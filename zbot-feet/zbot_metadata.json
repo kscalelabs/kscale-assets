@@ -1,0 +1,95 @@
+{
+  "joint_name_to_metadata": {
+    "left_shoulder_yaw": {
+      "id": 11,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "left_shoulder_pitch": {
+      "id": 12,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "left_elbow": {
+      "id": 13,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "left_gripper": {
+      "id": 14,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "right_shoulder_yaw": {
+      "id": 21,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "right_shoulder_pitch": {
+      "id": 22,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "right_elbow": {
+      "id": 23,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "right_gripper": {
+      "id": 24,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "left_hip_yaw": {
+      "id": 31,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "left_hip_roll": {
+      "id": 32,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "left_hip_pitch": {
+      "id": 33,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "left_knee": {
+      "id": 34,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "left_ankle": {
+      "id": 35,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "right_hip_yaw": {
+      "id": 41,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "right_hip_roll": {
+      "id": 42,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "right_hip_pitch": {
+      "id": 43,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "right_knee": {
+      "id": 44,
+      "kp": 200.0,
+      "kd": 5.0
+    },
+    "right_ankle": {
+      "id": 45,
+      "kp": 200.0,
+      "kd": 5.0
+    }
+  },
+  "control_frequency": 50
+}

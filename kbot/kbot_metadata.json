@@ -1,0 +1,105 @@
+{
+  "joint_name_to_metadata": {
+    "left_shoulder_pitch_03": {
+      "id": 11,
+      "kp": 20.0,
+      "kd": 0.56866
+    },
+    "left_shoulder_roll_03": {
+      "id": 12,
+      "kp": 50.0,
+      "kd": 8.0093
+    },
+    "left_shoulder_yaw_02": {
+      "id": 13,
+      "kp": 50.0,
+      "kd": 8.0321
+    },
+    "left_elbow_02": {
+      "id": 14,
+      "kp": 20.0,
+      "kd": 2.3667
+    },
+    "left_wrist_02": {
+      "id": 15,
+      "kp": 20.0,
+      "kd": 0.51228
+    },
+    "right_shoulder_pitch_03": {
+      "id": 21,
+      "kp": 20.0,
+      "kd": 0.56850
+    },
+    "right_shoulder_roll_03": {
+      "id": 22,
+      "kp": 50.0,
+      "kd": 8.0001
+    },
+    "right_shoulder_yaw_02": {
+      "id": 23,
+      "kp": 50.0,
+      "kd": 8.0231
+    },
+    "right_elbow_02": {
+      "id": 24,
+      "kp": 20.0,
+      "kd": 2.3667
+    },
+    "right_wrist_02": {
+      "id": 25,
+      "kp": 20.0,
+      "kd": 0.51228
+    },
+    "left_hip_pitch_04": {
+      "id": 31,
+      "kp": 100.0,
+      "kd": 15.851
+    },
+    "left_hip_roll_03": {
+      "id": 32,
+      "kp": 50.0,
+      "kd": 11.152
+    },
+    "left_hip_yaw_03": {
+      "id": 33,
+      "kp": 50.0,
+      "kd": 1.4643
+    },
+    "left_knee_04": {
+      "id": 34,
+      "kp": 100.0,
+      "kd": 6.1504
+    },
+    "left_ankle_02": {
+      "id": 35,
+      "kp": 20.0,
+      "kd": 0.60059
+    },
+    "right_hip_pitch_04": {
+      "id": 41,
+      "kp": 100.0,
+      "kd": 15.851
+    },
+    "right_hip_roll_03": {
+      "id": 42,
+      "kp": 50.0,
+      "kd": 11.152
+    },
+    "right_hip_yaw_03": {
+      "id": 43,
+      "kp": 50.0,
+      "kd": 1.4617
+    },
+    "right_knee_04": {
+      "id": 44,
+      "kp": 100.0,
+      "kd": 6.1504
+    },
+    "right_ankle_02": {
+      "id": 45,
+      "kp": 20.0,
+      "kd": 0.60059
+    }
+  },
+  "control_frequency": 50
+}
