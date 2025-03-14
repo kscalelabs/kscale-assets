@@ -204,6 +204,11 @@
     <motor name="right_ankle_02_ctrl" joint="right_ankle_02" class="motor_02" />
   </actuator>
 
+  <contact>
+    <pair geom1="foot1_collision_box" geom2="floor" />
+    <pair geom1="foot3_collision_box" geom2="floor" />
+  </contact>
+
   <sensor>
     <accelerometer name="imu_acc" site="imu_site" noise="0.01" />
     <gyro name="imu_gyro" site="imu_site" noise="0.01" />

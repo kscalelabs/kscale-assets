@@ -121,8 +121,8 @@
                 <body name="FOOT" pos="0.100000 0 0.000800" quat="-1.2247452309842457e-07 -0.7071068967259713 -0.7071066656470838 -1.22474483074382e-07">
                   <joint name="left_ankle" type="hinge" class="motor" range="-1.570796 1.570796" axis="0 0 1" />
                   <inertial pos="-0.015078 0.027835 0.018700" mass="0.278140" diaginertia="4.5e-05 0.000205 0.000182" />
-                  <geom name="FOOT_collision" type="mesh" mesh="FOOT.collision.stl" class="collision" />
                   <geom name="FOOT_visual" material="L_ARM_MIRROR_1_material" type="mesh" mesh="FOOT.stl" class="visual" />
+                  <geom name="FOOT_collision_box" type="box" pos="-0.016074 0.012925 0.018700" size="0.044935 0.022707 0.020220" class="collision" />
                 </body>
               </body>
             </body>
@@ -147,8 +147,8 @@
                 <body name="FOOT_2" pos="0.100000 0 0.001000" quat="-1.2247452309842457e-07 -0.7071068967259713 0.7071066656470838 1.22474483074382e-07">
                   <joint name="right_ankle" type="hinge" class="motor" range="-1.570796 1.570796" axis="0 0 1" />
                   <inertial pos="-0.015078 -0.027835 0.018700" mass="0.278140" diaginertia="4.5e-05 0.000205 0.000182" />
-                  <geom name="FOOT_2_collision" type="mesh" mesh="FOOT_2.collision.stl" class="collision" />
                   <geom name="FOOT_2_visual" material="L_ARM_MIRROR_1_material" type="mesh" mesh="FOOT_2.stl" class="visual" />
+                  <geom name="FOOT_2_collision_box" type="box" pos="-0.016015 -0.012928 0.018700" size="0.044976 0.022733 0.020220" class="collision" />
                 </body>
               </body>
             </body>
@@ -181,6 +181,11 @@
     <motor name="right_knee_ctrl" joint="right_knee" class="motor" />
     <motor name="right_ankle_ctrl" joint="right_ankle" class="motor" />
   </actuator>
+
+  <contact>
+    <pair geom1="FOOT_collision_box" geom2="floor" />
+    <pair geom1="FOOT_2_collision_box" geom2="floor" />
+  </contact>
 
   <sensor>
     <accelerometer name="IMU_acc" site="IMU_site" noise="0.01" />

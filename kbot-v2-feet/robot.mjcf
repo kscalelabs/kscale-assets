@@ -141,8 +141,8 @@
                 <body name="KB_D_501R_R_LEG_FOOT" pos="-0.031300 0.292500 0.034000">
                   <joint name="right_ankle_02" type="hinge" class="motor_02" range="-0.296706 0.785398" axis="0 0 1" />
                   <inertial pos="-0.013265 0.028578 -0.016056" mass="0.492747" diaginertia="0.000283 0.00156 0.001485" />
-                  <geom name="KB_D_501R_R_LEG_FOOT_collision" type="mesh" mesh="KB_D_501R_R_LEG_FOOT.collision.stl" class="collision" />
                   <geom name="KB_D_501R_R_LEG_FOOT_visual" material="KB_D_501R_R_LEG_FOOT_material" type="mesh" mesh="KB_D_501R_R_LEG_FOOT.stl" class="visual" />
+                  <geom name="KB_D_501R_R_LEG_FOOT_collision_box" type="box" pos="-0.028565 0.014366 -0.014000" size="0.105479 0.035873 0.036000" class="collision" />
                 </body>
               </body>
             </body>
@@ -167,8 +167,8 @@
                 <body name="KB_D_501L_L_LEG_FOOT" pos="-0.031300 -0.292500 -0.057200">
                   <joint name="left_ankle_02" type="hinge" class="motor_02" range="-0.785398 0.296706" axis="0 0 1.0" />
                   <inertial pos="-0.013265 -0.028578 0.011944" mass="0.492748" diaginertia="0.000283 0.00156 0.001485" />
-                  <geom name="KB_D_501L_L_LEG_FOOT_collision" type="mesh" mesh="KB_D_501L_L_LEG_FOOT.collision.stl" class="collision" />
                   <geom name="KB_D_501L_L_LEG_FOOT_visual" material="KB_D_501R_R_LEG_FOOT_material" type="mesh" mesh="KB_D_501L_L_LEG_FOOT.stl" class="visual" />
+                  <geom name="KB_D_501L_L_LEG_FOOT_collision_box" type="box" pos="-0.028403 -0.014436 0.014000" size="0.105488 0.036200 0.036000" class="collision" />
                 </body>
               </body>
             </body>
@@ -208,6 +208,11 @@
     <motor name="left_knee_04_ctrl" joint="left_knee_04" class="motor_04" />
     <motor name="left_ankle_02_ctrl" joint="left_ankle_02" class="motor_02" />
   </actuator>
+
+  <contact>
+    <pair geom1="KB_D_501R_R_LEG_FOOT_collision_box" geom2="floor" />
+    <pair geom1="KB_D_501L_L_LEG_FOOT_collision_box" geom2="floor" />
+  </contact>
 
   <sensor>
     <accelerometer name="imu_acc" site="imu_site" noise="0.01" />
