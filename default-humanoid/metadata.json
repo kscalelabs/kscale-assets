@@ -1,0 +1,111 @@
+{
+    "joint_name_to_metadata": {
+      "abdomen_y": {
+        "id": 1,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "abdomen_z": {
+        "id": 2,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "abdomen_x": {
+        "id": 3,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "hip_x_right": {
+        "id": 4,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "hip_z_right": {
+        "id": 5,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "hip_y_right": {
+        "id": 6,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "knee_right": {
+        "id": 7,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "ankle_x_right": {
+        "id": 8,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "ankle_y_right": {
+        "id": 9,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "hip_x_left": {
+        "id": 10,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "hip_z_left": {
+        "id": 11,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "hip_y_left": {
+        "id": 12,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "knee_left": {
+        "id": 13,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "ankle_x_left": {
+        "id": 14,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "ankle_y_left": {
+        "id": 15,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "shoulder1_right": {
+        "id": 16,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "shoulder2_right": {
+        "id": 17,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "elbow_right": {
+        "id": 18,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "shoulder1_left": {
+        "id": 19,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "shoulder2_left": {
+        "id": 20,
+        "kp": 50.0,
+        "kd": 5.0
+      },
+      "elbow_left": {
+        "id": 21,
+        "kp": 50.0,
+        "kd": 5.0
+      }
+    },
+    "control_frequency": 50
+  }
+  
