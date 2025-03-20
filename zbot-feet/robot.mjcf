@@ -1,5 +1,6 @@
 <mujoco model="z-bot2_fe_urdf">
   <default>
+    <mesh maxhullvert="32"/>
     <default class="robot">
       <default class="motor">
         <joint armature="0.0005" frictionloss="0.1" actuatorfrcrange="-2.0 2.0" />

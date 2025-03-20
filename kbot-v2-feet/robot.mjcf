@@ -1,5 +1,6 @@
 <mujoco model="kbot-v2">
   <default>
+    <mesh maxhullvert="32"/>
     <default class="robot">
       <default class="motor_00">
         <joint armature="0.0005" frictionloss="0.1" actuatorfrcrange="-14.0 14.0" />
