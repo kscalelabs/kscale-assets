@@ -101,5 +101,5 @@
       "kd": "1.0"
     }
   },
-  "control_frequency": 50
+  "control_frequency": "50"
 }
