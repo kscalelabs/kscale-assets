@@ -58,29 +58,29 @@
     <origin xyz="-0.024250 0 -0.080000" rpy="-3.141593 -1.570796 0"/>
     <parent link="KC_C_104R_PitchHardstopDriven"/>
     <child link="RS03_3"/>
-    <limit effort="60" velocity="6.283" lower="-0.383972" upper="1.658063"/>
-    <axis xyz="0 0 1.0"/>
+    <limit effort="60" velocity="6.283" lower="-1.658063" upper="0.383972"/>
+    <axis xyz="0 0 -1"/>
   </joint>
   <joint name="dof_right_hip_roll_03" type="revolute">
     <origin xyz="-0.028250 -0.030000 -0.071000" rpy="3.141593 -1.570796 0"/>
     <parent link="KC_D_102R_R_Hip_Yoke_Drive"/>
     <child link="RS03_4"/>
-    <limit effort="60" velocity="6.283" lower="-0.209440" upper="2.268928"/>
-    <axis xyz="0 0 1.0"/>
+    <limit effort="60" velocity="6.283" lower="-2.268928" upper="0.209440"/>
+    <axis xyz="0 0 -1"/>
   </joint>
   <joint name="dof_left_hip_roll_03" type="revolute">
     <origin xyz="-0.028250 0.030000 -0.071000" rpy="0 1.570796 0"/>
     <parent link="KC_D_102L_L_Hip_Yoke_Drive"/>
     <child link="RS03_5"/>
-    <limit effort="60" velocity="6.283" lower="-2.268928" upper="0.209440"/>
-    <axis xyz="0 0 1.0"/>
+    <limit effort="60" velocity="6.283" lower="-0.209440" upper="2.268928"/>
+    <axis xyz="0 0 -1"/>
   </joint>
   <joint name="dof_left_shoulder_roll_03" type="revolute">
     <origin xyz="-0.024250 0 -0.080000" rpy="-3.141593 1.570796 0"/>
     <parent link="KC_C_104L_PitchHardstopDriven"/>
     <child link="RS03_6"/>
-    <limit effort="60" velocity="6.283" lower="-1.658063" upper="0.383972"/>
-    <axis xyz="0 0 -1.0"/>
+    <limit effort="60" velocity="6.283" lower="-0.383972" upper="1.658063"/>
+    <axis xyz="0 0 1"/>
   </joint>
   <joint name="dof_right_shoulder_yaw_02" type="revolute">
     <origin xyz="-0.013000 0.142000 0.030250" rpy="1.570796 0 0"/>
