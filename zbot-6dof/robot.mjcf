@@ -1,0 +1,235 @@
+<mujoco model="top_level_assy_[urdf]">
+  <default>
+    <default class="robot">
+      <default class="motor">
+        <joint armature="0.0005" frictionloss="0.5" actuatorfrcrange="-2.0 2.0" />
+        <motor ctrlrange="-2.0 2.0" />
+      </default>
+      <default class="visual">
+        <geom material="visualgeom" contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="collision">
+        <geom condim="6" friction="0.8 0.02 0.01" group="3" />
+      </default>
+    </default>
+    <mesh maxhullvert="64" />
+  </default>
+
+  <compiler angle="radian" />
+
+  <asset>
+    <material name="floating_base_link_material" rgba="1 0 0 1" />
+    <material name="Z_BOT2_MASTER_BODY_SKELETON_material" rgba="0.494118 0.623529 0.749020 1" />
+    <material name="IMU_material" rgba="0 1 0 1" />
+    <material name="Z_BOT2_MASTER_SHOULDER2_material" rgba="0.364706 0.360784 0.749020 1" />
+    <material name="Hip_Bracket_material" rgba="0.231373 0.380392 0.705882 1" />
+    <material name="FK_AP_019_25T_11_material" rgba="0.749020 0.498039 0.725490 1" />
+    <material name="L_ARM_MIRROR_1_material" rgba="0.627451 0.627451 0.627451 1" />
+    <material name="R_ARM_MIRROR_1_material" rgba="0.647059 0.647059 0.647059 1" />
+    <material name="Upper_Leg_material" rgba="0.498039 0.498039 0.498039 1" />
+    <material name="default_material" rgba="0.7 0.7 0.7 1" />
+    <mesh name="Z_BOT2_MASTER_BODY_SKELETON.collision.stl" file="meshes/Z_BOT2_MASTER_BODY_SKELETON.collision.stl" />
+    <mesh name="Z_BOT2_MASTER_BODY_SKELETON.stl" file="meshes/Z_BOT2_MASTER_BODY_SKELETON.stl" />
+    <mesh name="IMU.stl" file="meshes/IMU.stl" />
+    <mesh name="Z_BOT2_MASTER_SHOULDER2.stl" file="meshes/Z_BOT2_MASTER_SHOULDER2.stl" />
+    <mesh name="FK_AP_019_25T_11.collision.stl" file="meshes/FK_AP_019_25T_11.collision.stl" />
+    <mesh name="FK_AP_019_25T_11.stl" file="meshes/FK_AP_019_25T_11.stl" />
+    <mesh name="L_ARM_MIRROR_1.collision.stl" file="meshes/L_ARM_MIRROR_1.collision.stl" />
+    <mesh name="L_ARM_MIRROR_1.stl" file="meshes/L_ARM_MIRROR_1.stl" />
+    <mesh name="FINGER_1.collision.stl" file="meshes/FINGER_1.collision.stl" />
+    <mesh name="FINGER_1.stl" file="meshes/FINGER_1.stl" />
+    <mesh name="Z_BOT2_MASTER_SHOULDER2_1.stl" file="meshes/Z_BOT2_MASTER_SHOULDER2_1.stl" />
+    <mesh name="FK_AP_019_25T_11_1.collision.stl" file="meshes/FK_AP_019_25T_11_1.collision.stl" />
+    <mesh name="FK_AP_019_25T_11_1.stl" file="meshes/FK_AP_019_25T_11_1.stl" />
+    <mesh name="R_ARM_MIRROR_1.collision.stl" file="meshes/R_ARM_MIRROR_1.collision.stl" />
+    <mesh name="R_ARM_MIRROR_1.stl" file="meshes/R_ARM_MIRROR_1.stl" />
+    <mesh name="FINGER_1_1.collision.stl" file="meshes/FINGER_1_1.collision.stl" />
+    <mesh name="FINGER_1_1.stl" file="meshes/FINGER_1_1.stl" />
+    <mesh name="Hip_Bracket.stl" file="meshes/Hip_Bracket.stl" />
+    <mesh name="ST15_4.stl" file="meshes/ST15_4.stl" />
+    <mesh name="Upper_Leg.collision.stl" file="meshes/Upper_Leg.collision.stl" />
+    <mesh name="Upper_Leg.stl" file="meshes/Upper_Leg.stl" />
+    <mesh name="ST15_12.stl" file="meshes/ST15_12.stl" />
+    <mesh name="ST15_14.stl" file="meshes/ST15_14.stl" />
+    <mesh name="Left_Foot.collision.stl" file="meshes/Left_Foot.collision.stl" />
+    <mesh name="Left_Foot.stl" file="meshes/Left_Foot.stl" />
+    <mesh name="Hip_Bracket_2.stl" file="meshes/Hip_Bracket_2.stl" />
+    <mesh name="ST15_7.stl" file="meshes/ST15_7.stl" />
+    <mesh name="Upper_Leg_2.collision.stl" file="meshes/Upper_Leg_2.collision.stl" />
+    <mesh name="Upper_Leg_2.stl" file="meshes/Upper_Leg_2.stl" />
+    <mesh name="ST15_13.stl" file="meshes/ST15_13.stl" />
+    <mesh name="ST15_15.stl" file="meshes/ST15_15.stl" />
+    <mesh name="Right_Foot.collision.stl" file="meshes/Right_Foot.collision.stl" />
+    <mesh name="Right_Foot.stl" file="meshes/Right_Foot.stl" />
+  </asset>
+
+  <worldbody>
+    <body name="floating_base_link" pos="0.00000000 0.00000000 0.39709303" childclass="robot">
+      <freejoint name="floating_base" />
+      <geom name="floating_base_link_visual" quat="0.7073882691671998 0.0 0.0 0.706825181105366" material="floating_base_link_material" type="sphere" size="0.01" class="visual" />
+      <body name="Z_BOT2_MASTER_BODY_SKELETON" quat="0.7073882691671998 0.0 0.0 0.706825181105366">
+        <inertial pos="-0.000316 0.007954 -0.043762" mass="1.209796" diaginertia="0.003041 0.003682 0.001756" />
+        <geom name="Z_BOT2_MASTER_BODY_SKELETON_collision" type="mesh" mesh="Z_BOT2_MASTER_BODY_SKELETON.collision.stl" class="collision" />
+        <geom name="Z_BOT2_MASTER_BODY_SKELETON_visual" material="Z_BOT2_MASTER_BODY_SKELETON_material" type="mesh" mesh="Z_BOT2_MASTER_BODY_SKELETON.stl" class="visual" />
+        <body name="IMU" pos="0.042470 0.026490 -0.025518" quat="0.5000001633974483 0.4999999999999733 0.49999983660255165 0.4999999999999733">
+          <inertial pos="-0.010000 -0.007500 0.001235" mass="0.001887" diaginertia="1e-06 1e-06 1e-06" />
+          <geom name="IMU_visual" material="IMU_material" type="mesh" mesh="IMU.stl" class="visual" />
+          <site name="IMU_site" quat="1.0 0.0 0.0 0.0" pos="0.0 0.0 0.0" />
+        </body>
+        <body name="Z_BOT2_MASTER_SHOULDER2" pos="-0.055995 -0.010610 -0.009528" quat="0.7071068967259818 -0.7071066656470943 0.0 0.0">
+          <joint name="right_shoulder_yaw" type="hinge" class="motor" range="-0.174533 1.221731" axis="0 0 1" />
+          <inertial pos="-0.012788 -0.001374 0.018800" mass="0.008227" diaginertia="3e-06 3e-06 1e-06" />
+          <geom name="Z_BOT2_MASTER_SHOULDER2_visual" material="Z_BOT2_MASTER_SHOULDER2_material" type="mesh" mesh="Z_BOT2_MASTER_SHOULDER2.stl" class="visual" />
+          <body name="FK_AP_019_25T_11" pos="-0.020845 0.004900 0.018800" quat="-1.2247452309842457e-07 0.7071068967259713 1.22474483074382e-07 0.7071066656470838">
+            <joint name="right_shoulder_pitch" type="hinge" class="motor" range="-3.141593 3.141593" axis="0 0 1" />
+            <inertial pos="-0.000729 -0.043819 -0.018153" mass="0.222405" diaginertia="0.000326 5.3e-05 0.000328" />
+            <geom name="FK_AP_019_25T_11_collision" type="mesh" mesh="FK_AP_019_25T_11.collision.stl" class="collision" />
+            <geom name="FK_AP_019_25T_11_visual" material="FK_AP_019_25T_11_material" type="mesh" mesh="FK_AP_019_25T_11.stl" class="visual" />
+            <body name="L_ARM_MIRROR_1" pos="-0.019800 -0.092984 -0.018600" quat="-1.2247452309842457e-07 -0.7071068967259713 1.22474483074382e-07 -0.7071066656470838">
+              <joint name="right_elbow_yaw" type="hinge" class="motor" range="-1.570796 0.872665" axis="0 0 1" />
+              <inertial pos="-0.003295 0.055921 0.017302" mass="0.153130" diaginertia="0.000126 4.4e-05 0.000118" />
+              <geom name="L_ARM_MIRROR_1_collision" type="mesh" mesh="L_ARM_MIRROR_1.collision.stl" class="collision" />
+              <geom name="L_ARM_MIRROR_1_visual" material="L_ARM_MIRROR_1_material" type="mesh" mesh="L_ARM_MIRROR_1.stl" class="visual" />
+              <body name="FINGER_1" pos="-0.011778 0.066206 -0.001260" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
+                <joint name="right_gripper" type="hinge" class="motor" range="-0.523599 0.523599" axis="0 0 -1" />
+                <inertial pos="-0.021523 -0.027779 -0.018800" mass="0.022322" diaginertia="9e-06 6e-06 7e-06" />
+                <geom name="FINGER_1_collision" type="mesh" mesh="FINGER_1.collision.stl" class="collision" />
+                <geom name="FINGER_1_visual" material="L_ARM_MIRROR_1_material" type="mesh" mesh="FINGER_1.stl" class="visual" />
+              </body>
+            </body>
+          </body>
+        </body>
+        <body name="Z_BOT2_MASTER_SHOULDER2_1" pos="0.055995 -0.010610 -0.009528" quat="0.7071068967259818 0.7071066656470943 0.0 0.0">
+          <joint name="left_shoulder_yaw" type="hinge" class="motor" range="-1.221731 0.174533" axis="0 0 -1" />
+          <inertial pos="0.012788 0.001374 -0.018800" mass="0.008227" diaginertia="3e-06 3e-06 1e-06" />
+          <geom name="Z_BOT2_MASTER_SHOULDER2_1_visual" material="Z_BOT2_MASTER_SHOULDER2_material" type="mesh" mesh="Z_BOT2_MASTER_SHOULDER2_1.stl" class="visual" />
+          <body name="FK_AP_019_25T_11_1" pos="0.020845 -0.004900 -0.018800" quat="-1.2247452309842457e-07 0.7071068967259713 -1.22474483074382e-07 -0.7071066656470838">
+            <joint name="left_shoulder_pitch" type="hinge" class="motor" range="-3.141593 3.141593" axis="0 0 1" />
+            <inertial pos="-0.000741 0.043819 -0.018142" mass="0.222405" diaginertia="0.000326 5.2e-05 0.000328" />
+            <geom name="FK_AP_019_25T_11_1_collision" type="mesh" mesh="FK_AP_019_25T_11_1.collision.stl" class="collision" />
+            <geom name="FK_AP_019_25T_11_1_visual" material="FK_AP_019_25T_11_material" type="mesh" mesh="FK_AP_019_25T_11_1.stl" class="visual" />
+            <body name="R_ARM_MIRROR_1" pos="-0.019800 0.092984 -0.018600" quat="0.7071068967259818 0.0 0.7071066656470943 0.0">
+              <joint name="left_elbow_yaw" type="hinge" class="motor" range="-0.872665 1.570796" axis="0 0 1" />
+              <inertial pos="0.003280 0.055927 0.017306" mass="0.153130" diaginertia="0.000126 4.4e-05 0.000118" />
+              <geom name="R_ARM_MIRROR_1_collision" type="mesh" mesh="R_ARM_MIRROR_1.collision.stl" class="collision" />
+              <geom name="R_ARM_MIRROR_1_visual" material="R_ARM_MIRROR_1_material" type="mesh" mesh="R_ARM_MIRROR_1.stl" class="visual" />
+              <body name="FINGER_1_1" pos="0.011778 0.066206 -0.001260" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
+                <joint name="left_gripper" type="hinge" class="motor" range="-0.523599 0.523599" axis="0 0 -1" />
+                <inertial pos="0.021523 -0.027779 -0.018800" mass="0.022322" diaginertia="9e-06 6e-06 7e-06" />
+                <geom name="FINGER_1_1_collision" type="mesh" mesh="FINGER_1_1.collision.stl" class="collision" />
+                <geom name="FINGER_1_1_visual" material="L_ARM_MIRROR_1_material" type="mesh" mesh="FINGER_1_1.stl" class="visual" />
+              </body>
+            </body>
+          </body>
+        </body>
+        <body name="Hip_Bracket" pos="0.042868 -0.002265 -0.123018" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
+          <joint name="left_hip_yaw" type="hinge" class="motor" range="-1.570796 1.570796" axis="0 0 -1" />
+          <inertial pos="0.006897 0 -0.006184" mass="0.019861" diaginertia="1.2e-05 1.1e-05 5e-06" />
+          <geom name="Hip_Bracket_visual" material="Hip_Bracket_material" type="mesh" mesh="Hip_Bracket.stl" class="visual" />
+          <body name="ST15_4" pos="0.000087 -0.019650 0.024075" quat="0.7071068967259818 0.7071066656470943 0.0 0.0">
+            <joint name="left_hip_roll" type="hinge" class="motor" range="-0.610865 0.610865" axis="0 0 -1" />
+            <inertial pos="-0.000781 0.013065 0.000178" mass="0.217273" diaginertia="0.000131 0.000113 7.2e-05" />
+            <geom name="ST15_4_visual" material="floating_base_link_material" type="mesh" mesh="ST15_4.stl" class="visual" />
+            <body name="Upper_Leg" pos="-0.019800 0 -0.016150" quat="-1.2247452309842457e-07 -0.7071068967259713 1.22474483074382e-07 -0.7071066656470838">
+              <joint name="left_hip_pitch" type="hinge" class="motor" range="-1.570796 0.872665" axis="0 0 1" />
+              <inertial pos="-0.004004 -0.054562 0.018602" mass="0.030705" diaginertia="3.8e-05 1.3e-05 2.9e-05" />
+              <geom name="Upper_Leg_collision" type="mesh" mesh="Upper_Leg.collision.stl" class="collision" />
+              <geom name="Upper_Leg_visual" material="Upper_Leg_material" type="mesh" mesh="Upper_Leg.stl" class="visual" />
+              <body name="ST15_12" pos="0 -0.100000 0.001260" quat="-1.7320510330969933e-07 0.999999999999985 0.0 -0.0">
+                <joint name="left_knee_pitch" type="hinge" class="motor" range="-1.396263 1.396263" axis="0 0 1" />
+                <inertial pos="-0.000874 0.024183 -0.017593" mass="0.133647" diaginertia="0.000117 3.6e-05 0.000102" />
+                <geom name="ST15_12_visual" material="floating_base_link_material" type="mesh" mesh="ST15_12.stl" class="visual" />
+                <body name="ST15_14" pos="0 0.100000 -0.036340" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
+                  <joint name="left_ankle_pitch" type="hinge" class="motor" range="-1.396263 0.698132" axis="0 0 1" />
+                  <inertial pos="0.016328 0.013065 -0.018019" mass="0.217273" diaginertia="7.2e-05 0.000113 0.000131" />
+                  <geom name="ST15_14_visual" material="floating_base_link_material" type="mesh" mesh="ST15_14.stl" class="visual" />
+                  <body name="Left_Foot" pos="0.015150 0 -0.018800" quat="-1.2247452309842457e-07 -0.7071068967259713 1.22474483074382e-07 -0.7071066656470838">
+                    <joint name="left_ankle_roll" type="hinge" class="motor" range="-1.047198 1.047198" axis="0 0 1" />
+                    <inertial pos="0.006981 0.025970 -0.010887" mass="0.096554" diaginertia="9e-05 0.000131 4.7e-05" />
+                    <geom name="Left_Foot_collision" type="mesh" mesh="Left_Foot.collision.stl" class="collision" />
+                    <geom name="Left_Foot_visual" material="Upper_Leg_material" type="mesh" mesh="Left_Foot.stl" class="visual" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+        <body name="Hip_Bracket_2" pos="-0.042868 -0.002265 -0.123018" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
+          <joint name="right_hip_yaw" type="hinge" class="motor" range="-1.570796 1.570796" axis="0 0 -1" />
+          <inertial pos="-0.006897 0 -0.006184" mass="0.019861" diaginertia="1.2e-05 1.1e-05 5e-06" />
+          <geom name="Hip_Bracket_2_visual" material="Hip_Bracket_material" type="mesh" mesh="Hip_Bracket_2.stl" class="visual" />
+          <body name="ST15_7" pos="-0.000087 -0.019650 0.024075" quat="0.7071068967259818 0.7071066656470943 0.0 0.0">
+            <joint name="right_hip_roll" type="hinge" class="motor" range="-0.610865 0.610865" axis="0 0 -1" />
+            <inertial pos="-0.000781 0.013065 0.000178" mass="0.217273" diaginertia="0.000131 0.000113 7.2e-05" />
+            <geom name="ST15_7_visual" material="floating_base_link_material" type="mesh" mesh="ST15_7.stl" class="visual" />
+            <body name="Upper_Leg_2" pos="0.018800 0 -0.016150" quat="-1.2247452309842457e-07 -0.7071068967259713 1.22474483074382e-07 -0.7071066656470838">
+              <joint name="right_hip_pitch" type="hinge" class="motor" range="-1.570796 0.872665" axis="0 0 -1" />
+              <inertial pos="-0.004004 -0.054562 -0.019057" mass="0.030705" diaginertia="3.8e-05 1.3e-05 2.9e-05" />
+              <geom name="Upper_Leg_2_collision" type="mesh" mesh="Upper_Leg_2.collision.stl" class="collision" />
+              <geom name="Upper_Leg_2_visual" material="Upper_Leg_material" type="mesh" mesh="Upper_Leg_2.stl" class="visual" />
+              <body name="ST15_13" pos="0 -0.100000 -0.036399" quat="-1.7320510330969933e-07 0.999999999999985 0.0 -0.0">
+                <joint name="right_knee_pitch" type="hinge" class="motor" range="-1.396263 1.396263" axis="0 0 1" />
+                <inertial pos="-0.000874 0.024183 -0.017593" mass="0.133647" diaginertia="0.000117 3.6e-05 0.000102" />
+                <geom name="ST15_13_visual" material="floating_base_link_material" type="mesh" mesh="ST15_13.stl" class="visual" />
+                <body name="ST15_15" pos="0 0.100000 -0.036340" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
+                  <joint name="right_ankle_pitch" type="hinge" class="motor" range="-1.396263 0.698132" axis="0 0 1" />
+                  <inertial pos="0.016328 0.013065 -0.018019" mass="0.217273" diaginertia="7.2e-05 0.000113 0.000131" />
+                  <geom name="ST15_15_visual" material="floating_base_link_material" type="mesh" mesh="ST15_15.stl" class="visual" />
+                  <body name="Right_Foot" pos="0.015150 0 -0.018800" quat="-1.2247452309842457e-07 -0.7071068967259713 1.22474483074382e-07 -0.7071066656470838">
+                    <joint name="right_ankle_roll" type="hinge" class="motor" range="-1.047198 1.047198" axis="0 0 1" />
+                    <inertial pos="-0.006981 0.025970 -0.010887" mass="0.096554" diaginertia="9e-05 0.000131 4.7e-05" />
+                    <geom name="Right_Foot_collision" type="mesh" mesh="Right_Foot.collision.stl" class="collision" />
+                    <geom name="Right_Foot_visual" material="Upper_Leg_material" type="mesh" mesh="Right_Foot.stl" class="visual" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <site name="floating_base_link_site" />
+      <camera name="front_camera" mode="track" fovy="90.0" quat="4.329780281177467e-17 4.329780281177466e-17 0.7071067811865475 0.7071067811865476" pos="0.0 2.0 0.5" />
+      <camera name="side_camera" mode="track" fovy="90.0" quat="-0.5 -0.4999999999999999 0.5 0.5000000000000001" pos="-2.0 0.0 0.5" />
+    </body>
+  </worldbody>
+
+  <actuator>
+    <motor name="right_shoulder_yaw_ctrl" joint="right_shoulder_yaw" class="motor" />
+    <motor name="right_shoulder_pitch_ctrl" joint="right_shoulder_pitch" class="motor" />
+    <motor name="right_elbow_yaw_ctrl" joint="right_elbow_yaw" class="motor" />
+    <motor name="right_gripper_ctrl" joint="right_gripper" class="motor" />
+    <motor name="left_shoulder_yaw_ctrl" joint="left_shoulder_yaw" class="motor" />
+    <motor name="left_shoulder_pitch_ctrl" joint="left_shoulder_pitch" class="motor" />
+    <motor name="left_elbow_yaw_ctrl" joint="left_elbow_yaw" class="motor" />
+    <motor name="left_gripper_ctrl" joint="left_gripper" class="motor" />
+    <motor name="left_hip_yaw_ctrl" joint="left_hip_yaw" class="motor" />
+    <motor name="left_hip_roll_ctrl" joint="left_hip_roll" class="motor" />
+    <motor name="left_hip_pitch_ctrl" joint="left_hip_pitch" class="motor" />
+    <motor name="left_knee_pitch_ctrl" joint="left_knee_pitch" class="motor" />
+    <motor name="left_ankle_pitch_ctrl" joint="left_ankle_pitch" class="motor" />
+    <motor name="left_ankle_roll_ctrl" joint="left_ankle_roll" class="motor" />
+    <motor name="right_hip_yaw_ctrl" joint="right_hip_yaw" class="motor" />
+    <motor name="right_hip_roll_ctrl" joint="right_hip_roll" class="motor" />
+    <motor name="right_hip_pitch_ctrl" joint="right_hip_pitch" class="motor" />
+    <motor name="right_knee_pitch_ctrl" joint="right_knee_pitch" class="motor" />
+    <motor name="right_ankle_pitch_ctrl" joint="right_ankle_pitch" class="motor" />
+    <motor name="right_ankle_roll_ctrl" joint="right_ankle_roll" class="motor" />
+  </actuator>
+
+  <contact>
+    <exclude body1="FK_AP_019_25T_11" body2="L_ARM_MIRROR_1" />
+    <exclude body1="FK_AP_019_25T_11_1" body2="R_ARM_MIRROR_1" />
+    <exclude body1="L_ARM_MIRROR_1" body2="FINGER_1" />
+    <exclude body1="R_ARM_MIRROR_1" body2="FINGER_1_1" />
+  </contact>
+
+  <sensor>
+    <accelerometer name="IMU_acc" site="IMU_site" noise="0.01" />
+    <gyro name="IMU_gyro" site="IMU_site" noise="0.01" />
+    <magnetometer name="IMU_mag" site="IMU_site" noise="0.05" />
+    <framepos name="base_link_pos" objtype="site" objname="IMU_site" />
+    <framequat name="base_link_quat" objtype="site" objname="IMU_site" />
+    <framelinvel name="base_link_vel" objtype="site" objname="IMU_site" />
+    <frameangvel name="base_link_ang_vel" objtype="site" objname="IMU_site" />
+  </sensor>
+</mujoco>
