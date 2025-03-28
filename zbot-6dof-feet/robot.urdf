@@ -368,12 +368,6 @@
         <color rgba="0.498039 0.498039 0.498039 1"/>
       </material>
     </visual>
-    <collision name="Upper_Leg.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Upper_Leg_collision_geometry">
-        <mesh filename="meshes/Upper_Leg.collision.stl"/>
-      </geometry>
-    </collision>
     <inertial name="Upper_Leg_inertial">
       <mass value="0.030705"/>
       <inertia ixx="0.000038" iyy="0.000013" izz="0.000029" ixy="-0.000002" ixz="0" iyz="0"/>
@@ -438,12 +432,6 @@
         <color rgba="0.498039 0.498039 0.498039 1"/>
       </material>
     </visual>
-    <collision name="Upper_Leg.collision_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Upper_Leg_collision_geometry_2">
-        <mesh filename="meshes/Upper_Leg_2.collision.stl"/>
-      </geometry>
-    </collision>
     <inertial name="Upper_Leg_inertial_2">
       <mass value="0.030705"/>
       <inertia ixx="0.000038" iyy="0.000013" izz="0.000029" ixy="-0.000002" ixz="0" iyz="0"/>

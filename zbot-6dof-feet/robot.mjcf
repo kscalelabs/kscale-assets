@@ -40,7 +40,6 @@
     <mesh name="FINGER_1_1.stl" file="meshes/FINGER_1_1.stl" />
     <mesh name="Hip_Bracket.stl" file="meshes/Hip_Bracket.stl" />
     <mesh name="ST15_4.stl" file="meshes/ST15_4.stl" />
-    <mesh name="Upper_Leg.collision.stl" file="meshes/Upper_Leg.collision.stl" />
     <mesh name="Upper_Leg.stl" file="meshes/Upper_Leg.stl" />
     <mesh name="ST15_12.stl" file="meshes/ST15_12.stl" />
     <mesh name="ST15_14.stl" file="meshes/ST15_14.stl" />
@@ -48,7 +47,6 @@
     <mesh name="Left_Foot.stl" file="meshes/Left_Foot.stl" />
     <mesh name="Hip_Bracket_2.stl" file="meshes/Hip_Bracket_2.stl" />
     <mesh name="ST15_7.stl" file="meshes/ST15_7.stl" />
-    <mesh name="Upper_Leg_2.collision.stl" file="meshes/Upper_Leg_2.collision.stl" />
     <mesh name="Upper_Leg_2.stl" file="meshes/Upper_Leg_2.stl" />
     <mesh name="ST15_13.stl" file="meshes/ST15_13.stl" />
     <mesh name="ST15_15.stl" file="meshes/ST15_15.stl" />
@@ -119,7 +117,6 @@
             <body name="Upper_Leg" pos="-0.019800 0 -0.016150" quat="-1.2247452309842457e-07 -0.7071068967259713 1.22474483074382e-07 -0.7071066656470838">
               <joint name="left_hip_pitch" type="hinge" class="motor" range="-1.570796 0.872665" axis="0 0 1" />
               <inertial pos="-0.004004 -0.054562 0.018602" mass="0.030705" diaginertia="3.8e-05 1.3e-05 2.9e-05" />
-              <geom name="Upper_Leg_collision" type="mesh" mesh="Upper_Leg.collision.stl" class="collision" />
               <geom name="Upper_Leg_visual" material="Upper_Leg_material" type="mesh" mesh="Upper_Leg.stl" class="visual" />
               <body name="ST15_12" pos="0 -0.100000 0.001260" quat="-1.7320510330969933e-07 0.999999999999985 0.0 -0.0">
                 <joint name="left_knee_pitch" type="hinge" class="motor" range="-1.396263 1.396263" axis="0 0 1" />
@@ -132,8 +129,8 @@
                   <body name="Left_Foot" pos="0.015150 0 -0.018800" quat="-1.2247452309842457e-07 -0.7071068967259713 1.22474483074382e-07 -0.7071066656470838">
                     <joint name="left_ankle_roll" type="hinge" class="motor" range="-1.047198 1.047198" axis="0 0 1" />
                     <inertial pos="0.006981 0.025970 -0.010887" mass="0.096554" diaginertia="9e-05 0.000131 4.7e-05" />
-                    <geom name="Left_Foot_visual" material="Upper_Leg_material" type="box" class="visual" pos="0.006992 0.011324 -0.012323" quat="0.500199 0.499801 -0.499801 0.500199" size="0.021329 0.037001 0.051723" />
-                    <geom name="Left_Foot_collision_box" type="box" pos="0.006992 0.011324 -0.012323" quat="0.500199 0.499801 -0.499801 0.500199" size="0.021329 0.037001 0.051723" class="collision" />
+                    <geom name="Left_Foot_visual" material="Upper_Leg_material" type="box" class="visual" pos="0.006992 0.011324 -0.012323" size="0.037001 0.021324 0.051723" />
+                    <geom name="Left_Foot_collision_box" type="box" pos="0.006992 0.011324 -0.012323" size="0.037001 0.021324 0.051723" class="collision" />
                   </body>
                 </body>
               </body>
@@ -151,7 +148,6 @@
             <body name="Upper_Leg_2" pos="0.018800 0 -0.016150" quat="-1.2247452309842457e-07 -0.7071068967259713 1.22474483074382e-07 -0.7071066656470838">
               <joint name="right_hip_pitch" type="hinge" class="motor" range="-1.570796 0.872665" axis="0 0 -1" />
               <inertial pos="-0.004004 -0.054562 -0.019057" mass="0.030705" diaginertia="3.8e-05 1.3e-05 2.9e-05" />
-              <geom name="Upper_Leg_2_collision" type="mesh" mesh="Upper_Leg_2.collision.stl" class="collision" />
               <geom name="Upper_Leg_2_visual" material="Upper_Leg_material" type="mesh" mesh="Upper_Leg_2.stl" class="visual" />
               <body name="ST15_13" pos="0 -0.100000 -0.036399" quat="-1.7320510330969933e-07 0.999999999999985 0.0 -0.0">
                 <joint name="right_knee_pitch" type="hinge" class="motor" range="-1.396263 1.396263" axis="0 0 1" />
@@ -164,8 +160,8 @@
                   <body name="Right_Foot" pos="0.015150 0 -0.018800" quat="-1.2247452309842457e-07 -0.7071068967259713 1.22474483074382e-07 -0.7071066656470838">
                     <joint name="right_ankle_roll" type="hinge" class="motor" range="-1.047198 1.047198" axis="0 0 1" />
                     <inertial pos="-0.006981 0.025970 -0.010887" mass="0.096554" diaginertia="9e-05 0.000131 4.7e-05" />
-                    <geom name="Right_Foot_visual" material="Upper_Leg_material" type="box" class="visual" pos="-0.007008 0.011329 -0.012323" quat="0.500199 0.499801 -0.499801 0.500199" size="0.021324 0.037001 0.051723" />
-                    <geom name="Right_Foot_collision_box" type="box" pos="-0.007008 0.011329 -0.012323" quat="0.500199 0.499801 -0.499801 0.500199" size="0.021324 0.037001 0.051723" class="collision" />
+                    <geom name="Right_Foot_visual" material="Upper_Leg_material" type="box" class="visual" pos="-0.007008 0.011329 -0.012323" size="0.037001 0.021324 0.051723" />
+                    <geom name="Right_Foot_collision_box" type="box" pos="-0.007008 0.011329 -0.012323"  size="0.037001 0.021324 0.051723" class="collision" />
                   </body>
                 </body>
               </body>
