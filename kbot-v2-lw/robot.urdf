@@ -8,18 +8,18 @@
       <material name="floating_base_link_material">
         <color rgba="1 0 0 1"/>
       </material>
-      <origin xyz="0 0 0" rpy="0.00 0.00 0.00"/>
+      <origin xyz="0 0 0" rpy="0.00 0.00 1.57"/>
     </visual>
     <inertial name="floating_base_link_inertial">
       <mass value="0.001"/>
       <inertia ixx="0.000001" iyy="0.000001" izz="0.000002" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 0" rpy="0.00 0.00 0.00"/>
+      <origin xyz="0 0 0" rpy="0.00 0.00 1.57"/>
     </inertial>
   </link>
   <joint name="floating_base_joint" type="fixed">
     <parent link="floating_base_link"/>
     <child link="Torso_Side_Right"/>
-    <origin xyz="0 0 0" rpy="0.00 0.00 0.00"/>
+    <origin xyz="0 0 0" rpy="0.00 0.00 1.57"/>
   </joint>
   <joint name="dof_right_shoulder_pitch_03" type="revolute">
     <origin xyz="-0.028031 0.000007 0.126021" rpy="1.570796 0 1.570796"/>
