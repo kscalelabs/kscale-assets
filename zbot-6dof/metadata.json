@@ -1,101 +1,101 @@
 {
   "joint_name_to_metadata": {
-    "left_shoulder_yaw": {
+    "left_shoulder_pitch_15": {
       "id": 11,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "left_shoulder_pitch": {
+    "left_shoulder_roll_15": {
       "id": 12,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "left_elbow_yaw": {
+    "left_elbow_roll_15": {
       "id": 13,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "left_gripper": {
+    "left_gripper_15": {
       "id": 14,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "right_shoulder_yaw": {
+    "right_shoulder_pitch_15": {
       "id": 21,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "right_shoulder_pitch": {
+    "right_shoulder_roll_15": {
       "id": 22,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "right_elbow_yaw": {
+    "right_elbow_roll_15": {
       "id": 23,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "right_gripper": {
+    "right_gripper_15": {
       "id": 24,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "left_hip_yaw": {
+    "left_hip_yaw_50": {
       "id": 31,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "left_hip_roll": {
+    "left_hip_roll_50": {
       "id": 32,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "left_hip_pitch": {
+    "left_hip_pitch_50": {
       "id": 33,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "left_knee_pitch": {
+    "left_knee_pitch_50": {
       "id": 34,
       "kp": "40.0",
       "kd": "5.0"
     },
-    "left_ankle_pitch": {
+    "left_ankle_pitch_50": {
       "id": 35,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "left_ankle_roll": {
+    "left_ankle_roll_50": {
       "id": 36,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "right_hip_yaw": {
+    "right_hip_yaw_50": {
       "id": 41,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "right_hip_roll": {
+    "right_hip_roll_50": {
       "id": 42,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "right_hip_pitch": {
+    "right_hip_pitch_50": {
       "id": 43,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "right_knee_pitch": {
+    "right_knee_pitch_50": {
       "id": 44,
       "kp": "40.0",
       "kd": "5.0"
     },
-    "right_ankle_pitch": {
+    "right_ankle_pitch_50": {
       "id": 45,
       "kp": "20.0",
       "kd": "5.0"
     },
-    "right_ankle_roll": {
+    "right_ankle_roll_50": {
       "id": 46,
       "kp": "20.0",
       "kd": "5.0"
