@@ -63,6 +63,7 @@
   <worldbody>
     <body name="floating_base_link" pos="0.00000000 0.00000000 1.00947904" childclass="robot">
       <freejoint name="floating_base" />
+      <site name="data_torso" size="0.01" pos="0 0.09 -0.25"/>
       <geom name="floating_base_link_visual" quat="0.7073882691671998 0.0 0.0 0.706825181105366" material="floating_base_link_material" type="sphere" size="0.01" class="visual" />
       <body name="Torso_Side_Right" quat="0.7073882691671998 0.0 0.0 0.706825181105366">
         <inertial pos="0.093342 -0.001704 -0.061458" mass="13.320850" diaginertia="0.49511 0.521226 0.059272" />
@@ -79,6 +80,7 @@
               <body name="KC_C_401R_R_UpForearmDrive" pos="0.018500 -0.010000 -0.137000" quat="0.7071068967259818 0.0 0.7071066656470943 0.0">
                 <inertial pos="0.061999 0.015867 -0.012446" mass="0.585204" diaginertia="0.000522 0.001021 0.00102" />
                 <geom name="KC_C_401R_R_UpForearmDrive_visual" material="Torso_Side_Right_material" type="mesh" mesh="KC_C_401R_R_UpForearmDrive.stl" class="visual" />
+              
                 <body name="KB_C_501X_Right_Bayonet_Adapter_Hard_Stop" pos="0.103000 0.017350 -0.018000" quat="0.7071068967259818 0.0 -0.7071066656470943 0.0">
                   <inertial pos="0.002102 0.000041 -0.035252" mass="0.303020" diaginertia="0.00031 0.000303 0.000253" />
                   <geom name="KB_C_501X_Right_Bayonet_Adapter_Hard_Stop_visual" material="Torso_Side_Right_material" type="mesh" mesh="KB_C_501X_Right_Bayonet_Adapter_Hard_Stop.stl" class="visual" />
@@ -107,6 +109,7 @@
             </body>
           </body>
         </body>
+          
         <body name="imu" pos="0.121783 0.043292 0.231518" quat="0.7071067715114185 8.22589334037449e-07 0.7071067908607194 8.22589334037449e-07">
           <inertial pos="0.014737 -0.012000 0.003000" mass="0.005700" diaginertia="1e-06 1e-06 2e-06" />
           <geom name="imu_visual" material="imu_material" type="mesh" mesh="imu.stl" class="visual" />
@@ -131,8 +134,9 @@
                 <body name="KB_D_501R_R_LEG_FOOT" pos="-0.030000 0.290000 0.035100">
                   <joint name="dof_right_ankle_02" type="hinge" ref="0.0" class="motor_02" range="-0.296706 0.785398" axis="0 0 1" />
                   <inertial pos="-0.014842 0.027139 -0.016105" mass="0.483858" diaginertia="0.000268 0.001549 0.001458" />
-                  <geom name="KB_D_501R_R_LEG_FOOT_visual" material="Torso_Side_Right_material" type="box" class="visual" pos="-0.028920 0.012560 -0.014000" quat="0.500000 0.500000 -0.500000 0.500000" size="0.034236 0.105716 0.036000" />
-                  <geom name="KB_D_501R_R_LEG_FOOT_collision_box" type="box" pos="-0.028920 0.012560 -0.014000" quat="0.500000 0.500000 -0.500000 0.500000" size="0.034236 0.105716 0.036000" class="collision" />
+                  <geom name="KB_D_501R_R_LEG_FOOT_visual" material="Torso_Side_Right_material" type="box" class="visual" pos="-0.028920 0.012560 -0.014000" quat="0.500000 0.500000 -0.500000 0.500000" size="0.034236 0.105716 0.016000" />
+                  <geom name="KB_D_501R_R_LEG_FOOT_collision_box" type="box" pos="-0.028920 0.012560 -0.014000" quat="0.500000 0.500000 -0.500000 0.500000" size="0.034236 0.105716 0.016000" class="collision" />
+                  <site name="KB_D_501R_R_LEG_FOOT_collision_box"/>
                 </body>
               </body>
             </body>
@@ -157,8 +161,9 @@
                 <body name="KB_D_501L_L_LEG_FOOT" pos="-0.030000 -0.290000 0.035100" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
                   <joint name="dof_left_ankle_02" type="hinge" ref="0.0" class="motor_02" range="-0.785398 0.296706" axis="0 0 -1" />
                   <inertial pos="-0.014842 0.027139 0.016105" mass="0.483858" diaginertia="0.000268 0.001549 0.001458" />
-                  <geom name="KB_D_501L_L_LEG_FOOT_visual" material="Torso_Side_Right_material" type="box" class="visual" pos="-0.028818 0.012560 0.014000" quat="0.500000 0.500000 -0.500000 0.500000" size="0.034236 0.105818 0.036000" />
-                  <geom name="KB_D_501L_L_LEG_FOOT_collision_box" type="box" pos="-0.028818 0.012560 0.014000" quat="0.500000 0.500000 -0.500000 0.500000" size="0.034236 0.105818 0.036000" class="collision" />
+                  <geom name="KB_D_501L_L_LEG_FOOT_visual" material="Torso_Side_Right_material" type="box" class="visual" pos="-0.028818 0.012560 0.014000" quat="0.500000 0.500000 -0.500000 0.500000" size="0.034236 0.105818 0.016000" />
+                  <geom name="KB_D_501L_L_LEG_FOOT_collision_box" type="box" pos="-0.028818 0.012560 0.014000" quat="0.500000 0.500000 -0.500000 0.500000" size="0.034236 0.105818 0.016000" class="collision" />
+                  <site name="KB_D_501L_L_LEG_FOOT_collision_box"/>
                 </body>
               </body>
             </body>
@@ -166,6 +171,7 @@
         </body>
       </body>
       <site name="floating_base_link_site" />
+      
       <camera name="front_camera" mode="track" fovy="90.0" quat="4.329780281177467e-17 4.329780281177466e-17 0.7071067811865475 0.7071067811865476" pos="0.0 2.0 0.5" />
       <camera name="side_camera" mode="track" fovy="90.0" quat="-0.5 -0.4999999999999999 0.5 0.5000000000000001" pos="-2.0 0.0 0.5" />
     </body>
@@ -185,11 +191,20 @@
   </actuator>
 
   <contact>
-    <pair geom1="KB_D_501R_R_LEG_FOOT_collision_box" geom2="floor" />
-    <pair geom1="KB_D_501L_L_LEG_FOOT_collision_box" geom2="floor" />
+    <pair geom1="KB_D_501R_R_LEG_FOOT_collision_box" geom2="floor" friction="0.6 0.6"/>
+    <pair geom1="KB_D_501L_L_LEG_FOOT_collision_box" geom2="floor" friction="0.6 0.6"/>
+    <pair geom1="KB_D_501L_L_LEG_FOOT_collision_box" geom2="KB_D_501R_R_LEG_FOOT_collision_box"/>
   </contact>
 
   <sensor>
+    <framezaxis objtype="site" objname="data_torso" name="upvector_torso"/>
+    <velocimeter site="data_torso" name="local_linvel_torso"/>
+    <accelerometer site="data_torso" name="accelerometer_torso"/>
+    <framequat objtype="site" objname="data_torso" name="orientation_torso"/>
+    <gyro site="data_torso" name="gyro_torso"/>
+    <framelinvel objtype="site" objname="data_torso" name="global_linvel_torso"/>
+    <frameangvel objtype="site" objname="data_torso" name="global_angvel_torso"/>
+
     <accelerometer name="imu_acc" site="imu_site" noise="0.01" />
     <gyro name="imu_gyro" site="imu_site" noise="0.01" />
     <magnetometer name="imu_mag" site="imu_site" noise="0.05" />
@@ -198,4 +213,5 @@
     <framelinvel name="base_link_vel" objtype="site" objname="imu_site" />
     <frameangvel name="base_link_ang_vel" objtype="site" objname="imu_site" />
   </sensor>
+
 </mujoco>
