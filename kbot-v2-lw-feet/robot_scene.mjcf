@@ -193,7 +193,12 @@
       <site name="floating_base_link_site" />
       <camera name="front_camera" mode="track" fovy="90.0" quat="4.329780281177467e-17 4.329780281177466e-17 0.7071067811865475 0.7071067811865476" pos="0.0 2.0 0.5" />
       <camera name="side_camera" mode="track" fovy="90.0" quat="-0.5 -0.4999999999999999 0.5 0.5000000000000001" pos="-2.0 0.0 0.5" />
-    </body>
+      <camera name="iso_camera"
+              mode="track"
+              fovy="60"
+              pos="1 -0.8 0.8"
+        euler="0.8 0.65 0.6" />
+</body>
   </worldbody>
 
   <actuator>
