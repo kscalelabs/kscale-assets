@@ -3,11 +3,11 @@
     <default class="robot">
       <default class="motor_15">
         <joint armature="0.039999999991812" frictionloss="0.16197241014297026" damping="1.2305092028680242" actuatorfrcrange="-5.466091040935576 5.466091040935576" />
-        <motor ctrlrange="-5.466091040935576 5.466091040935576" />
+        <motor forcerange="-5.466091040935576 5.466091040935576" ctrlrange="-5.466091040935576 5.466091040935576" />
       </default>
       <default class="motor_50">
         <joint armature="0.03999977737144798" frictionloss="0.19999504581400715" damping="1.3464038511725651" actuatorfrcrange="-8.716130441407099 8.716130441407099" />
-        <motor ctrlrange="-8.716130441407099 8.716130441407099" />
+        <motor forcerange="-8.716130441407099 8.716130441407099" ctrlrange="-8.716130441407099 8.716130441407099" />
       </default>
       <default class="visual">
         <geom material="visualgeom" contype="0" conaffinity="0" group="2" />
