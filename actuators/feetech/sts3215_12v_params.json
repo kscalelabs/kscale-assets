@@ -1,4 +1,5 @@
 {
+    "actuator_type": "feetech-sts3215-12v",
     "sysid": "sts3215-12v-id009",
     "max_torque": 5.466091040935576 ,
     "armature": 0.039999999991812,
