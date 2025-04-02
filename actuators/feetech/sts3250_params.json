@@ -1,4 +1,5 @@
 {
+    "actuator_type": "feetech-sts3250",
     "sysid": "sts3250-id008",
     "max_torque": 8.716130441407099,
     "armature": 0.03999977737144798,
