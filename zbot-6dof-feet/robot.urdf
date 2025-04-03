@@ -21,10 +21,10 @@
     <child link="Top_Brace"/>
     <origin xyz="0 0 0" rpy="0.00 0.00 1.57"/>
   </joint>
-  <joint name="IMU" type="fixed">
-    <origin xyz="-0.010000 -0.006714 0.034035" rpy="0 0 0"/>
+  <joint name="frame_imu_site" type="fixed">
+    <origin xyz="-0.010000 0.008286 0.034035" rpy="0 0 -1.570796"/>
     <parent link="Top_Brace"/>
-    <child link="IMU_2"/>
+    <child link="imu"/>
   </joint>
   <joint name="left_shoulder_pitch_15" type="revolute">
     <origin xyz="0.060300 0.000211 0.026100" rpy="-1.570796 0 1.570796"/>
@@ -182,17 +182,17 @@
       <origin xyz="0.000031 0.009591 -0.026570" rpy="0 0 0"/>
     </inertial>
   </link>
-  <link name="IMU_2">
-    <visual name="IMU_visual">
+  <link name="imu">
+    <visual name="imu_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="IMU_geometry">
-        <mesh filename="meshes/IMU.stl"/>
+      <geometry name="imu_geometry">
+        <mesh filename="meshes/imu.stl"/>
       </geometry>
-      <material name="IMU_material">
+      <material name="imu_material">
         <color rgba="0 1 0 1"/>
       </material>
     </visual>
-    <inertial name="IMU_inertial">
+    <inertial name="imu_inertial">
       <mass value="0.001887"/>
       <inertia ixx="0.000001" iyy="0.000001" izz="0.000001" ixy="0" ixz="0" iyz="0"/>
       <origin xyz="0.010000 0.007500 -0.001235" rpy="0 0 0"/>
