@@ -31,7 +31,7 @@
         <geom material="visualgeom" contype="0" conaffinity="0" group="2" />
       </default>
       <default class="collision">
-        <geom condim="6" friction="0.8 0.02 0.01" material="Torso_Side_Right_material" group="3" contype="1" conaffinity="1" rgba="1 1 1 0.3"/>
+        <geom condim="6" friction="0.8 0.02 0.01" material="Torso_Side_Right_material" group="2" rgba="1 1 1 0.7" />
       </default>
     </default>
     <mesh maxhullvert="64" />
@@ -79,9 +79,9 @@
     <body name="floating_base_link" pos="0.00000000 0.00000000 1.00947904" childclass="robot">
       <freejoint name="floating_base" />
       <!-- Main torso collision box -->
-      <geom class="collision" name="torso_collision" size="0.1 0.15 0.21" pos="0.0 0.09 -0.01" type="box"/>
+      <geom class="collision" name="torso_collision" rgba="1 1 1 0.3" contype="1" conaffinity="1" size="0.1 0.15 0.21" pos="0.0 0.09 -0.01" type="box"/>
       <!-- Leg approximation collision box -->
-      <geom class="collision" name="legs_collision" size="0.1 0.18 0.1" pos="0.0 0.09 -0.35" type="box"/>
+      <geom class="collision" name="legs_collision" rgba="1 1 1 0.3" contype="1" conaffinity="1" size="0.1 0.18 0.1" pos="0.0 0.09 -0.35" type="box"/>
       
       <geom name="floating_base_link_visual" quat="0.7073882691671998 0.0 0.0 0.706825181105366" material="floating_base_link_material" type="sphere" size="0.01" class="visual" />
       <body name="Torso_Side_Right" quat="0.7073882691671998 0.0 0.0 0.706825181105366">
@@ -99,12 +99,12 @@
               <joint name="dof_right_shoulder_yaw_02" type="hinge" ref="0.0" class="motor_02" range="-1.658063 1.658063" axis="0 0 1" />
               <inertial pos="0.003910 -0.004160 -0.101316" mass="0.743508" diaginertia="0.00241 0.002208 0.000693" />
               <geom name="KC_C_202R_visual" material="Torso_Side_Right_material" type="mesh" mesh="KC_C_202R.stl" class="visual" />
-              <geom name="right_upper_arm_collision" class="collision" size="0.05 0.05 0.135" pos="0 0.0 0.06" euler="0 0 0" type="box"/>
+              <geom name="right_upper_arm_collision" class="collision" size="0.05 0.05 0.135" pos="0 0.0 0.06" euler="0 0 0" rgba="1 1 1 0.3" contype="1" conaffinity="1" type="box"/>
               <body name="KC_C_401R_R_UpForearmDrive" pos="0.018500 -0.010000 -0.137000" quat="0.7071068967259818 0.0 0.7071066656470943 0.0">
                 <joint name="dof_right_elbow_02" type="hinge" ref="0.0" class="motor_02" range="0 2.478368" axis="0 0 -1" />
                 <inertial pos="0.061999 0.015867 -0.012446" mass="0.585204" diaginertia="0.000522 0.001021 0.00102" />
                 <geom name="KC_C_401R_R_UpForearmDrive_visual" material="Torso_Side_Right_material" type="mesh" mesh="KC_C_401R_R_UpForearmDrive.stl" class="visual" />
-                <geom name="right_forearm_collision" class="collision" size="0.04 0.04 0.095" pos="0.08 0.02 -.015" euler="0 -1.57 0" type="box"/>
+                <geom name="right_forearm_collision" class="collision" size="0.04 0.04 0.095" pos="0.08 0.02 -.015" euler="0 -1.57 0" type="box" rgba="1 1 1 0.3" contype="1" conaffinity="1" />
                 <body name="KB_C_501X_Right_Bayonet_Adapter_Hard_Stop" pos="0.103000 0.017350 -0.018000" quat="0.7071068967259818 0.0 -0.7071066656470943 0.0">
                   <joint name="dof_right_wrist_00" type="hinge" ref="0.0" class="motor_00" range="-1.745329 1.745329" axis="0 0 1" />
                   <inertial pos="0.002102 0.000041 -0.035252" mass="0.303020" diaginertia="0.00031 0.000303 0.000253" />
@@ -232,63 +232,6 @@
     <motor name="dof_left_knee_04_ctrl" joint="dof_left_knee_04" class="motor_04" />
     <motor name="dof_left_ankle_02_ctrl" joint="dof_left_ankle_02" class="motor_02" />
   </actuator>
-
-  <contact>
-    <!-- Updated contact pairs -->
-    <pair geom1="KB_D_501R_R_LEG_FOOT_collision_box" geom2="floor" />
-    <pair geom1="KB_D_501L_L_LEG_FOOT_collision_box" geom2="floor" />
-    <pair geom1="torso_collision" geom2="floor" />
-    <pair geom1="legs_collision" geom2="floor" />
-    
-    <!-- Body collision pairs - updated for the simplified collision model -->
-    <pair geom1="right_upper_arm_collision" geom2="torso_collision" />
-    <pair geom1="right_forearm_collision" geom2="torso_collision" />
-    <pair geom1="left_upper_arm_collision" geom2="torso_collision" />
-    <pair geom1="left_forearm_collision" geom2="torso_collision" />
-    <pair geom1="right_forearm_collision" geom2="legs_collision" />
-    <pair geom1="left_forearm_collision" geom2="legs_collision" />
-    
-    <!-- Body exclusions - prevent collisions between connected or non-interacting parts -->
-    <exclude body1="Torso_Side_Right" body2="KC_C_104R_PitchHardstopDriven" />
-    <exclude body1="Torso_Side_Right" body2="KC_C_104L_PitchHardstopDriven" />
-    <exclude body1="Torso_Side_Right" body2="KC_D_102R_R_Hip_Yoke_Drive" />
-    <exclude body1="Torso_Side_Right" body2="KC_D_102L_L_Hip_Yoke_Drive" />
-
-    <exclude body1="KC_C_104R_PitchHardstopDriven" body2="RS03_3" />
-    <exclude body1="KC_C_104L_PitchHardstopDriven" body2="RS03_6" />
-    
-    <exclude body1="RS03_3" body2="KC_C_202R" />
-    <exclude body1="RS03_6" body2="KC_C_202L" />
-    
-    <exclude body1="KC_C_202R" body2="KC_C_401R_R_UpForearmDrive" />
-    <exclude body1="KC_C_202L" body2="KC_C_401L_L_UpForearmDrive" />
-    
-    <exclude body1="KC_C_401R_R_UpForearmDrive" body2="KB_C_501X_Right_Bayonet_Adapter_Hard_Stop" />
-    <exclude body1="KC_C_401L_L_UpForearmDrive" body2="KB_C_501X_Left_Bayonet_Adapter_Hard_Stop" />
-    
-    <exclude body1="KC_D_102R_R_Hip_Yoke_Drive" body2="RS03_4" />
-    <exclude body1="KC_D_102L_L_Hip_Yoke_Drive" body2="RS03_5" />
-    
-    <exclude body1="RS03_4" body2="KC_D_301R_R_Femur_Lower_Drive" />
-    <exclude body1="RS03_5" body2="KC_D_301L_L_Femur_Lower_Drive" />
-    
-    <exclude body1="KC_D_301R_R_Femur_Lower_Drive" body2="KC_D_401R_R_Shin_Drive" />
-    <exclude body1="KC_D_301L_L_Femur_Lower_Drive" body2="KC_D_401L_L_Shin_Drive" />
-    
-    <exclude body1="KC_D_401R_R_Shin_Drive" body2="KB_D_501R_R_LEG_FOOT" />
-    <exclude body1="KC_D_401L_L_Shin_Drive" body2="KB_D_501L_L_LEG_FOOT" />
-    
-    <!-- Left-right limb exclusions -->
-    <exclude body1="KC_C_104R_PitchHardstopDriven" body2="KC_C_104L_PitchHardstopDriven" />
-    <exclude body1="RS03_3" body2="RS03_6" />
-    <exclude body1="KC_C_202R" body2="KC_C_202L" />
-    <exclude body1="KC_C_401R_R_UpForearmDrive" body2="KC_C_401L_L_UpForearmDrive" />
-    <exclude body1="KC_D_102R_R_Hip_Yoke_Drive" body2="KC_D_102L_L_Hip_Yoke_Drive" />
-    <exclude body1="RS03_4" body2="RS03_5" />
-    <exclude body1="KC_D_301R_R_Femur_Lower_Drive" body2="KC_D_301L_L_Femur_Lower_Drive" />
-    <exclude body1="KC_D_401R_R_Shin_Drive" body2="KC_D_401L_L_Shin_Drive" />
-    <exclude body1="KB_D_501R_R_LEG_FOOT" body2="KB_D_501L_L_LEG_FOOT" />
-  </contact>
 
   <sensor>
     <accelerometer name="imu_acc" site="imu_site" noise="0.01" />
