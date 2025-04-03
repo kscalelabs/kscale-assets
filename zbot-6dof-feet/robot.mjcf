@@ -24,13 +24,13 @@
   <asset>
     <material name="floating_base_link_material" rgba="1 0 0 1" />
     <material name="Top_Brace_material" rgba="0.615686 0.811765 0.929412 1" />
-    <material name="IMU_material" rgba="0 1 0 1" />
+    <material name="imu_material" rgba="0 1 0 1" />
     <material name="Left_1910_0025_0816_REV1_material" rgba="0.647059 0.647059 0.647059 1" />
     <material name="Left_Shoulder_Roll_SERVO_DUAL_v5_material" rgba="0.286275 0.286275 0.286275 1" />
     <material name="L_ARM_MIRROR_1_material" rgba="0.627451 0.627451 0.627451 1" />
     <material name="default_material" rgba="0.7 0.7 0.7 1" />
     <mesh name="Top_Brace.stl" file="meshes/Top_Brace.stl" />
-    <mesh name="IMU.stl" file="meshes/IMU.stl" />
+    <mesh name="imu.stl" file="meshes/imu.stl" />
     <mesh name="Left_1910_0025_0816_REV1.stl" file="meshes/Left_1910_0025_0816_REV1.stl" />
     <mesh name="Left_Shoulder_Roll_SERVO_DUAL_v5.stl" file="meshes/Left_Shoulder_Roll_SERVO_DUAL_v5.stl" />
     <mesh name="R_ARM_MIRROR_1.stl" file="meshes/R_ARM_MIRROR_1.stl" />
@@ -62,10 +62,10 @@
       <body name="Top_Brace" quat="0.7073882691671998 0.0 0.0 0.706825181105366">
         <inertial pos="0.000031 0.009591 -0.026570" mass="1.292559" diaginertia="0.002933 0.00347 0.002115" />
         <geom name="Top_Brace_visual" material="Top_Brace_material" type="mesh" mesh="Top_Brace.stl" class="visual" />
-        <body name="IMU_2" pos="-0.010000 -0.006714 0.034035">
+        <body name="imu" pos="-0.010000 0.008286 0.034035" quat="0.7071068967259818 0.0 0.0 -0.7071066656470943">
           <inertial pos="0.010000 0.007500 -0.001235" mass="0.001887" diaginertia="1e-06 1e-06 1e-06" />
-          <geom name="IMU_2_visual" material="IMU_material" type="mesh" mesh="IMU.stl" class="visual" />
-          <site name="IMU_2_site" quat="1.0 0.0 0.0 0.0" pos="0.0 0.0 0.0" />
+          <geom name="imu_visual" material="imu_material" type="mesh" mesh="imu.stl" class="visual" />
+          <site name="imu_site" quat="1.0 0.0 0.0 0.0" pos="0.0 0.0 0.0" />
         </body>
         <body name="Left_1910_0025_0816_REV1" pos="0.060300 0.000211 0.026100" quat="0.5000001633974483 -0.4999999999999733 -0.49999983660255165 0.4999999999999733">
           <joint name="left_shoulder_pitch_15" type="hinge" ref="0.0" class="motor_15" range="-1.570796 3.141593" axis="0 0 1" />
@@ -205,12 +205,12 @@
   </contact>
 
   <sensor>
-    <accelerometer name="imu_acc" site="IMU_2_site" noise="0.01" />
-    <gyro name="imu_gyro" site="IMU_2_site" noise="0.01" />
-    <magnetometer name="imu_mag" site="IMU_2_site" noise="0.05" />
-    <framepos name="base_link_pos" objtype="site" objname="IMU_2_site" />
-    <framequat name="base_link_quat" objtype="site" objname="IMU_2_site" />
-    <framelinvel name="base_link_vel" objtype="site" objname="IMU_2_site" />
-    <frameangvel name="base_link_ang_vel" objtype="site" objname="IMU_2_site" />
+    <accelerometer name="imu_acc" site="imu_site" noise="0.01" />
+    <gyro name="imu_gyro" site="imu_site" noise="0.01" />
+    <magnetometer name="imu_mag" site="imu_site" noise="0.05" />
+    <framepos name="base_link_pos" objtype="site" objname="imu_site" />
+    <framequat name="base_link_quat" objtype="site" objname="imu_site" />
+    <framelinvel name="base_link_vel" objtype="site" objname="imu_site" />
+    <frameangvel name="base_link_ang_vel" objtype="site" objname="imu_site" />
   </sensor>
 </mujoco>
