@@ -22,7 +22,7 @@
     <origin xyz="0 0 0" rpy="0.00 0.00 1.57"/>
   </joint>
   <joint name="frame_imu_site" type="fixed">
-    <origin xyz="-0.010000 0.008286 0.034035" rpy="0 0 -1.570796"/>
+    <origin xyz="-0.010000 0.008286 0.036035" rpy="-3.141593 0 -1.570796"/>
     <parent link="Top_Brace"/>
     <child link="imu"/>
   </joint>
@@ -195,7 +195,7 @@
     <inertial name="imu_inertial">
       <mass value="0.001887"/>
       <inertia ixx="0.000001" iyy="0.000001" izz="0.000001" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.010000 0.007500 -0.001235" rpy="0 0 0"/>
+      <origin xyz="0.007500 -0.010000 0.001235" rpy="0 0 0"/>
     </inertial>
   </link>
   <link name="Left_1910_0025_0816_REV1">

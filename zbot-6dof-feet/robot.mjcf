@@ -62,8 +62,8 @@
       <body name="Top_Brace" quat="0.7073882691671998 0.0 0.0 0.706825181105366">
         <inertial pos="0.000031 0.009591 -0.026570" mass="1.292559" diaginertia="0.002933 0.00347 0.002115" />
         <geom name="Top_Brace_visual" material="Top_Brace_material" type="mesh" mesh="Top_Brace.stl" class="visual" />
-        <body name="imu" pos="-0.010000 0.008286 0.034035" quat="0.7071068967259818 0.0 0.0 -0.7071066656470943">
-          <inertial pos="0.010000 0.007500 -0.001235" mass="0.001887" diaginertia="1e-06 1e-06 1e-06" />
+        <body name="imu" pos="-0.010000 0.008286 0.036035" quat="-1.2247452309842457e-07 -0.7071068967259713 0.7071066656470838 1.22474483074382e-07">
+          <inertial pos="0.007500 -0.010000 0.001235" mass="0.001887" diaginertia="1e-06 1e-06 1e-06" />
           <geom name="imu_visual" material="imu_material" type="mesh" mesh="imu.stl" class="visual" />
           <site name="imu_site" quat="1.0 0.0 0.0 0.0" pos="0.0 0.0 0.0" />
         </body>
