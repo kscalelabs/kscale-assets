@@ -26,140 +26,140 @@
     <parent link="Top_Brace"/>
     <child link="imu"/>
   </joint>
-  <joint name="left_shoulder_pitch_15" type="revolute">
+  <joint name="left_shoulder_pitch" type="revolute">
     <origin xyz="0.060300 0.000211 0.026100" rpy="-1.570796 0 1.570796"/>
     <parent link="Top_Brace"/>
     <child link="Left_1910_0025_0816_REV1"/>
     <limit effort="2" velocity="2" lower="-1.570796" upper="3.141593"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="right_shoulder_pitch_15" type="revolute">
+  <joint name="right_shoulder_pitch" type="revolute">
     <origin xyz="-0.060300 0.000211 0.026100" rpy="1.570796 0 1.570796"/>
     <parent link="Top_Brace"/>
     <child link="Right_1910_0025_0816_REV1"/>
     <limit effort="2" velocity="2" lower="-1.570796" upper="3.141593"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="right_hip_yaw_50" type="revolute">
+  <joint name="right_hip_yaw" type="revolute">
     <origin xyz="-0.043042 0.000211 -0.089300" rpy="0 0 0"/>
     <parent link="Top_Brace"/>
     <child link="Right_Upper_Hip_Bracket"/>
     <limit effort="2" velocity="2" lower="-1.570796" upper="1.570796"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="left_hip_yaw_50" type="revolute">
+  <joint name="left_hip_yaw" type="revolute">
     <origin xyz="0.043042 0.000211 -0.089300" rpy="0 0 0"/>
     <parent link="Top_Brace"/>
     <child link="Left_Upper_Hip_Bracket"/>
     <limit effort="2" velocity="2" lower="-1.570796" upper="1.570796"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="left_shoulder_roll_15" type="revolute">
+  <joint name="left_shoulder_roll" type="revolute">
     <origin xyz="0.017892 0.004100 -0.032700" rpy="0 1.570796 0"/>
     <parent link="Left_1910_0025_0816_REV1"/>
     <child link="Left_Shoulder_Roll_SERVO_DUAL_v5"/>
     <limit effort="2" velocity="2" lower="-2.617994" upper="0.401426"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="right_shoulder_roll_15" type="revolute">
+  <joint name="right_shoulder_roll" type="revolute">
     <origin xyz="-0.017758 -0.004100 -0.032700" rpy="0 -1.570796 0"/>
     <parent link="Right_1910_0025_0816_REV1"/>
     <child link="Right_Shoulder_Roll_SERVO_DUAL_v5"/>
     <limit effort="2" velocity="2" lower="-2.617994" upper="0.401426"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="right_hip_roll_50" type="revolute">
+  <joint name="right_hip_roll" type="revolute">
     <origin xyz="-0.000087 0.019650 -0.026665" rpy="1.570796 0 0"/>
     <parent link="Right_Upper_Hip_Bracket"/>
     <child link="Right_Hip_Roll_ST15"/>
     <limit effort="2" velocity="2" lower="-0.610865" upper="0.610865"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="left_hip_roll_50" type="revolute">
+  <joint name="left_hip_roll" type="revolute">
     <origin xyz="-0.000087 0.019650 -0.026665" rpy="1.570796 0 0"/>
     <parent link="Left_Upper_Hip_Bracket"/>
     <child link="Left_Hip_Roll_ST15"/>
     <limit effort="2" velocity="2" lower="-0.610865" upper="0.610865"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="left_elbow_roll_15" type="revolute">
+  <joint name="left_elbow_roll" type="revolute">
     <origin xyz="0 0.086212 -0.038650" rpy="0 0 0"/>
     <parent link="Left_Shoulder_Roll_SERVO_DUAL_v5"/>
     <child link="R_ARM_MIRROR_1"/>
     <limit effort="2" velocity="2" lower="-0.872665" upper="1.570796"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="right_elbow_roll_15" type="revolute">
+  <joint name="right_elbow_roll" type="revolute">
     <origin xyz="0 -0.086212 0.001000" rpy="0 0 0"/>
     <parent link="Right_Shoulder_Roll_SERVO_DUAL_v5"/>
     <child link="L_ARM_MIRROR_1"/>
     <limit effort="2" velocity="2" lower="-0.872665" upper="1.570796"/>
     <axis xyz="0 0 -1"/>
   </joint>
-  <joint name="right_hip_pitch_50" type="revolute">
+  <joint name="right_hip_pitch" type="revolute">
     <origin xyz="-0.019800 0 0.016150" rpy="0 1.570796 0"/>
     <parent link="Right_Hip_Roll_ST15"/>
     <child link="Right_Upper_Leg"/>
     <limit effort="2" velocity="2" lower="-1.570796" upper="0.872665"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="left_hip_pitch_50" type="revolute">
+  <joint name="left_hip_pitch" type="revolute">
     <origin xyz="-0.019800 0 0.016150" rpy="0 1.570796 0"/>
     <parent link="Left_Hip_Roll_ST15"/>
     <child link="Left_Upper_Leg"/>
     <limit effort="2" velocity="2" lower="-1.570796" upper="0.872665"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="right_knee_pitch_50" type="revolute">
+  <joint name="right_knee_pitch" type="revolute">
     <origin xyz="0 -0.100000 0.001260" rpy="3.141593 0 0"/>
     <parent link="Right_Upper_Leg"/>
     <child link="Right_Knee_Pitch_ST15"/>
     <limit effort="2" velocity="2" lower="-1.396263" upper="1.396263"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="left_knee_pitch_50" type="revolute">
+  <joint name="left_knee_pitch" type="revolute">
     <origin xyz="0 -0.100000 0.001260" rpy="3.141593 0 0"/>
     <parent link="Left_Upper_Leg"/>
     <child link="Left_Knee_Pitch_ST15"/>
     <limit effort="2" velocity="2" lower="-1.396263" upper="1.396263"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="left_gripper_15" type="revolute">
+  <joint name="left_gripper_roll" type="revolute">
     <origin xyz="0.011815 0.066309 0.038340" rpy="-3.141593 0 -0.349066"/>
     <parent link="R_ARM_MIRROR_1"/>
     <child link="Left_Finger"/>
     <limit effort="2" velocity="2" lower="-0.523599" upper="0.523599"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="right_gripper_15" type="revolute">
+  <joint name="right_gripper_roll" type="revolute">
     <origin xyz="-0.011778 -0.066206 0.001260" rpy="-3.141593 0 -0.349066"/>
     <parent link="L_ARM_MIRROR_1"/>
     <child link="Right_Finger"/>
     <limit effort="2" velocity="2" lower="-0.523599" upper="0.523599"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="right_ankle_pitch_50" type="revolute">
+  <joint name="right_ankle_pitch" type="revolute">
     <origin xyz="0 0.100000 -0.036859" rpy="-3.141593 0 0"/>
     <parent link="Right_Knee_Pitch_ST15"/>
     <child link="Right_Ankle_Pitch_ST15"/>
     <limit effort="2" velocity="2" lower="-1.396263" upper="0.698132"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="left_ankle_pitch_50" type="revolute">
+  <joint name="left_ankle_pitch" type="revolute">
     <origin xyz="0 0.100000 -0.036040" rpy="-3.141593 0 0"/>
     <parent link="Left_Knee_Pitch_ST15"/>
     <child link="Left_Ankle_Pitch_ST15"/>
     <limit effort="2" velocity="2" lower="-1.396263" upper="0.698132"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="right_ankle_roll_50" type="revolute">
+  <joint name="right_ankle_roll" type="revolute">
     <origin xyz="0.015150 0 -0.018800" rpy="-3.141593 -1.570796 0"/>
     <parent link="Right_Ankle_Pitch_ST15"/>
     <child link="Right_Foot"/>
     <limit effort="2" velocity="2" lower="-1.047198" upper="1.047198"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="left_ankle_roll_50" type="revolute">
+  <joint name="left_ankle_roll" type="revolute">
     <origin xyz="0.015150 0 -0.018800" rpy="-3.141593 -1.570796 0"/>
     <parent link="Left_Ankle_Pitch_ST15"/>
     <child link="Left_Foot"/>
