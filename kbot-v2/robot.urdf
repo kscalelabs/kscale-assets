@@ -60,8 +60,8 @@
     <origin xyz="-0.028250 0.030000 -0.071000" rpy="3.141593 1.570796 0"/>
     <parent link="KB_D_102L_L_Hip_Yoke_Drive"/>
     <child link="RS03_4"/>
-    <limit effort="60" velocity="6.283" lower="-2.268928" upper="0"/>
-    <axis xyz="0 0 -1.0"/>
+    <limit effort="60" velocity="6.283" lower="0" upper="2.268928"/>
+    <axis xyz="0 0 1"/>
   </joint>
   <joint name="imu_link" type="fixed">
     <origin xyz="-0.028807 -0.009800 0.452404" rpy="0 -1.570796 0"/>
@@ -128,8 +128,8 @@
     <origin xyz="0.043200 -0.021000 0.212000" rpy="-1.570796 0 -1.570796"/>
     <parent link="KB_D_301L_L_Femur_Lower_Drive"/>
     <child link="KB_D_402L_L_Shin_Idle"/>
-    <limit effort="120" velocity="6.283" lower="0" upper="2.705260"/>
-    <axis xyz="0 0 1.0"/>
+    <limit effort="120" velocity="6.283" lower="-2.705260" upper="0"/>
+    <axis xyz="0 0 -1"/>
   </joint>
   <joint name="right_wrist_02" type="revolute">
     <origin xyz="0.017350 0.107700 0.018000" rpy="1.570796 1.570796 0"/>
@@ -142,8 +142,8 @@
     <origin xyz="-0.018500 -0.010000 -0.137000" rpy="1.570796 0 1.570796"/>
     <parent link="L_Bicep_Lower_Drive"/>
     <child link="L_Forearm_Upper_Drive"/>
-    <limit effort="17" velocity="12.566" lower="-2.530727" upper="0"/>
-    <axis xyz="0 0 1"/>
+    <limit effort="17" velocity="12.566" lower="0" upper="2.530727"/>
+    <axis xyz="0 0 -1.0"/>
   </joint>
   <joint name="right_ankle_02" type="revolute">
     <origin xyz="-0.031300 0.292500 0.034000" rpy="0 0 0"/>
@@ -156,8 +156,8 @@
     <origin xyz="-0.031300 -0.292500 -0.057200" rpy="0 0 0"/>
     <parent link="KB_D_402L_L_Shin_Idle"/>
     <child link="KB_D_501L_L_LEG_FOOT"/>
-    <limit effort="17" velocity="12.566" lower="-0.785398" upper="0.296706"/>
-    <axis xyz="0 0 1.0"/>
+    <limit effort="17" velocity="12.566" lower="-0.296706" upper="0.785398"/>
+    <axis xyz="0 0 -1"/>
   </joint>
   <joint name="left_wrist_02" type="revolute">
     <origin xyz="0.017350 -0.106500 0.018000" rpy="1.570796 -1.570796 0"/>
