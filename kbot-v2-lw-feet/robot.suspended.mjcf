@@ -62,7 +62,6 @@
 
   <worldbody>
     <body name="floating_base_link" pos="0.00000000 0.00000000 1.00947904" childclass="robot">
-      <freejoint name="floating_base" />
       <geom name="floating_base_link_visual" quat="0.7073882691671998 0.0 0.0 0.706825181105366" material="floating_base_link_material" type="sphere" size="0.01" class="visual" />
       <body name="Torso_Side_Right" quat="0.7073882691671998 0.0 0.0 0.706825181105366">
         <inertial pos="0.093342 -0.001704 -0.061458" mass="13.320850" diaginertia="0.49511 0.521226 0.059272" />
