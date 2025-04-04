@@ -22,7 +22,7 @@
     <origin xyz="0 0 0" rpy="0.00 0.00 1.57"/>
   </joint>
   <joint name="frame_imu_site" type="fixed">
-    <origin xyz="-0.010000 0.008286 0.036035" rpy="-3.141593 0 3.141593"/>
+    <origin xyz="-0.010000 0.008286 0.036035" rpy="-3.141593 0 0"/>
     <parent link="Top_Brace"/>
     <child link="imu"/>
   </joint>

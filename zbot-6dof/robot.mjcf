@@ -70,7 +70,7 @@
         <inertial pos="0.000030 0.009550 -0.026636" mass="1.309559" diaginertia="0.00297 0.003538 0.002153" />
         <geom name="Top_Brace_collision" type="mesh" mesh="Top_Brace.collision.stl" class="collision" />
         <geom name="Top_Brace_visual" material="Top_Brace_material" type="mesh" mesh="Top_Brace.stl" class="visual" />
-        <body name="imu" pos="-0.010000 0.008286 0.036035" quat="3.000000781252362e-14 1.7320510330969674e-07 -0.99999999999997 -1.7320510330969674e-07">
+        <body name="imu" pos="-0.010000 0.008286 0.036035" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
           <inertial pos="0.007500 -0.010000 0.001235" mass="0.001887" diaginertia="1e-06 1e-06 1e-06" />
           <geom name="imu_visual" material="imu_material" type="mesh" mesh="imu.stl" class="visual" />
           <site name="imu_site" quat="1.0 0.0 0.0 0.0" pos="0.0 0.0 0.0" />
