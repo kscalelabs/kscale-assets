@@ -80,7 +80,7 @@
           <inertial pos="0.000038 0.000969 -0.014200" mass="0.019227" diaginertia="3e-06 5e-06 4e-06" />
           <geom name="Left_1910_0025_0816_REV1_visual" material="Left_1910_0025_0816_REV1_material" type="mesh" mesh="Left_1910_0025_0816_REV1.stl" class="visual" />
           <body name="Left_Shoulder_Roll_SERVO_DUAL_v5" pos="0.017892 0.004100 -0.032700" quat="0.7071068967259818 0.0 0.7071066656470943 0.0">
-            <joint name="left_shoulder_roll" type="hinge" ref="0.0" class="motor" range="-2.617994 0.401426" axis="0 0 1" />
+            <joint name="left_shoulder_roll" type="hinge" ref="0.0" class="motor" range="-0.401426 2.617994" axis="0 0 -1.0" />
             <inertial pos="0.000267 0.043106 -0.019071" mass="0.122460" diaginertia="0.000135 2e-05 0.000129" />
             <geom name="Left_Shoulder_Roll_SERVO_DUAL_v5_collision" type="mesh" mesh="Left_Shoulder_Roll_SERVO_DUAL_v5.collision.stl" class="collision" />
             <geom name="Left_Shoulder_Roll_SERVO_DUAL_v5_visual" material="Left_Shoulder_Roll_SERVO_DUAL_v5_material" type="mesh" mesh="Left_Shoulder_Roll_SERVO_DUAL_v5.stl" class="visual" />
@@ -90,7 +90,7 @@
               <geom name="R_ARM_MIRROR_1_collision" type="mesh" mesh="R_ARM_MIRROR_1.collision.stl" class="collision" />
               <geom name="R_ARM_MIRROR_1_visual" material="Left_1910_0025_0816_REV1_material" type="mesh" mesh="R_ARM_MIRROR_1.stl" class="visual" />
               <body name="Left_Finger" pos="0.011815 0.066309 0.038340" quat="-1.7057372635091388e-07 -0.9848077400232084 0.1736482513311056 3.007676331135323e-08">
-                <joint name="left_gripper_roll" type="hinge" ref="0.0" class="motor" range="-0.523599 0.523599" axis="0 0 1" />
+                <joint name="left_gripper_roll" type="hinge" ref="0.0" class="motor" range="-0.523599 0.523599" axis="0 0 -1.0" />
                 <inertial pos="0.010724 -0.033465 0.018800" mass="0.022323" diaginertia="1.1e-05 4e-06 7e-06" />
                 <geom name="Left_Finger_collision" type="mesh" mesh="Left_Finger.collision.stl" class="collision" />
                 <geom name="Left_Finger_visual" material="L_ARM_MIRROR_1_material" type="mesh" mesh="Left_Finger.stl" class="visual" />
@@ -122,7 +122,7 @@
           </body>
         </body>
         <body name="Right_Upper_Hip_Bracket" pos="-0.043042 0.000211 -0.089300">
-          <joint name="right_hip_yaw" type="hinge" ref="0.0" class="motor" range="-1.570796 1.570796" axis="0 0 1" />
+          <joint name="right_hip_yaw" type="hinge" ref="0.0" class="motor" range="-1.570796 1.570796" axis="0 0 -1.0" />
           <inertial pos="-0.000042 -0.006054 0.003361" mass="0.022071" diaginertia="1.5e-05 1.2e-05 6e-06" />
           <geom name="Right_Upper_Hip_Bracket_visual" material="Top_Brace_material" type="mesh" mesh="Right_Upper_Hip_Bracket.stl" class="visual" />
           <body name="Right_Hip_Roll_ST15" pos="-0.000087 0.019650 -0.026665" quat="0.7071068967259818 0.7071066656470943 0.0 0.0">
@@ -140,7 +140,7 @@
                 <geom name="Right_Knee_Pitch_ST15_collision" type="mesh" mesh="Right_Knee_Pitch_ST15.collision.stl" class="collision" />
                 <geom name="Right_Knee_Pitch_ST15_visual" material="floating_base_link_material" type="mesh" mesh="Right_Knee_Pitch_ST15.stl" class="visual" />
                 <body name="Right_Ankle_Pitch_ST15" pos="0 0.100000 -0.036859" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
-                  <joint name="right_ankle_pitch" type="hinge" ref="0.0" class="motor" range="-1.396263 0.698132" axis="0 0 1" />
+                  <joint name="right_ankle_pitch" type="hinge" ref="0.0" class="motor" range="-0.698132 1.396263" axis="0 0 -1.0" />
                   <inertial pos="0.016328 0.013065 -0.018019" mass="0.217273" diaginertia="7.2e-05 0.000113 0.000131" />
                   <geom name="Right_Ankle_Pitch_ST15_visual" material="floating_base_link_material" type="mesh" mesh="Right_Ankle_Pitch_ST15.stl" class="visual" />
                   <body name="Right_Foot" pos="0.015150 0 -0.018800" quat="-1.2247452309842457e-07 -0.7071068967259713 1.22474483074382e-07 -0.7071066656470838">
