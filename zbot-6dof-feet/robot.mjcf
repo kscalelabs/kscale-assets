@@ -1,4 +1,4 @@
-<mujoco model="v3.1_top_level_assembly_[urdf]">
+<mujoco model="[urdf]_v3.1_top_level_assembly">
   <default>
     <default class="robot">
       <default class="motor">
@@ -22,31 +22,31 @@
     <material name="Top_Brace_material" rgba="0.615686 0.811765 0.929412 1" />
     <material name="imu_material" rgba="0 1 0 1" />
     <material name="Left_1910_0025_0816_REV1_material" rgba="0.647059 0.647059 0.647059 1" />
-    <material name="Left_Shoulder_Roll_SERVO_DUAL_v5_material" rgba="0.286275 0.286275 0.286275 1" />
+    <material name="Left_Shoulder_Roll_STS3250_material" rgba="0.286275 0.286275 0.286275 1" />
     <material name="L_ARM_MIRROR_1_material" rgba="0.627451 0.627451 0.627451 1" />
     <material name="default_material" rgba="0.7 0.7 0.7 1" />
     <mesh name="Top_Brace.stl" file="meshes/Top_Brace.stl" />
     <mesh name="imu.stl" file="meshes/imu.stl" />
     <mesh name="Left_1910_0025_0816_REV1.stl" file="meshes/Left_1910_0025_0816_REV1.stl" />
-    <mesh name="Left_Shoulder_Roll_SERVO_DUAL_v5.stl" file="meshes/Left_Shoulder_Roll_SERVO_DUAL_v5.stl" />
+    <mesh name="Left_Shoulder_Roll_STS3250.stl" file="meshes/Left_Shoulder_Roll_STS3250.stl" />
     <mesh name="R_ARM_MIRROR_1.stl" file="meshes/R_ARM_MIRROR_1.stl" />
     <mesh name="Left_Finger.stl" file="meshes/Left_Finger.stl" />
     <mesh name="Right_1910_0025_0816_REV1.stl" file="meshes/Right_1910_0025_0816_REV1.stl" />
-    <mesh name="Right_Shoulder_Roll_SERVO_DUAL_v5.stl" file="meshes/Right_Shoulder_Roll_SERVO_DUAL_v5.stl" />
+    <mesh name="Right_Shoulder_Roll_STS3250.stl" file="meshes/Right_Shoulder_Roll_STS3250.stl" />
     <mesh name="L_ARM_MIRROR_1.stl" file="meshes/L_ARM_MIRROR_1.stl" />
     <mesh name="Right_Finger.stl" file="meshes/Right_Finger.stl" />
     <mesh name="Right_Upper_Hip_Bracket.stl" file="meshes/Right_Upper_Hip_Bracket.stl" />
-    <mesh name="Right_Hip_Roll_ST15.stl" file="meshes/Right_Hip_Roll_ST15.stl" />
+    <mesh name="Right_Hip_Roll_STS3250.stl" file="meshes/Right_Hip_Roll_STS3250.stl" />
     <mesh name="Right_Upper_Leg.stl" file="meshes/Right_Upper_Leg.stl" />
-    <mesh name="Right_Knee_Pitch_ST15.stl" file="meshes/Right_Knee_Pitch_ST15.stl" />
-    <mesh name="Right_Ankle_Pitch_ST15.stl" file="meshes/Right_Ankle_Pitch_ST15.stl" />
+    <mesh name="Right_Knee_Pitch_STS3250.stl" file="meshes/Right_Knee_Pitch_STS3250.stl" />
+    <mesh name="Right_Ankle_Pitch_STS3250.stl" file="meshes/Right_Ankle_Pitch_STS3250.stl" />
     <mesh name="Right_Foot.collision.stl" file="meshes/Right_Foot.collision.stl" />
     <mesh name="Right_Foot.stl" file="meshes/Right_Foot.stl" />
     <mesh name="Left_Upper_Hip_Bracket.stl" file="meshes/Left_Upper_Hip_Bracket.stl" />
-    <mesh name="Left_Hip_Roll_ST15.stl" file="meshes/Left_Hip_Roll_ST15.stl" />
+    <mesh name="Left_Hip_Roll_STS3250.stl" file="meshes/Left_Hip_Roll_STS3250.stl" />
     <mesh name="Left_Upper_Leg.stl" file="meshes/Left_Upper_Leg.stl" />
-    <mesh name="Left_Knee_Pitch_ST15.stl" file="meshes/Left_Knee_Pitch_ST15.stl" />
-    <mesh name="Left_Ankle_Pitch_ST15.stl" file="meshes/Left_Ankle_Pitch_ST15.stl" />
+    <mesh name="Left_Knee_Pitch_STS3250.stl" file="meshes/Left_Knee_Pitch_STS3250.stl" />
+    <mesh name="Left_Ankle_Pitch_STS3250.stl" file="meshes/Left_Ankle_Pitch_STS3250.stl" />
     <mesh name="Left_Foot.collision.stl" file="meshes/Left_Foot.collision.stl" />
     <mesh name="Left_Foot.stl" file="meshes/Left_Foot.stl" />
   </asset>
@@ -56,9 +56,9 @@
       <freejoint name="floating_base" />
       <geom name="floating_base_link_visual" quat="0.7073882691671998 0.0 0.0 0.706825181105366" material="floating_base_link_material" type="sphere" size="0.01" class="visual" />
       <body name="Top_Brace" quat="0.7073882691671998 0.0 0.0 0.706825181105366">
-        <inertial pos="0.000031 0.009591 -0.026570" mass="1.292559" diaginertia="0.002933 0.00347 0.002115" />
+        <inertial pos="0.000030 0.009550 -0.026636" mass="1.309559" diaginertia="0.00297 0.003538 0.002153" />
         <geom name="Top_Brace_visual" material="Top_Brace_material" type="mesh" mesh="Top_Brace.stl" class="visual" />
-        <body name="imu" pos="-0.010000 0.008286 0.036035" quat="-1.2247452309842457e-07 -0.7071068967259713 0.7071066656470838 1.22474483074382e-07">
+        <body name="imu" pos="-0.010000 0.008286 0.036035" quat="3.000000781252362e-14 1.7320510330969674e-07 -0.99999999999997 -1.7320510330969674e-07">
           <inertial pos="0.007500 -0.010000 0.001235" mass="0.001887" diaginertia="1e-06 1e-06 1e-06" />
           <geom name="imu_visual" material="imu_material" type="mesh" mesh="imu.stl" class="visual" />
           <site name="imu_site" quat="1.0 0.0 0.0 0.0" pos="0.0 0.0 0.0" />
@@ -67,17 +67,17 @@
           <joint name="left_shoulder_pitch" type="hinge" ref="0.0" class="motor" range="-1.570796 3.141593" axis="0 0 1" />
           <inertial pos="0.000038 0.000969 -0.014200" mass="0.019227" diaginertia="3e-06 5e-06 4e-06" />
           <geom name="Left_1910_0025_0816_REV1_visual" material="Left_1910_0025_0816_REV1_material" type="mesh" mesh="Left_1910_0025_0816_REV1.stl" class="visual" />
-          <body name="Left_Shoulder_Roll_SERVO_DUAL_v5" pos="0.017892 0.004100 -0.032700" quat="0.7071068967259818 0.0 0.7071066656470943 0.0">
+          <body name="Left_Shoulder_Roll_STS3250" pos="0.017892 0.004100 -0.032700" quat="0.7071068967259818 0.0 0.7071066656470943 0.0">
             <joint name="left_shoulder_roll" type="hinge" ref="0.0" class="motor" range="-0.401426 2.617994" axis="0 0 -1.0" />
-            <inertial pos="0.000267 0.043106 -0.019071" mass="0.122460" diaginertia="0.000135 2e-05 0.000129" />
-            <geom name="Left_Shoulder_Roll_SERVO_DUAL_v5_visual" material="Left_Shoulder_Roll_SERVO_DUAL_v5_material" type="mesh" mesh="Left_Shoulder_Roll_SERVO_DUAL_v5.stl" class="visual" />
+            <inertial pos="0.000229 0.038854 -0.019074" mass="0.142460" diaginertia="0.000156 2.3e-05 0.000149" />
+            <geom name="Left_Shoulder_Roll_STS3250_visual" material="Left_Shoulder_Roll_STS3250_material" type="mesh" mesh="Left_Shoulder_Roll_STS3250.stl" class="visual" />
             <body name="R_ARM_MIRROR_1" pos="0 0.086212 -0.038650">
               <joint name="left_elbow_roll" type="hinge" ref="0.0" class="motor" range="-0.872665 1.570796" axis="0 0 1" />
-              <inertial pos="0.003329 0.056019 0.019346" mass="0.153130" diaginertia="0.000126 4.4e-05 0.000118" />
+              <inertial pos="-0.000534 0.054008 0.018540" mass="0.184048" diaginertia="0.000206 6e-05 0.000193" />
               <geom name="R_ARM_MIRROR_1_visual" material="Left_1910_0025_0816_REV1_material" type="mesh" mesh="R_ARM_MIRROR_1.stl" class="visual" />
               <body name="Left_Finger" pos="0.011815 0.066309 0.038340" quat="-1.7057372635091388e-07 -0.9848077400232084 0.1736482513311056 3.007676331135323e-08">
                 <joint name="left_gripper_roll" type="hinge" ref="0.0" class="motor" range="-0.523599 0.523599" axis="0 0 -1.0" />
-                <inertial pos="0.010724 -0.033465 0.018800" mass="0.022323" diaginertia="1.1e-05 4e-06 7e-06" />
+                <inertial pos="0.010671 -0.028980 0.018799" mass="0.044365" diaginertia="2.3e-05 1e-05 1.6e-05" />
                 <geom name="Left_Finger_visual" material="L_ARM_MIRROR_1_material" type="mesh" mesh="Left_Finger.stl" class="visual" />
               </body>
             </body>
@@ -87,17 +87,17 @@
           <joint name="right_shoulder_pitch" type="hinge" ref="0.0" class="motor" range="-1.570796 3.141593" axis="0 0 1" />
           <inertial pos="0.000038 -0.000969 -0.014200" mass="0.019227" diaginertia="3e-06 5e-06 4e-06" />
           <geom name="Right_1910_0025_0816_REV1_visual" material="Left_1910_0025_0816_REV1_material" type="mesh" mesh="Right_1910_0025_0816_REV1.stl" class="visual" />
-          <body name="Right_Shoulder_Roll_SERVO_DUAL_v5" pos="-0.017758 -0.004100 -0.032700" quat="0.7071068967259818 0.0 -0.7071066656470943 0.0">
+          <body name="Right_Shoulder_Roll_STS3250" pos="-0.017758 -0.004100 -0.032700" quat="0.7071068967259818 0.0 -0.7071066656470943 0.0">
             <joint name="right_shoulder_roll" type="hinge" ref="0.0" class="motor" range="-2.617994 0.401426" axis="0 0 1" />
-            <inertial pos="-0.000267 -0.043106 -0.018579" mass="0.122460" diaginertia="0.000135 2e-05 0.000129" />
-            <geom name="Right_Shoulder_Roll_SERVO_DUAL_v5_visual" material="Left_Shoulder_Roll_SERVO_DUAL_v5_material" type="mesh" mesh="Right_Shoulder_Roll_SERVO_DUAL_v5.stl" class="visual" />
+            <inertial pos="-0.000229 -0.038854 -0.018576" mass="0.142460" diaginertia="0.000156 2.3e-05 0.000149" />
+            <geom name="Right_Shoulder_Roll_STS3250_visual" material="Left_Shoulder_Roll_STS3250_material" type="mesh" mesh="Right_Shoulder_Roll_STS3250.stl" class="visual" />
             <body name="L_ARM_MIRROR_1" pos="0 -0.086212 0.001000">
               <joint name="right_elbow_roll" type="hinge" ref="0.0" class="motor" range="-0.872665 1.570796" axis="0 0 -1" />
-              <inertial pos="-0.003295 -0.055921 -0.017302" mass="0.153130" diaginertia="0.000126 4.4e-05 0.000118" />
+              <inertial pos="0.000560 -0.053930 -0.017547" mass="0.184048" diaginertia="0.000206 6e-05 0.000193" />
               <geom name="L_ARM_MIRROR_1_visual" material="L_ARM_MIRROR_1_material" type="mesh" mesh="L_ARM_MIRROR_1.stl" class="visual" />
               <body name="Right_Finger" pos="-0.011778 -0.066206 0.001260" quat="-1.7057372635091388e-07 -0.9848077400232084 0.1736482513311056 3.007676331135323e-08">
                 <joint name="right_gripper_roll" type="hinge" ref="0.0" class="motor" range="-0.523599 0.523599" axis="0 0 1" />
-                <inertial pos="-0.010771 0.037355 0.018800" mass="0.015601" diaginertia="6e-06 3e-06 4e-06" />
+                <inertial pos="-0.010671 0.028980 0.018799" mass="0.044365" diaginertia="2.3e-05 1e-05 1.6e-05" />
                 <geom name="Right_Finger_visual" material="L_ARM_MIRROR_1_material" type="mesh" mesh="Right_Finger.stl" class="visual" />
               </body>
             </body>
@@ -107,22 +107,22 @@
           <joint name="right_hip_yaw" type="hinge" ref="0.0" class="motor" range="-1.570796 1.570796" axis="0 0 -1.0" />
           <inertial pos="-0.000042 -0.006054 0.003361" mass="0.022071" diaginertia="1.5e-05 1.2e-05 6e-06" />
           <geom name="Right_Upper_Hip_Bracket_visual" material="Top_Brace_material" type="mesh" mesh="Right_Upper_Hip_Bracket.stl" class="visual" />
-          <body name="Right_Hip_Roll_ST15" pos="-0.000087 0.019650 -0.026665" quat="0.7071068967259818 0.7071066656470943 0.0 0.0">
+          <body name="Right_Hip_Roll_STS3250" pos="-0.000087 0.019650 -0.026665" quat="0.7071068967259818 0.7071066656470943 0.0 0.0">
             <joint name="right_hip_roll" type="hinge" ref="0.0" class="motor" range="-0.610865 0.610865" axis="0 0 1" />
-            <inertial pos="-0.000781 -0.013065 -0.000178" mass="0.217273" diaginertia="0.000131 0.000113 7.2e-05" />
-            <geom name="Right_Hip_Roll_ST15_visual" material="floating_base_link_material" type="mesh" mesh="Right_Hip_Roll_ST15.stl" class="visual" />
+            <inertial pos="-0.000772 -0.013316 -0.000110" mass="0.178551" diaginertia="0.000108 9.4e-05 6e-05" />
+            <geom name="Right_Hip_Roll_STS3250_visual" material="floating_base_link_material" type="mesh" mesh="Right_Hip_Roll_STS3250.stl" class="visual" />
             <body name="Right_Upper_Leg" pos="-0.019800 0 0.016150" quat="0.7071068967259818 0.0 0.7071066656470943 0.0">
               <joint name="right_hip_pitch" type="hinge" ref="0.0" class="motor" range="-1.570796 0.872665" axis="0 0 1" />
               <inertial pos="-0.004004 -0.054562 0.018602" mass="0.030705" diaginertia="3.8e-05 1.3e-05 2.9e-05" />
               <geom name="Right_Upper_Leg_visual" material="Top_Brace_material" type="mesh" mesh="Right_Upper_Leg.stl" class="visual" />
-              <body name="Right_Knee_Pitch_ST15" pos="0 -0.100000 0.001260" quat="-1.7320510330969933e-07 0.999999999999985 0.0 -0.0">
+              <body name="Right_Knee_Pitch_STS3250" pos="0 -0.100000 0.001260" quat="-1.7320510330969933e-07 0.999999999999985 0.0 -0.0">
                 <joint name="right_knee_pitch" type="hinge" ref="0.0" class="motor" range="-1.396263 1.396263" axis="0 0 1" />
-                <inertial pos="-0.000874 0.024183 -0.017685" mass="0.133647" diaginertia="0.000117 3.6e-05 0.000102" />
-                <geom name="Right_Knee_Pitch_ST15_visual" material="floating_base_link_material" type="mesh" mesh="Right_Knee_Pitch_ST15.stl" class="visual" />
-                <body name="Right_Ankle_Pitch_ST15" pos="0 0.100000 -0.036859" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
+                <inertial pos="-0.001019 0.026262 -0.017776" mass="0.114286" diaginertia="0.000107 3.2e-05 9.3e-05" />
+                <geom name="Right_Knee_Pitch_STS3250_visual" material="floating_base_link_material" type="mesh" mesh="Right_Knee_Pitch_STS3250.stl" class="visual" />
+                <body name="Right_Ankle_Pitch_STS3250" pos="0 0.100000 -0.036859" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
                   <joint name="right_ankle_pitch" type="hinge" ref="0.0" class="motor" range="-0.698132 1.396263" axis="0 0 -1.0" />
-                  <inertial pos="0.016328 0.013065 -0.018019" mass="0.217273" diaginertia="7.2e-05 0.000113 0.000131" />
-                  <geom name="Right_Ankle_Pitch_ST15_visual" material="floating_base_link_material" type="mesh" mesh="Right_Ankle_Pitch_ST15.stl" class="visual" />
+                  <inertial pos="0.016260 0.013316 -0.018027" mass="0.178551" diaginertia="6e-05 9.4e-05 0.000108" />
+                  <geom name="Right_Ankle_Pitch_STS3250_visual" material="floating_base_link_material" type="mesh" mesh="Right_Ankle_Pitch_STS3250.stl" class="visual" />
                   <body name="Right_Foot" pos="0.015150 0 -0.018800" quat="-1.2247452309842457e-07 -0.7071068967259713 1.22474483074382e-07 -0.7071066656470838">
                     <joint name="right_ankle_roll" type="hinge" ref="0.0" class="motor" range="-1.047198 1.047198" axis="0 0 1" />
                     <inertial pos="-0.006981 0.025970 -0.010887" mass="0.096554" diaginertia="9e-05 0.000131 4.7e-05" />
@@ -138,22 +138,22 @@
           <joint name="left_hip_yaw" type="hinge" ref="0.0" class="motor" range="-1.570796 1.570796" axis="0 0 1" />
           <inertial pos="-0.000059 -0.010510 -0.007889" mass="0.034227" diaginertia="2.3e-05 1.9e-05 7e-06" />
           <geom name="Left_Upper_Hip_Bracket_visual" material="Top_Brace_material" type="mesh" mesh="Left_Upper_Hip_Bracket.stl" class="visual" />
-          <body name="Left_Hip_Roll_ST15" pos="-0.000087 0.019650 -0.026665" quat="0.7071068967259818 0.7071066656470943 0.0 0.0">
+          <body name="Left_Hip_Roll_STS3250" pos="-0.000087 0.019650 -0.026665" quat="0.7071068967259818 0.7071066656470943 0.0 0.0">
             <joint name="left_hip_roll" type="hinge" ref="0.0" class="motor" range="-0.610865 0.610865" axis="0 0 1" />
-            <inertial pos="-0.000781 -0.013065 -0.000178" mass="0.217273" diaginertia="0.000131 0.000113 7.2e-05" />
-            <geom name="Left_Hip_Roll_ST15_visual" material="floating_base_link_material" type="mesh" mesh="Left_Hip_Roll_ST15.stl" class="visual" />
+            <inertial pos="-0.000772 -0.013316 -0.000110" mass="0.178551" diaginertia="0.000108 9.4e-05 6e-05" />
+            <geom name="Left_Hip_Roll_STS3250_visual" material="floating_base_link_material" type="mesh" mesh="Left_Hip_Roll_STS3250.stl" class="visual" />
             <body name="Left_Upper_Leg" pos="-0.019800 0 0.016150" quat="0.7071068967259818 0.0 0.7071066656470943 0.0">
               <joint name="left_hip_pitch" type="hinge" ref="0.0" class="motor" range="-1.570796 0.872665" axis="0 0 1" />
               <inertial pos="-0.004004 -0.054562 0.018602" mass="0.030705" diaginertia="3.8e-05 1.3e-05 2.9e-05" />
               <geom name="Left_Upper_Leg_visual" material="Top_Brace_material" type="mesh" mesh="Left_Upper_Leg.stl" class="visual" />
-              <body name="Left_Knee_Pitch_ST15" pos="0 -0.100000 0.001260" quat="-1.7320510330969933e-07 0.999999999999985 0.0 -0.0">
+              <body name="Left_Knee_Pitch_STS3250" pos="0 -0.100000 0.001260" quat="-1.7320510330969933e-07 0.999999999999985 0.0 -0.0">
                 <joint name="left_knee_pitch" type="hinge" ref="0.0" class="motor" range="-1.396263 1.396263" axis="0 0 1" />
-                <inertial pos="-0.000874 0.024183 -0.017507" mass="0.133647" diaginertia="0.000117 3.6e-05 0.000102" />
-                <geom name="Left_Knee_Pitch_ST15_visual" material="floating_base_link_material" type="mesh" mesh="Left_Knee_Pitch_ST15.stl" class="visual" />
-                <body name="Left_Ankle_Pitch_ST15" pos="0 0.100000 -0.036040" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
+                <inertial pos="-0.001019 0.026262 -0.017568" mass="0.114286" diaginertia="0.000107 3.2e-05 9.3e-05" />
+                <geom name="Left_Knee_Pitch_STS3250_visual" material="floating_base_link_material" type="mesh" mesh="Left_Knee_Pitch_STS3250.stl" class="visual" />
+                <body name="Left_Ankle_Pitch_STS3250" pos="0 0.100000 -0.036040" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
                   <joint name="left_ankle_pitch" type="hinge" ref="0.0" class="motor" range="-1.396263 0.698132" axis="0 0 1" />
-                  <inertial pos="0.016328 0.013065 -0.018019" mass="0.217273" diaginertia="7.2e-05 0.000113 0.000131" />
-                  <geom name="Left_Ankle_Pitch_ST15_visual" material="floating_base_link_material" type="mesh" mesh="Left_Ankle_Pitch_ST15.stl" class="visual" />
+                  <inertial pos="0.016260 0.013316 -0.018027" mass="0.178551" diaginertia="6e-05 9.4e-05 0.000108" />
+                  <geom name="Left_Ankle_Pitch_STS3250_visual" material="floating_base_link_material" type="mesh" mesh="Left_Ankle_Pitch_STS3250.stl" class="visual" />
                   <body name="Left_Foot" pos="0.015150 0 -0.018800" quat="-1.2247452309842457e-07 -0.7071068967259713 1.22474483074382e-07 -0.7071066656470838">
                     <joint name="left_ankle_roll" type="hinge" ref="0.0" class="motor" range="-1.047198 1.047198" axis="0 0 1" />
                     <inertial pos="0.006981 0.025970 -0.010887" mass="0.096554" diaginertia="9e-05 0.000131 4.7e-05" />
