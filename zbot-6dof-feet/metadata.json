@@ -51,74 +51,74 @@
     "left_hip_yaw": {
       "actuator_type": "feetech-sts3250",
       "id": 31,
-      "kp": "30.0",
-      "kd": "10.0"
+      "kp": "20.0",
+      "kd": "5.0"
     },
     "left_hip_roll": {
       "actuator_type": "feetech-sts3250",
       "id": 32,
-      "kp": "30.0",
-      "kd": "10.0"
+      "kp": "20.0",
+      "kd": "5.0"
     },
     "left_hip_pitch": {
       "actuator_type": "feetech-sts3250",
       "id": 33,
-      "kp": "30.0",
-      "kd": "10.0"
+      "kp": "20.0",
+      "kd": "5.0"
     },
     "left_knee_pitch": {
       "actuator_type": "feetech-sts3250",
       "id": 34,
-      "kp": "30.0",
-      "kd": "10.0"
+      "kp": "20.0",
+      "kd": "5.0"
     },
     "left_ankle_roll": {
       "actuator_type": "feetech-sts3250",
       "id": 35,
-      "kp": "30.0",
-      "kd": "10.0"
+      "kp": "20.0",
+      "kd": "5.0"
     },
     "left_ankle_pitch": {
       "actuator_type": "feetech-sts3250",
       "id": 36,
-      "kp": "30.0",
-      "kd": "10.0"
+      "kp": "20.0",
+      "kd": "5.0"
     },
     "right_hip_yaw": {
       "actuator_type": "feetech-sts3250",
       "id": 41,
-      "kp": "30.0",
-      "kd": "10.0"
+      "kp": "20.0",
+      "kd": "5.0"
     },
     "right_hip_roll": {
       "actuator_type": "feetech-sts3250",
       "id": 42,
-      "kp": "30.0",
-      "kd": "10.0"
+      "kp": "20.0",
+      "kd": "5.0"
     },
     "right_hip_pitch": {
       "actuator_type": "feetech-sts3250",
       "id": 43,
-      "kp": "30.0",
-      "kd": "10.0"
+      "kp": "20.0",
+      "kd": "5.0"
     },
     "right_knee_pitch": {
       "actuator_type": "feetech-sts3250",
       "id": 44,
-      "kp": "30.0",
-      "kd": "10.0"
+      "kp": "20.0",
+      "kd": "5.0"
     },
     "right_ankle_roll": {
       "actuator_type": "feetech-sts3250",
       "id": 45,
-      "kp": "30.0",
-      "kd": "10.0"
+      "kp": "20.0",
+      "kd": "5.0"
     },
     "right_ankle_pitch": {
       "actuator_type": "feetech-sts3250",
       "id": 46,
-      "kp": "30.0",
-      "kd": "10.0"
+      "kp": "20.0",
+      "kd": "5.0"
     }
   },
   "control_frequency": "50"
