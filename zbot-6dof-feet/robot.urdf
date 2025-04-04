@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<robot name="v3.1_top_level_assembly_[urdf]">
+<robot name="[urdf]_v3.1_top_level_assembly">
   <link name="floating_base_link">
     <visual name="floating_base_link_visual">
       <geometry name="floating_base_link_geometry">
@@ -22,7 +22,7 @@
     <origin xyz="0 0 0" rpy="0.00 0.00 1.57"/>
   </joint>
   <joint name="frame_imu_site" type="fixed">
-    <origin xyz="-0.010000 0.008286 0.036035" rpy="-3.141593 0 -1.570796"/>
+    <origin xyz="-0.010000 0.008286 0.036035" rpy="-3.141593 0 0"/>
     <parent link="Top_Brace"/>
     <child link="imu"/>
   </joint>
@@ -57,55 +57,55 @@
   <joint name="left_shoulder_roll" type="revolute">
     <origin xyz="0.017892 0.004100 -0.032700" rpy="0 1.570796 0"/>
     <parent link="Left_1910_0025_0816_REV1"/>
-    <child link="Left_Shoulder_Roll_SERVO_DUAL_v5"/>
+    <child link="Left_Shoulder_Roll_STS3250"/>
     <limit effort="2" velocity="2" lower="-0.401426" upper="2.617994"/>
     <axis xyz="0 0 -1.0"/>
   </joint>
   <joint name="right_shoulder_roll" type="revolute">
     <origin xyz="-0.017758 -0.004100 -0.032700" rpy="0 -1.570796 0"/>
     <parent link="Right_1910_0025_0816_REV1"/>
-    <child link="Right_Shoulder_Roll_SERVO_DUAL_v5"/>
+    <child link="Right_Shoulder_Roll_STS3250"/>
     <limit effort="2" velocity="2" lower="-2.617994" upper="0.401426"/>
     <axis xyz="0 0 1"/>
   </joint>
   <joint name="right_hip_roll" type="revolute">
     <origin xyz="-0.000087 0.019650 -0.026665" rpy="1.570796 0 0"/>
     <parent link="Right_Upper_Hip_Bracket"/>
-    <child link="Right_Hip_Roll_ST15"/>
+    <child link="Right_Hip_Roll_STS3250"/>
     <limit effort="2" velocity="2" lower="-0.610865" upper="0.610865"/>
     <axis xyz="0 0 1"/>
   </joint>
   <joint name="left_hip_roll" type="revolute">
     <origin xyz="-0.000087 0.019650 -0.026665" rpy="1.570796 0 0"/>
     <parent link="Left_Upper_Hip_Bracket"/>
-    <child link="Left_Hip_Roll_ST15"/>
+    <child link="Left_Hip_Roll_STS3250"/>
     <limit effort="2" velocity="2" lower="-0.610865" upper="0.610865"/>
     <axis xyz="0 0 1"/>
   </joint>
   <joint name="left_elbow_roll" type="revolute">
     <origin xyz="0 0.086212 -0.038650" rpy="0 0 0"/>
-    <parent link="Left_Shoulder_Roll_SERVO_DUAL_v5"/>
+    <parent link="Left_Shoulder_Roll_STS3250"/>
     <child link="R_ARM_MIRROR_1"/>
     <limit effort="2" velocity="2" lower="-0.872665" upper="1.570796"/>
     <axis xyz="0 0 1"/>
   </joint>
   <joint name="right_elbow_roll" type="revolute">
     <origin xyz="0 -0.086212 0.001000" rpy="0 0 0"/>
-    <parent link="Right_Shoulder_Roll_SERVO_DUAL_v5"/>
+    <parent link="Right_Shoulder_Roll_STS3250"/>
     <child link="L_ARM_MIRROR_1"/>
     <limit effort="2" velocity="2" lower="-0.872665" upper="1.570796"/>
     <axis xyz="0 0 -1"/>
   </joint>
   <joint name="right_hip_pitch" type="revolute">
     <origin xyz="-0.019800 0 0.016150" rpy="0 1.570796 0"/>
-    <parent link="Right_Hip_Roll_ST15"/>
+    <parent link="Right_Hip_Roll_STS3250"/>
     <child link="Right_Upper_Leg"/>
     <limit effort="2" velocity="2" lower="-1.570796" upper="0.872665"/>
     <axis xyz="0 0 1"/>
   </joint>
   <joint name="left_hip_pitch" type="revolute">
     <origin xyz="-0.019800 0 0.016150" rpy="0 1.570796 0"/>
-    <parent link="Left_Hip_Roll_ST15"/>
+    <parent link="Left_Hip_Roll_STS3250"/>
     <child link="Left_Upper_Leg"/>
     <limit effort="2" velocity="2" lower="-1.570796" upper="0.872665"/>
     <axis xyz="0 0 1"/>
@@ -113,14 +113,14 @@
   <joint name="right_knee_pitch" type="revolute">
     <origin xyz="0 -0.100000 0.001260" rpy="3.141593 0 0"/>
     <parent link="Right_Upper_Leg"/>
-    <child link="Right_Knee_Pitch_ST15"/>
+    <child link="Right_Knee_Pitch_STS3250"/>
     <limit effort="2" velocity="2" lower="-1.396263" upper="1.396263"/>
     <axis xyz="0 0 1"/>
   </joint>
   <joint name="left_knee_pitch" type="revolute">
     <origin xyz="0 -0.100000 0.001260" rpy="3.141593 0 0"/>
     <parent link="Left_Upper_Leg"/>
-    <child link="Left_Knee_Pitch_ST15"/>
+    <child link="Left_Knee_Pitch_STS3250"/>
     <limit effort="2" velocity="2" lower="-1.396263" upper="1.396263"/>
     <axis xyz="0 0 1"/>
   </joint>
@@ -140,28 +140,28 @@
   </joint>
   <joint name="right_ankle_pitch" type="revolute">
     <origin xyz="0 0.100000 -0.036859" rpy="-3.141593 0 0"/>
-    <parent link="Right_Knee_Pitch_ST15"/>
-    <child link="Right_Ankle_Pitch_ST15"/>
+    <parent link="Right_Knee_Pitch_STS3250"/>
+    <child link="Right_Ankle_Pitch_STS3250"/>
     <limit effort="2" velocity="2" lower="-0.698132" upper="1.396263"/>
     <axis xyz="0 0 -1.0"/>
   </joint>
   <joint name="left_ankle_pitch" type="revolute">
     <origin xyz="0 0.100000 -0.036040" rpy="-3.141593 0 0"/>
-    <parent link="Left_Knee_Pitch_ST15"/>
-    <child link="Left_Ankle_Pitch_ST15"/>
+    <parent link="Left_Knee_Pitch_STS3250"/>
+    <child link="Left_Ankle_Pitch_STS3250"/>
     <limit effort="2" velocity="2" lower="-1.396263" upper="0.698132"/>
     <axis xyz="0 0 1"/>
   </joint>
   <joint name="right_ankle_roll" type="revolute">
     <origin xyz="0.015150 0 -0.018800" rpy="-3.141593 -1.570796 0"/>
-    <parent link="Right_Ankle_Pitch_ST15"/>
+    <parent link="Right_Ankle_Pitch_STS3250"/>
     <child link="Right_Foot"/>
     <limit effort="2" velocity="2" lower="-1.047198" upper="1.047198"/>
     <axis xyz="0 0 1"/>
   </joint>
   <joint name="left_ankle_roll" type="revolute">
     <origin xyz="0.015150 0 -0.018800" rpy="-3.141593 -1.570796 0"/>
-    <parent link="Left_Ankle_Pitch_ST15"/>
+    <parent link="Left_Ankle_Pitch_STS3250"/>
     <child link="Left_Foot"/>
     <limit effort="2" velocity="2" lower="-1.047198" upper="1.047198"/>
     <axis xyz="0 0 1"/>
@@ -177,9 +177,9 @@
       </material>
     </visual>
     <inertial name="Top_Brace_inertial">
-      <mass value="1.292559"/>
-      <inertia ixx="0.002933" iyy="0.003470" izz="0.002115" ixy="-0.000006" ixz="-0.000003" iyz="0.000105"/>
-      <origin xyz="0.000031 0.009591 -0.026570" rpy="0 0 0"/>
+      <mass value="1.309559"/>
+      <inertia ixx="0.002970" iyy="0.003538" izz="0.002153" ixy="-0.000006" ixz="-0.000003" iyz="0.000109"/>
+      <origin xyz="0.000030 0.009550 -0.026636" rpy="0 0 0"/>
     </inertial>
   </link>
   <link name="imu">
@@ -262,68 +262,68 @@
       <origin xyz="-0.000059 -0.010510 -0.007889" rpy="0 0 0"/>
     </inertial>
   </link>
-  <link name="Left_Shoulder_Roll_SERVO_DUAL_v5">
-    <visual name="Left_Shoulder_Roll_SERVO_DUAL_v5_visual">
+  <link name="Left_Shoulder_Roll_STS3250">
+    <visual name="Left_Shoulder_Roll_STS3250_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Shoulder_Roll_SERVO_DUAL_v5_geometry">
-        <mesh filename="meshes/Left_Shoulder_Roll_SERVO_DUAL_v5.stl"/>
+      <geometry name="Left_Shoulder_Roll_STS3250_geometry">
+        <mesh filename="meshes/Left_Shoulder_Roll_STS3250.stl"/>
       </geometry>
-      <material name="Left_Shoulder_Roll_SERVO_DUAL_v5_material">
+      <material name="Left_Shoulder_Roll_STS3250_material">
         <color rgba="0.286275 0.286275 0.286275 1"/>
       </material>
     </visual>
-    <inertial name="Left_Shoulder_Roll_SERVO_DUAL_v5_inertial">
-      <mass value="0.122460"/>
-      <inertia ixx="0.000135" iyy="0.000020" izz="0.000129" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.000267 0.043106 -0.019071" rpy="0 0 0"/>
+    <inertial name="Left_Shoulder_Roll_STS3250_inertial">
+      <mass value="0.142460"/>
+      <inertia ixx="0.000156" iyy="0.000023" izz="0.000149" ixy="0" ixz="0" iyz="0"/>
+      <origin xyz="0.000229 0.038854 -0.019074" rpy="0 0 0"/>
     </inertial>
   </link>
-  <link name="Right_Shoulder_Roll_SERVO_DUAL_v5">
-    <visual name="Right_Shoulder_Roll_SERVO_DUAL_v5_visual">
+  <link name="Right_Shoulder_Roll_STS3250">
+    <visual name="Right_Shoulder_Roll_STS3250_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Shoulder_Roll_SERVO_DUAL_v5_geometry">
-        <mesh filename="meshes/Right_Shoulder_Roll_SERVO_DUAL_v5.stl"/>
+      <geometry name="Right_Shoulder_Roll_STS3250_geometry">
+        <mesh filename="meshes/Right_Shoulder_Roll_STS3250.stl"/>
       </geometry>
-      <material name="Right_Shoulder_Roll_SERVO_DUAL_v5_material">
+      <material name="Right_Shoulder_Roll_STS3250_material">
         <color rgba="0.286275 0.286275 0.286275 1"/>
       </material>
     </visual>
-    <inertial name="Right_Shoulder_Roll_SERVO_DUAL_v5_inertial">
-      <mass value="0.122460"/>
-      <inertia ixx="0.000135" iyy="0.000020" izz="0.000129" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.000267 -0.043106 -0.018579" rpy="0 0 0"/>
+    <inertial name="Right_Shoulder_Roll_STS3250_inertial">
+      <mass value="0.142460"/>
+      <inertia ixx="0.000156" iyy="0.000023" izz="0.000149" ixy="0" ixz="0" iyz="0"/>
+      <origin xyz="-0.000229 -0.038854 -0.018576" rpy="0 0 0"/>
     </inertial>
   </link>
-  <link name="Right_Hip_Roll_ST15">
-    <visual name="Right_Hip_Roll_ST15_visual">
+  <link name="Right_Hip_Roll_STS3250">
+    <visual name="Right_Hip_Roll_STS3250_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Hip_Roll_ST15_geometry">
-        <mesh filename="meshes/Right_Hip_Roll_ST15.stl"/>
+      <geometry name="Right_Hip_Roll_STS3250_geometry">
+        <mesh filename="meshes/Right_Hip_Roll_STS3250.stl"/>
       </geometry>
-      <material name="Right_Hip_Roll_ST15_material">
+      <material name="Right_Hip_Roll_STS3250_material">
         <color rgba="1 0 0 1"/>
       </material>
     </visual>
-    <inertial name="Right_Hip_Roll_ST15_inertial">
-      <mass value="0.217273"/>
-      <inertia ixx="0.000131" iyy="0.000113" izz="0.000072" ixy="0" ixz="0.000003" iyz="0.000002"/>
-      <origin xyz="-0.000781 -0.013065 -0.000178" rpy="0 0 0"/>
+    <inertial name="Right_Hip_Roll_STS3250_inertial">
+      <mass value="0.178551"/>
+      <inertia ixx="0.000108" iyy="0.000094" izz="0.000060" ixy="0" ixz="0.000002" iyz="0"/>
+      <origin xyz="-0.000772 -0.013316 -0.000110" rpy="0 0 0"/>
     </inertial>
   </link>
-  <link name="Left_Hip_Roll_ST15">
-    <visual name="Left_Hip_Roll_ST15_visual">
+  <link name="Left_Hip_Roll_STS3250">
+    <visual name="Left_Hip_Roll_STS3250_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Hip_Roll_ST15_geometry">
-        <mesh filename="meshes/Left_Hip_Roll_ST15.stl"/>
+      <geometry name="Left_Hip_Roll_STS3250_geometry">
+        <mesh filename="meshes/Left_Hip_Roll_STS3250.stl"/>
       </geometry>
-      <material name="Left_Hip_Roll_ST15_material">
+      <material name="Left_Hip_Roll_STS3250_material">
         <color rgba="1 0 0 1"/>
       </material>
     </visual>
-    <inertial name="Left_Hip_Roll_ST15_inertial">
-      <mass value="0.217273"/>
-      <inertia ixx="0.000131" iyy="0.000113" izz="0.000072" ixy="0" ixz="0.000003" iyz="0.000002"/>
-      <origin xyz="-0.000781 -0.013065 -0.000178" rpy="0 0 0"/>
+    <inertial name="Left_Hip_Roll_STS3250_inertial">
+      <mass value="0.178551"/>
+      <inertia ixx="0.000108" iyy="0.000094" izz="0.000060" ixy="0" ixz="0.000002" iyz="0"/>
+      <origin xyz="-0.000772 -0.013316 -0.000110" rpy="0 0 0"/>
     </inertial>
   </link>
   <link name="R_ARM_MIRROR_1">
@@ -337,9 +337,9 @@
       </material>
     </visual>
     <inertial name="R_ARM_MIRROR_1_inertial">
-      <mass value="0.153130"/>
-      <inertia ixx="0.000126" iyy="0.000044" izz="0.000118" ixy="0.000006" ixz="0" iyz="0.000001"/>
-      <origin xyz="0.003329 0.056019 0.019346" rpy="0 0 0"/>
+      <mass value="0.184048"/>
+      <inertia ixx="0.000206" iyy="0.000060" izz="0.000193" ixy="0.000018" ixz="0" iyz="0"/>
+      <origin xyz="-0.000534 0.054008 0.018540" rpy="0 0 0"/>
     </inertial>
   </link>
   <link name="L_ARM_MIRROR_1">
@@ -353,9 +353,9 @@
       </material>
     </visual>
     <inertial name="L_ARM_MIRROR_1_inertial">
-      <mass value="0.153130"/>
-      <inertia ixx="0.000126" iyy="0.000044" izz="0.000118" ixy="0.000006" ixz="0" iyz="-0.000001"/>
-      <origin xyz="-0.003295 -0.055921 -0.017302" rpy="0 0 0"/>
+      <mass value="0.184048"/>
+      <inertia ixx="0.000206" iyy="0.000060" izz="0.000193" ixy="0.000018" ixz="0.000002" iyz="0"/>
+      <origin xyz="0.000560 -0.053930 -0.017547" rpy="0 0 0"/>
     </inertial>
   </link>
   <link name="Right_Upper_Leg">
@@ -390,36 +390,36 @@
       <origin xyz="-0.004004 -0.054562 0.018602" rpy="0 0 0"/>
     </inertial>
   </link>
-  <link name="Right_Knee_Pitch_ST15">
-    <visual name="Right_Knee_Pitch_ST15_visual">
+  <link name="Right_Knee_Pitch_STS3250">
+    <visual name="Right_Knee_Pitch_STS3250_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Knee_Pitch_ST15_geometry">
-        <mesh filename="meshes/Right_Knee_Pitch_ST15.stl"/>
+      <geometry name="Right_Knee_Pitch_STS3250_geometry">
+        <mesh filename="meshes/Right_Knee_Pitch_STS3250.stl"/>
       </geometry>
-      <material name="Right_Knee_Pitch_ST15_material">
+      <material name="Right_Knee_Pitch_STS3250_material">
         <color rgba="1 0 0 1"/>
       </material>
     </visual>
-    <inertial name="Right_Knee_Pitch_ST15_inertial">
-      <mass value="0.133647"/>
-      <inertia ixx="0.000117" iyy="0.000036" izz="0.000102" ixy="0.000002" ixz="0" iyz="0.000001"/>
-      <origin xyz="-0.000874 0.024183 -0.017685" rpy="0 0 0"/>
+    <inertial name="Right_Knee_Pitch_STS3250_inertial">
+      <mass value="0.114286"/>
+      <inertia ixx="0.000107" iyy="0.000032" izz="0.000093" ixy="0.000002" ixz="0" iyz="0.000002"/>
+      <origin xyz="-0.001019 0.026262 -0.017776" rpy="0 0 0"/>
     </inertial>
   </link>
-  <link name="Left_Knee_Pitch_ST15">
-    <visual name="Left_Knee_Pitch_ST15_visual">
+  <link name="Left_Knee_Pitch_STS3250">
+    <visual name="Left_Knee_Pitch_STS3250_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Knee_Pitch_ST15_geometry">
-        <mesh filename="meshes/Left_Knee_Pitch_ST15.stl"/>
+      <geometry name="Left_Knee_Pitch_STS3250_geometry">
+        <mesh filename="meshes/Left_Knee_Pitch_STS3250.stl"/>
       </geometry>
-      <material name="Left_Knee_Pitch_ST15_material">
+      <material name="Left_Knee_Pitch_STS3250_material">
         <color rgba="1 0 0 1"/>
       </material>
     </visual>
-    <inertial name="Left_Knee_Pitch_ST15_inertial">
-      <mass value="0.133647"/>
-      <inertia ixx="0.000117" iyy="0.000036" izz="0.000102" ixy="0.000002" ixz="0" iyz="0"/>
-      <origin xyz="-0.000874 0.024183 -0.017507" rpy="0 0 0"/>
+    <inertial name="Left_Knee_Pitch_STS3250_inertial">
+      <mass value="0.114286"/>
+      <inertia ixx="0.000107" iyy="0.000032" izz="0.000093" ixy="0.000002" ixz="0" iyz="0.000001"/>
+      <origin xyz="-0.001019 0.026262 -0.017568" rpy="0 0 0"/>
     </inertial>
   </link>
   <link name="Left_Finger">
@@ -433,9 +433,9 @@
       </material>
     </visual>
     <inertial name="Left_Finger_inertial">
-      <mass value="0.022323"/>
-      <inertia ixx="0.000011" iyy="0.000004" izz="0.000007" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.010724 -0.033465 0.018800" rpy="0 0 0"/>
+      <mass value="0.044365"/>
+      <inertia ixx="0.000023" iyy="0.000010" izz="0.000016" ixy="0.000002" ixz="0" iyz="0"/>
+      <origin xyz="0.010671 -0.028980 0.018799" rpy="0 0 0"/>
     </inertial>
   </link>
   <link name="Right_Finger">
@@ -449,41 +449,41 @@
       </material>
     </visual>
     <inertial name="Right_Finger_inertial">
-      <mass value="0.015601"/>
-      <inertia ixx="0.000006" iyy="0.000003" izz="0.000004" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.010771 0.037355 0.018800" rpy="0 0 0"/>
+      <mass value="0.044365"/>
+      <inertia ixx="0.000023" iyy="0.000010" izz="0.000016" ixy="0.000002" ixz="0" iyz="0"/>
+      <origin xyz="-0.010671 0.028980 0.018799" rpy="0 0 0"/>
     </inertial>
   </link>
-  <link name="Right_Ankle_Pitch_ST15">
-    <visual name="Right_Ankle_Pitch_ST15_visual">
+  <link name="Right_Ankle_Pitch_STS3250">
+    <visual name="Right_Ankle_Pitch_STS3250_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Ankle_Pitch_ST15_geometry">
-        <mesh filename="meshes/Right_Ankle_Pitch_ST15.stl"/>
+      <geometry name="Right_Ankle_Pitch_STS3250_geometry">
+        <mesh filename="meshes/Right_Ankle_Pitch_STS3250.stl"/>
       </geometry>
-      <material name="Right_Ankle_Pitch_ST15_material">
+      <material name="Right_Ankle_Pitch_STS3250_material">
         <color rgba="1 0 0 1"/>
       </material>
     </visual>
-    <inertial name="Right_Ankle_Pitch_ST15_inertial">
-      <mass value="0.217273"/>
-      <inertia ixx="0.000072" iyy="0.000113" izz="0.000131" ixy="0.000002" ixz="0.000003" iyz="0"/>
-      <origin xyz="0.016328 0.013065 -0.018019" rpy="0 0 0"/>
+    <inertial name="Right_Ankle_Pitch_STS3250_inertial">
+      <mass value="0.178551"/>
+      <inertia ixx="0.000060" iyy="0.000094" izz="0.000108" ixy="0" ixz="0.000002" iyz="0"/>
+      <origin xyz="0.016260 0.013316 -0.018027" rpy="0 0 0"/>
     </inertial>
   </link>
-  <link name="Left_Ankle_Pitch_ST15">
-    <visual name="Left_Ankle_Pitch_ST15_visual">
+  <link name="Left_Ankle_Pitch_STS3250">
+    <visual name="Left_Ankle_Pitch_STS3250_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Ankle_Pitch_ST15_geometry">
-        <mesh filename="meshes/Left_Ankle_Pitch_ST15.stl"/>
+      <geometry name="Left_Ankle_Pitch_STS3250_geometry">
+        <mesh filename="meshes/Left_Ankle_Pitch_STS3250.stl"/>
       </geometry>
-      <material name="Left_Ankle_Pitch_ST15_material">
+      <material name="Left_Ankle_Pitch_STS3250_material">
         <color rgba="1 0 0 1"/>
       </material>
     </visual>
-    <inertial name="Left_Ankle_Pitch_ST15_inertial">
-      <mass value="0.217273"/>
-      <inertia ixx="0.000072" iyy="0.000113" izz="0.000131" ixy="0.000002" ixz="0.000003" iyz="0"/>
-      <origin xyz="0.016328 0.013065 -0.018019" rpy="0 0 0"/>
+    <inertial name="Left_Ankle_Pitch_STS3250_inertial">
+      <mass value="0.178551"/>
+      <inertia ixx="0.000060" iyy="0.000094" izz="0.000108" ixy="0" ixz="0.000002" iyz="0"/>
+      <origin xyz="0.016260 0.013316 -0.018027" rpy="0 0 0"/>
     </inertial>
   </link>
   <link name="Right_Foot">
