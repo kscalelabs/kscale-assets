@@ -24,7 +24,7 @@
   <joint name="imu" type="fixed">
     <origin xyz="0.044470 0.006575 -0.025518" rpy="1.570796 0 -1.570796"/>
     <parent link="Z_BOT2_MASTER_BODY_SKELETON"/>
-    <child link="IMU"/>
+    <child link="IMU_2"/>
   </joint>
   <joint name="left_shoulder_yaw" type="revolute">
     <origin xyz="0.055995 -0.010610 -0.009528" rpy="1.570796 0 -3.141593"/>
@@ -174,7 +174,7 @@
       <origin xyz="-0.000189 0.010193 -0.031201" rpy="0 0 0"/>
     </inertial>
   </link>
-  <link name="IMU">
+  <link name="IMU_2">
     <visual name="IMU_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="IMU_geometry">

@@ -53,7 +53,6 @@
 
   <worldbody>
     <body name="floating_base_link" pos="0.00000000 0.00000000 0.36596501" childclass="robot">
-      <freejoint name="floating_base" />
       <geom name="floating_base_link_visual" quat="0.7073882691671998 0.0 0.0 0.706825181105366" material="floating_base_link_material" type="sphere" size="0.01" class="visual" />
       <body name="Top_Brace" quat="0.7073882691671998 0.0 0.0 0.706825181105366">
         <inertial pos="0.000030 0.009550 -0.026636" mass="1.309559" diaginertia="0.00297 0.003538 0.002153" />

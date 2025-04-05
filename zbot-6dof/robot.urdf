@@ -1,5 +1,171 @@
 <?xml version="1.0" ?>
 <robot name="[urdf]_v3.1_top_level_assembly">
+  <link name="floating_base_link">
+    <visual name="floating_base_link_visual">
+      <geometry name="floating_base_link_geometry">
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name="floating_base_link_material">
+        <color rgba="1 0 0 1"/>
+      </material>
+      <origin xyz="0 0 0" rpy="0.00 0.00 1.57"/>
+    </visual>
+    <inertial name="floating_base_link_inertial">
+      <mass value="0.001"/>
+      <inertia ixx="0.000001" iyy="0.000001" izz="0.000002" ixy="0" ixz="0" iyz="0"/>
+      <origin xyz="0 0 0" rpy="0.00 0.00 1.57"/>
+    </inertial>
+  </link>
+  <joint name="floating_base_joint" type="fixed">
+    <parent link="floating_base_link"/>
+    <child link="Top_Brace"/>
+    <origin xyz="0 0 0" rpy="0.00 0.00 1.57"/>
+  </joint>
+  <joint name="frame_imu_site" type="fixed">
+    <origin xyz="-0.010000 0.008286 0.036035" rpy="-3.141593 0 0"/>
+    <parent link="Top_Brace"/>
+    <child link="imu"/>
+  </joint>
+  <joint name="left_shoulder_pitch" type="revolute">
+    <origin xyz="0.060300 0.000211 0.026100" rpy="-1.570796 0 1.570796"/>
+    <parent link="Top_Brace"/>
+    <child link="Left_1910_0025_0816_REV1"/>
+    <limit effort="2" velocity="2" lower="-1.570796" upper="3.141593"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="right_shoulder_pitch" type="revolute">
+    <origin xyz="-0.060300 0.000211 0.026100" rpy="1.570796 0 1.570796"/>
+    <parent link="Top_Brace"/>
+    <child link="Right_1910_0025_0816_REV1"/>
+    <limit effort="2" velocity="2" lower="-1.570796" upper="3.141593"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="right_hip_yaw" type="revolute">
+    <origin xyz="-0.043042 0.000211 -0.089300" rpy="0 0 0"/>
+    <parent link="Top_Brace"/>
+    <child link="Right_Upper_Hip_Bracket"/>
+    <limit effort="2" velocity="2" lower="-1.570796" upper="1.570796"/>
+    <axis xyz="0 0 -1.0"/>
+  </joint>
+  <joint name="left_hip_yaw" type="revolute">
+    <origin xyz="0.043042 0.000211 -0.089300" rpy="0 0 0"/>
+    <parent link="Top_Brace"/>
+    <child link="Left_Upper_Hip_Bracket"/>
+    <limit effort="2" velocity="2" lower="-1.570796" upper="1.570796"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="left_shoulder_roll" type="revolute">
+    <origin xyz="0.017892 0.004100 -0.032700" rpy="0 1.570796 0"/>
+    <parent link="Left_1910_0025_0816_REV1"/>
+    <child link="Left_Shoulder_Roll_STS3250"/>
+    <limit effort="2" velocity="2" lower="-0.401426" upper="2.617994"/>
+    <axis xyz="0 0 -1.0"/>
+  </joint>
+  <joint name="right_shoulder_roll" type="revolute">
+    <origin xyz="-0.017758 -0.004100 -0.032700" rpy="0 -1.570796 0"/>
+    <parent link="Right_1910_0025_0816_REV1"/>
+    <child link="Right_Shoulder_Roll_STS3250"/>
+    <limit effort="2" velocity="2" lower="-2.617994" upper="0.401426"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="right_hip_roll" type="revolute">
+    <origin xyz="-0.000087 0.019650 -0.026665" rpy="1.570796 0 0"/>
+    <parent link="Right_Upper_Hip_Bracket"/>
+    <child link="Right_Hip_Roll_STS3250"/>
+    <limit effort="2" velocity="2" lower="-0.610865" upper="0.610865"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="left_hip_roll" type="revolute">
+    <origin xyz="-0.000087 0.019650 -0.026665" rpy="1.570796 0 0"/>
+    <parent link="Left_Upper_Hip_Bracket"/>
+    <child link="Left_Hip_Roll_STS3250"/>
+    <limit effort="2" velocity="2" lower="-0.610865" upper="0.610865"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="left_elbow_roll" type="revolute">
+    <origin xyz="0 0.086212 -0.038650" rpy="0 0 0"/>
+    <parent link="Left_Shoulder_Roll_STS3250"/>
+    <child link="R_ARM_MIRROR_1"/>
+    <limit effort="2" velocity="2" lower="-0.872665" upper="1.570796"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="right_elbow_roll" type="revolute">
+    <origin xyz="0 -0.086212 0.001000" rpy="0 0 0"/>
+    <parent link="Right_Shoulder_Roll_STS3250"/>
+    <child link="L_ARM_MIRROR_1"/>
+    <limit effort="2" velocity="2" lower="-0.872665" upper="1.570796"/>
+    <axis xyz="0 0 -1"/>
+  </joint>
+  <joint name="right_hip_pitch" type="revolute">
+    <origin xyz="-0.019800 0 0.016150" rpy="0 1.570796 0"/>
+    <parent link="Right_Hip_Roll_STS3250"/>
+    <child link="Right_Upper_Leg"/>
+    <limit effort="2" velocity="2" lower="-1.570796" upper="0.872665"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="left_hip_pitch" type="revolute">
+    <origin xyz="-0.019800 0 0.016150" rpy="0 1.570796 0"/>
+    <parent link="Left_Hip_Roll_STS3250"/>
+    <child link="Left_Upper_Leg"/>
+    <limit effort="2" velocity="2" lower="-1.570796" upper="0.872665"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="right_knee_pitch" type="revolute">
+    <origin xyz="0 -0.100000 0.001260" rpy="3.141593 0 0"/>
+    <parent link="Right_Upper_Leg"/>
+    <child link="Right_Knee_Pitch_STS3250"/>
+    <limit effort="2" velocity="2" lower="-1.396263" upper="1.396263"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="left_knee_pitch" type="revolute">
+    <origin xyz="0 -0.100000 0.001260" rpy="3.141593 0 0"/>
+    <parent link="Left_Upper_Leg"/>
+    <child link="Left_Knee_Pitch_STS3250"/>
+    <limit effort="2" velocity="2" lower="-1.396263" upper="1.396263"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="left_gripper_roll" type="revolute">
+    <origin xyz="0.011815 0.066309 0.038340" rpy="-3.141593 0 -0.349066"/>
+    <parent link="R_ARM_MIRROR_1"/>
+    <child link="Left_Finger"/>
+    <limit effort="2" velocity="2" lower="-0.523599" upper="0.523599"/>
+    <axis xyz="0 0 -1.0"/>
+  </joint>
+  <joint name="right_gripper_roll" type="revolute">
+    <origin xyz="-0.011778 -0.066206 0.001260" rpy="-3.141593 0 -0.349066"/>
+    <parent link="L_ARM_MIRROR_1"/>
+    <child link="Right_Finger"/>
+    <limit effort="2" velocity="2" lower="-0.523599" upper="0.523599"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="right_ankle_pitch" type="revolute">
+    <origin xyz="0 0.100000 -0.036859" rpy="-3.141593 0 0"/>
+    <parent link="Right_Knee_Pitch_STS3250"/>
+    <child link="Right_Ankle_Pitch_STS3250"/>
+    <limit effort="2" velocity="2" lower="-0.698132" upper="1.396263"/>
+    <axis xyz="0 0 -1.0"/>
+  </joint>
+  <joint name="left_ankle_pitch" type="revolute">
+    <origin xyz="0 0.100000 -0.036040" rpy="-3.141593 0 0"/>
+    <parent link="Left_Knee_Pitch_STS3250"/>
+    <child link="Left_Ankle_Pitch_STS3250"/>
+    <limit effort="2" velocity="2" lower="-1.396263" upper="0.698132"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="right_ankle_roll" type="revolute">
+    <origin xyz="0.015150 0 -0.018800" rpy="-3.141593 -1.570796 0"/>
+    <parent link="Right_Ankle_Pitch_STS3250"/>
+    <child link="Right_Foot"/>
+    <limit effort="2" velocity="2" lower="-1.047198" upper="1.047198"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="left_ankle_roll" type="revolute">
+    <origin xyz="0.015150 0 -0.018800" rpy="-3.141593 -1.570796 0"/>
+    <parent link="Left_Ankle_Pitch_STS3250"/>
+    <child link="Left_Foot"/>
+    <limit effort="2" velocity="2" lower="-1.047198" upper="1.047198"/>
+    <axis xyz="0 0 1"/>
+  </joint>
   <link name="Top_Brace">
     <visual name="Top_Brace_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -7,593 +173,21 @@
         <mesh filename="meshes/Top_Brace.stl"/>
       </geometry>
       <material name="Top_Brace_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
+        <color rgba="0.615686 0.811765 0.929412 1"/>
       </material>
     </visual>
     <collision name="Top_Brace.collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="Top_Brace_collision_geometry">
-        <mesh filename="meshes/Top_Brace.stl"/>
+        <mesh filename="meshes/Top_Brace.collision.stl"/>
       </geometry>
     </collision>
     <inertial name="Top_Brace_inertial">
-      <mass value="0.03604658"/>
-      <inertia ixx="2.1946578e-05" iyy="2.8373349e-05" izz="2.3965955e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.309559"/>
+      <inertia ixx="0.002970" iyy="0.003538" izz="0.002153" ixy="-0.000006" ixz="-0.000003" iyz="0.000109"/>
+      <origin xyz="0.000030 0.009550 -0.026636" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="Fastened_3" type="fixed">
-    <origin xyz="0.015 -0.01478863 -0.019300301" rpy="3.1415927 0 0"/>
-    <parent link="Top_Brace"/>
-    <child link="Center_Frame"/>
-  </joint>
-  <link name="Center_Frame">
-    <visual name="Center_Frame_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Center_Frame_geometry">
-        <mesh filename="meshes/Center_Frame.stl"/>
-      </geometry>
-      <material name="Center_Frame_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Center_Frame.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Center_Frame_collision_geometry">
-        <mesh filename="meshes/Center_Frame.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Center_Frame_inertial">
-      <mass value="0.037737788"/>
-      <inertia ixx="3.5792466e-05" iyy="2.4441993e-05" izz="4.0905452e-05" ixy="0" ixz="0" iyz="-3.3128224e-06"/>
-      <origin xyz="-0.014972329 -0.01651632 0.015610292" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_4" type="fixed">
-    <origin xyz="0.0247 0.02251137 0.030459699" rpy="-1.5707963 0 1.5707963"/>
-    <parent link="Top_Brace"/>
-    <child link="Shoulder"/>
-  </joint>
-  <link name="Shoulder">
-    <visual name="Shoulder_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Shoulder_geometry">
-        <mesh filename="meshes/Shoulder.stl"/>
-      </geometry>
-      <material name="Shoulder_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Shoulder.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Shoulder_collision_geometry">
-        <mesh filename="meshes/Shoulder.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Shoulder_inertial">
-      <mass value="0.019240987"/>
-      <inertia ixx="6.4044087e-06" iyy="6.9357209e-06" izz="8.6513201e-06" ixy="0" ixz="0" iyz="1.5312034e-06"/>
-      <origin xyz="-0.0223 0.019286587 -0.016066967" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_5" type="fixed">
-    <origin xyz="-0.0247 0.02251137 0.030459699" rpy="1.5707963 0 1.5707963"/>
-    <parent link="Top_Brace"/>
-    <child link="Shoulder_2"/>
-  </joint>
-  <link name="Shoulder_2">
-    <visual name="Shoulder_visual_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Shoulder_geometry_2">
-        <mesh filename="meshes/Shoulder_2.stl"/>
-      </geometry>
-      <material name="Shoulder_material_2">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Shoulder.collision_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Shoulder_collision_geometry_2">
-        <mesh filename="meshes/Shoulder_2.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Shoulder_inertial_2">
-      <mass value="0.019240987"/>
-      <inertia ixx="6.4044087e-06" iyy="6.9357209e-06" izz="8.6513201e-06" ixy="0" ixz="0" iyz="-1.5312034e-06"/>
-      <origin xyz="-0.0223 -0.019286587 -0.016066967" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_6" type="fixed">
-    <origin xyz="0.0222 0.02251137 0.030459699" rpy="1.5707963 0 1.5707963"/>
-    <parent link="Top_Brace"/>
-    <child link="Top_Brace_2"/>
-  </joint>
-  <link name="Top_Brace_2">
-    <visual name="Top_Brace_visual_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Top_Brace_geometry_2">
-        <mesh filename="meshes/Top_Brace_2.stl"/>
-      </geometry>
-      <material name="Top_Brace_material_2">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Top_Brace.collision_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Top_Brace_collision_geometry_2">
-        <mesh filename="meshes/Top_Brace_2.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Top_Brace_inertial_2">
-      <mass value="0.032832307"/>
-      <inertia ixx="1.5210551e-05" iyy="2.0167558e-05" izz="2.0832975e-05" ixy="4.9365146e-06" ixz="0" iyz="0"/>
-      <origin xyz="-0.012512466 -0.0077764496 -0.022199519" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_21" type="fixed">
-    <origin xyz="-0.0224 -0.01958863 0.0016996986" rpy="-1.5707963 0 1.5707963"/>
-    <parent link="Top_Brace"/>
-    <child link="Part_32"/>
-  </joint>
-  <link name="Part_32">
-    <visual name="Part_32_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Part_32_geometry">
-        <mesh filename="meshes/Part_32.stl"/>
-      </geometry>
-      <material name="Part_32_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Part_32.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Part_32_collision_geometry">
-        <mesh filename="meshes/Part_32.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Part_32_inertial">
-      <mass value="0.0062146709"/>
-      <inertia ixx="1.6527225e-06" iyy="1.4860918e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.003687673 0.006 -0.0224" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_1" type="fixed">
-    <origin xyz="0.01365 -0.050452431 0.0322" rpy="0 0 0"/>
-    <parent link="Center_Frame"/>
-    <child link="Hip_Frame_Upper_Bracket"/>
-  </joint>
-  <link name="Hip_Frame_Upper_Bracket">
-    <visual name="Hip_Frame_Upper_Bracket_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Hip_Frame_Upper_Bracket_geometry">
-        <mesh filename="meshes/Hip_Frame_Upper_Bracket.stl"/>
-      </geometry>
-      <material name="Hip_Frame_Upper_Bracket_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Hip_Frame_Upper_Bracket.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Hip_Frame_Upper_Bracket_collision_geometry">
-        <mesh filename="meshes/Hip_Frame_Upper_Bracket.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Hip_Frame_Upper_Bracket_inertial">
-      <mass value="0.037363313"/>
-      <inertia ixx="2.8160414e-05" iyy="2.6931374e-05" izz="4.1763725e-05" ixy="0" ixz="0" iyz="-1.4441729e-06"/>
-      <origin xyz="-0.028645484 0.02567749 0.020790031" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_70" type="fixed">
-    <origin xyz="-0.015 0.008784541 0.03262674" rpy="-1.5707963 0 0"/>
-    <parent link="Center_Frame"/>
-    <child link="BATTERY"/>
-  </joint>
-  <link name="BATTERY">
-    <visual name="BATTERY_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="BATTERY_geometry">
-        <mesh filename="meshes/BATTERY.stl"/>
-      </geometry>
-      <material name="BATTERY_material">
-        <color rgba="0.49803922 0.49803922 0.49803922 1"/>
-      </material>
-    </visual>
-    <collision name="BATTERY.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="BATTERY_collision_geometry">
-        <mesh filename="meshes/BATTERY.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="BATTERY_inertial">
-      <mass value="0.36821164"/>
-      <inertia ixx="0.00024081562" iyy="0.00018826423" izz="0.00013112616" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 -0.035" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_19" type="fixed">
-    <origin xyz="-0.0061 0.0087499998 -0.01547514" rpy="-3.1415927 1.5707963 0"/>
-    <parent link="Shoulder"/>
-    <child link="Shoulder_Brace"/>
-  </joint>
-  <link name="Shoulder_Brace">
-    <visual name="Shoulder_Brace_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Shoulder_Brace_geometry">
-        <mesh filename="meshes/Shoulder_Brace.stl"/>
-      </geometry>
-      <material name="Shoulder_Brace_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Shoulder_Brace.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Shoulder_Brace_collision_geometry">
-        <mesh filename="meshes/Shoulder_Brace.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Shoulder_Brace_inertial">
-      <mass value="0.015191268"/>
-      <inertia ixx="4.8862475e-06" iyy="5.4151484e-06" izz="3.2786839e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.011082036 -0.00070994438 0.01631652" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_23" type="fixed">
-    <origin xyz="-0.01205 0.01266 -0.031800281" rpy="3.1415927 0 0"/>
-    <parent link="Shoulder"/>
-    <child link="Left_Shoulder_Pitch_STS3250_Drive"/>
-  </joint>
-  <link name="Left_Shoulder_Pitch_STS3250_Drive">
-    <visual name="Left_Shoulder_Pitch_STS3250_Drive_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Shoulder_Pitch_STS3250_Drive_geometry">
-        <mesh filename="meshes/Left_Shoulder_Pitch_STS3250_Drive.stl"/>
-      </geometry>
-      <material name="Left_Shoulder_Pitch_STS3250_Drive_material">
-        <color rgba="0.74901961 0.49803922 0.7254902 1"/>
-      </material>
-    </visual>
-    <collision name="Left_Shoulder_Pitch_STS3250_Drive.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Shoulder_Pitch_STS3250_Drive_collision_geometry">
-        <mesh filename="meshes/Left_Shoulder_Pitch_STS3250_Drive.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Left_Shoulder_Pitch_STS3250_Drive_inertial">
-      <mass value="0.075"/>
-      <inertia ixx="2.5530963e-05" iyy="1.4739651e-05" izz="2.1525302e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.010265065 -0.0049820017 -0.014333344" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_20" type="fixed">
-    <origin xyz="-0.0061 -0.0087499998 -0.01547514" rpy="0 -1.5707963 0"/>
-    <parent link="Shoulder_2"/>
-    <child link="Shoulder_Brace_2"/>
-  </joint>
-  <link name="Shoulder_Brace_2">
-    <visual name="Shoulder_Brace_visual_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Shoulder_Brace_geometry_2">
-        <mesh filename="meshes/Shoulder_Brace_2.stl"/>
-      </geometry>
-      <material name="Shoulder_Brace_material_2">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Shoulder_Brace.collision_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Shoulder_Brace_collision_geometry_2">
-        <mesh filename="meshes/Shoulder_Brace_2.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Shoulder_Brace_inertial_2">
-      <mass value="0.015191268"/>
-      <inertia ixx="4.8862475e-06" iyy="5.4151484e-06" izz="3.2786839e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.011082036 -0.00070994438 0.01631652" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_22" type="fixed">
-    <origin xyz="-0.01205 -0.01266 -0.031800281" rpy="3.1415927 0 0"/>
-    <parent link="Shoulder_2"/>
-    <child link="Right_Shoulder_Pitch_STS3250_Drive"/>
-  </joint>
-  <link name="Right_Shoulder_Pitch_STS3250_Drive">
-    <visual name="Right_Shoulder_Pitch_STS3250_Drive_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Shoulder_Pitch_STS3250_Drive_geometry">
-        <mesh filename="meshes/Right_Shoulder_Pitch_STS3250_Drive.stl"/>
-      </geometry>
-      <material name="Right_Shoulder_Pitch_STS3250_Drive_material">
-        <color rgba="0.74901961 0.49803922 0.7254902 1"/>
-      </material>
-    </visual>
-    <collision name="Right_Shoulder_Pitch_STS3250_Drive.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Shoulder_Pitch_STS3250_Drive_collision_geometry">
-        <mesh filename="meshes/Right_Shoulder_Pitch_STS3250_Drive.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Right_Shoulder_Pitch_STS3250_Drive_inertial">
-      <mass value="0.075"/>
-      <inertia ixx="2.553096e-05" iyy="1.473965e-05" izz="2.1525299e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.01026506 0.0049819999 -0.014333337" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_7" type="fixed">
-    <origin xyz="-0.043294 -0.012459719 -0.022216373" rpy="0 -1.5707963 0"/>
-    <parent link="Top_Brace_2"/>
-    <child link="CAMERA"/>
-  </joint>
-  <link name="CAMERA">
-    <visual name="CAMERA_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="CAMERA_geometry">
-        <mesh filename="meshes/CAMERA.stl"/>
-      </geometry>
-      <material name="CAMERA_material">
-        <color rgba="0.98039216 0.71372549 0.0039215686 1"/>
-      </material>
-    </visual>
-    <collision name="CAMERA.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="CAMERA_collision_geometry">
-        <mesh filename="meshes/CAMERA.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="CAMERA_inertial">
-      <mass value="0.0126862"/>
-      <inertia ixx="1.0036175e-06" iyy="1.000212e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0.00062756182 0.0053215497" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_9" type="fixed">
-    <origin xyz="-0.00035 -0.003925 -0.0082" rpy="-3.1415927 -1.5707963 0"/>
-    <parent link="Top_Brace_2"/>
-    <child link="BOARD"/>
-  </joint>
-  <link name="BOARD">
-    <visual name="BOARD_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="BOARD_geometry">
-        <mesh filename="meshes/BOARD.stl"/>
-      </geometry>
-      <material name="BOARD_material">
-        <color rgba="0 0.50196078 0 1"/>
-      </material>
-    </visual>
-    <collision name="BOARD.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="BOARD_collision_geometry">
-        <mesh filename="meshes/BOARD.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="BOARD_inertial">
-      <mass value="0.0040688644"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.014009037 0.01848661 -0.00079999967" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_10" type="fixed">
-    <origin xyz="0.00665 -0.003425 -0.0412" rpy="0 -1.5707963 0"/>
-    <parent link="Top_Brace_2"/>
-    <child link="PA_PILLAR_M2_5X5_6"/>
-  </joint>
-  <link name="PA_PILLAR_M2_5X5_6">
-    <visual name="PA_PILLAR_M2_5X5_6_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="PA_PILLAR_M2_5X5_6_geometry">
-        <mesh filename="meshes/PA_PILLAR_M2_5X5_6.stl"/>
-      </geometry>
-      <material name="PA_PILLAR_M2_5X5_6_material">
-        <color rgba="1 1 0.94901961 1"/>
-      </material>
-    </visual>
-    <collision name="PA_PILLAR_M2_5X5_6.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="PA_PILLAR_M2_5X5_6_collision_geometry">
-        <mesh filename="meshes/PA_PILLAR_M2_5X5_6.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="PA_PILLAR_M2_5X5_6_inertial">
-      <mass value="0.00091962373"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 -0.0011573192" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_11" type="fixed">
-    <origin xyz="0.00665 -0.003925 -0.0082" rpy="0 -1.5707963 0"/>
-    <parent link="Top_Brace_2"/>
-    <child link="PA_PILLAR_M2_5X5_6_2"/>
-  </joint>
-  <link name="PA_PILLAR_M2_5X5_6_2">
-    <visual name="PA_PILLAR_M2_5X5_6_visual_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="PA_PILLAR_M2_5X5_6_geometry_2">
-        <mesh filename="meshes/PA_PILLAR_M2_5X5_6_2.stl"/>
-      </geometry>
-      <material name="PA_PILLAR_M2_5X5_6_material_2">
-        <color rgba="1 1 0.94901961 1"/>
-      </material>
-    </visual>
-    <collision name="PA_PILLAR_M2_5X5_6.collision_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="PA_PILLAR_M2_5X5_6_collision_geometry_2">
-        <mesh filename="meshes/PA_PILLAR_M2_5X5_6_2.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="PA_PILLAR_M2_5X5_6_inertial_2">
-      <mass value="0.00091962373"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 -0.0011573192" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_12" type="fixed">
-    <origin xyz="0.00665 -0.003925 -0.0362" rpy="0 -1.5707963 0"/>
-    <parent link="Top_Brace_2"/>
-    <child link="PA_PILLAR_M2_5X5_6_3"/>
-  </joint>
-  <link name="PA_PILLAR_M2_5X5_6_3">
-    <visual name="PA_PILLAR_M2_5X5_6_visual_3">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="PA_PILLAR_M2_5X5_6_geometry_3">
-        <mesh filename="meshes/PA_PILLAR_M2_5X5_6_3.stl"/>
-      </geometry>
-      <material name="PA_PILLAR_M2_5X5_6_material_3">
-        <color rgba="1 1 0.94901961 1"/>
-      </material>
-    </visual>
-    <collision name="PA_PILLAR_M2_5X5_6.collision_3">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="PA_PILLAR_M2_5X5_6_collision_geometry_3">
-        <mesh filename="meshes/PA_PILLAR_M2_5X5_6_3.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="PA_PILLAR_M2_5X5_6_inertial_3">
-      <mass value="0.00091962373"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 -0.0011573192" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_13" type="fixed">
-    <origin xyz="0.00665 -0.040925 -0.0082" rpy="0 -1.5707963 0"/>
-    <parent link="Top_Brace_2"/>
-    <child link="PA_PILLAR_M2_5X5_6_4"/>
-  </joint>
-  <link name="PA_PILLAR_M2_5X5_6_4">
-    <visual name="PA_PILLAR_M2_5X5_6_visual_4">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="PA_PILLAR_M2_5X5_6_geometry_4">
-        <mesh filename="meshes/PA_PILLAR_M2_5X5_6_4.stl"/>
-      </geometry>
-      <material name="PA_PILLAR_M2_5X5_6_material_4">
-        <color rgba="1 1 0.94901961 1"/>
-      </material>
-    </visual>
-    <collision name="PA_PILLAR_M2_5X5_6.collision_4">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="PA_PILLAR_M2_5X5_6_collision_geometry_4">
-        <mesh filename="meshes/PA_PILLAR_M2_5X5_6_4.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="PA_PILLAR_M2_5X5_6_inertial_4">
-      <mass value="0.00091962373"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 -0.0011573192" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_14" type="fixed">
-    <origin xyz="0.00665 -0.041425 -0.0032" rpy="0 -1.5707963 0"/>
-    <parent link="Top_Brace_2"/>
-    <child link="PA_PILLAR_M2_5X5_6_5"/>
-  </joint>
-  <link name="PA_PILLAR_M2_5X5_6_5">
-    <visual name="PA_PILLAR_M2_5X5_6_visual_5">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="PA_PILLAR_M2_5X5_6_geometry_5">
-        <mesh filename="meshes/PA_PILLAR_M2_5X5_6_5.stl"/>
-      </geometry>
-      <material name="PA_PILLAR_M2_5X5_6_material_5">
-        <color rgba="1 1 0.94901961 1"/>
-      </material>
-    </visual>
-    <collision name="PA_PILLAR_M2_5X5_6.collision_5">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="PA_PILLAR_M2_5X5_6_collision_geometry_5">
-        <mesh filename="meshes/PA_PILLAR_M2_5X5_6_5.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="PA_PILLAR_M2_5X5_6_inertial_5">
-      <mass value="0.00091962373"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 -0.0011573192" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_15" type="fixed">
-    <origin xyz="0.00665 -0.040925 -0.0362" rpy="0 -1.5707963 0"/>
-    <parent link="Top_Brace_2"/>
-    <child link="PA_PILLAR_M2_5X5_6_6"/>
-  </joint>
-  <link name="PA_PILLAR_M2_5X5_6_6">
-    <visual name="PA_PILLAR_M2_5X5_6_visual_6">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="PA_PILLAR_M2_5X5_6_geometry_6">
-        <mesh filename="meshes/PA_PILLAR_M2_5X5_6_6.stl"/>
-      </geometry>
-      <material name="PA_PILLAR_M2_5X5_6_material_6">
-        <color rgba="1 1 0.94901961 1"/>
-      </material>
-    </visual>
-    <collision name="PA_PILLAR_M2_5X5_6.collision_6">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="PA_PILLAR_M2_5X5_6_collision_geometry_6">
-        <mesh filename="meshes/PA_PILLAR_M2_5X5_6_6.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="PA_PILLAR_M2_5X5_6_inertial_6">
-      <mass value="0.00091962373"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 -0.0011573192" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_16" type="fixed">
-    <origin xyz="0.00665 -0.003425 -0.0032" rpy="3.1415927 1.5707963 0"/>
-    <parent link="Top_Brace_2"/>
-    <child link="PA_PILLAR_M2_5X5_6_5_2"/>
-  </joint>
-  <link name="PA_PILLAR_M2_5X5_6_5_2">
-    <visual name="PA_PILLAR_M2_5X5_6_5_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="PA_PILLAR_M2_5X5_6_5_geometry">
-        <mesh filename="meshes/PA_PILLAR_M2_5X5_6_5_2.stl"/>
-      </geometry>
-      <material name="PA_PILLAR_M2_5X5_6_5_material">
-        <color rgba="1 1 0.94901961 1"/>
-      </material>
-    </visual>
-    <collision name="PA_PILLAR_M2_5X5_6_5.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="PA_PILLAR_M2_5X5_6_5_collision_geometry">
-        <mesh filename="meshes/PA_PILLAR_M2_5X5_6_5_2.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="PA_PILLAR_M2_5X5_6_5_inertial">
-      <mass value="0.00091962373"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 -0.0011573192" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_17" type="fixed">
-    <origin xyz="0.00665 -0.041425 -0.0412" rpy="0 -1.5707963 0"/>
-    <parent link="Top_Brace_2"/>
-    <child link="PA_PILLAR_M2_5X5_6_7"/>
-  </joint>
-  <link name="PA_PILLAR_M2_5X5_6_7">
-    <visual name="PA_PILLAR_M2_5X5_6_visual_7">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="PA_PILLAR_M2_5X5_6_geometry_7">
-        <mesh filename="meshes/PA_PILLAR_M2_5X5_6_7.stl"/>
-      </geometry>
-      <material name="PA_PILLAR_M2_5X5_6_material_7">
-        <color rgba="1 1 0.94901961 1"/>
-      </material>
-    </visual>
-    <collision name="PA_PILLAR_M2_5X5_6.collision_7">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="PA_PILLAR_M2_5X5_6_collision_geometry_7">
-        <mesh filename="meshes/PA_PILLAR_M2_5X5_6_7.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="PA_PILLAR_M2_5X5_6_inertial_7">
-      <mass value="0.00091962373"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 -0.0011573192" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="frame_imu_site" type="fixed">
-    <origin xyz="-0.014225 0.004575 -0.0322" rpy="-1.5707963 0 -3.1415927"/>
-    <parent link="Top_Brace_2"/>
-    <child link="imu"/>
-  </joint>
   <link name="imu">
     <visual name="imu_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -604,160 +198,12 @@
         <color rgba="0 1 0 1"/>
       </material>
     </visual>
-    <collision name="imu.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="imu_collision_geometry">
-        <mesh filename="meshes/imu.stl"/>
-      </geometry>
-    </collision>
     <inertial name="imu_inertial">
-      <mass value="0.0018870325"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.0075 -0.01 0.0012348264" rpy="0 0 0"/>
+      <mass value="0.001887"/>
+      <inertia ixx="0.000001" iyy="0.000001" izz="0.000001" ixy="0" ixz="0" iyz="0"/>
+      <origin xyz="0.007500 -0.010000 0.001235" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="Fastened_2" type="fixed">
-    <origin xyz="-0.011830315 0.049618 0.0338" rpy="3.1415927 0 0"/>
-    <parent link="Hip_Frame_Upper_Bracket"/>
-    <child link="Hip_Frame_Lower_Bracket"/>
-  </joint>
-  <link name="Hip_Frame_Lower_Bracket">
-    <visual name="Hip_Frame_Lower_Bracket_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Hip_Frame_Lower_Bracket_geometry">
-        <mesh filename="meshes/Hip_Frame_Lower_Bracket.stl"/>
-      </geometry>
-      <material name="Hip_Frame_Lower_Bracket_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Hip_Frame_Lower_Bracket.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Hip_Frame_Lower_Bracket_collision_geometry">
-        <mesh filename="meshes/Hip_Frame_Lower_Bracket.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Hip_Frame_Lower_Bracket_inertial">
-      <mass value="0.026632471"/>
-      <inertia ixx="6.9921521e-06" iyy="1.973278e-05" izz="2.6696325e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.016819685 0.030981994 -0.0012689401" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_42" type="fixed">
-    <origin xyz="-0.087473057 0.0049798707 0.002" rpy="3.1415927 0 0"/>
-    <parent link="Hip_Frame_Upper_Bracket"/>
-    <child link="Right_Hip_Yaw_STS3250"/>
-  </joint>
-  <link name="Right_Hip_Yaw_STS3250">
-    <visual name="Right_Hip_Yaw_STS3250_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Hip_Yaw_STS3250_geometry">
-        <mesh filename="meshes/Right_Hip_Yaw_STS3250.stl"/>
-      </geometry>
-      <material name="Right_Hip_Yaw_STS3250_material">
-        <color rgba="1 0 0 1"/>
-      </material>
-    </visual>
-    <collision name="Right_Hip_Yaw_STS3250.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Hip_Yaw_STS3250_collision_geometry">
-        <mesh filename="meshes/Right_Hip_Yaw_STS3250.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Right_Hip_Yaw_STS3250_inertial">
-      <mass value="0.075"/>
-      <inertia ixx="2.6230744e-05" iyy="1.6009346e-05" izz="2.0937046e-05" ixy="1.8962745e-06" ixz="0" iyz="0"/>
-      <origin xyz="0.013726533 -0.018741891 -0.017655792" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_43" type="fixed">
-    <origin xyz="0.030173057 0.0049798707 0.002" rpy="3.1415927 0 0"/>
-    <parent link="Hip_Frame_Upper_Bracket"/>
-    <child link="Left_Hip_Yaw_STS3250"/>
-  </joint>
-  <link name="Left_Hip_Yaw_STS3250">
-    <visual name="Left_Hip_Yaw_STS3250_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Hip_Yaw_STS3250_geometry">
-        <mesh filename="meshes/Left_Hip_Yaw_STS3250.stl"/>
-      </geometry>
-      <material name="Left_Hip_Yaw_STS3250_material">
-        <color rgba="1 0 0 1"/>
-      </material>
-    </visual>
-    <collision name="Left_Hip_Yaw_STS3250.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Hip_Yaw_STS3250_collision_geometry">
-        <mesh filename="meshes/Left_Hip_Yaw_STS3250.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Left_Hip_Yaw_STS3250_inertial">
-      <mass value="0.075"/>
-      <inertia ixx="2.6253969e-05" iyy="1.5986121e-05" izz="2.0937046e-05" ixy="-1.8324635e-06" ixz="0" iyz="0"/>
-      <origin xyz="-0.013699941 -0.01874658 -0.017655792" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_25" type="fixed">
-    <origin xyz="0.02322486 0.0043899998 0.0162" rpy="3.1415927 1.5707963 0"/>
-    <parent link="Shoulder_Brace"/>
-    <child link="1611_0514_0008"/>
-  </joint>
-  <link name="1611_0514_0008">
-    <visual name="1611_0514_0008_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="1611_0514_0008_geometry">
-        <mesh filename="meshes/1611_0514_0008.stl"/>
-      </geometry>
-      <material name="1611_0514_0008_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="1611_0514_0008.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="1611_0514_0008_collision_geometry">
-        <mesh filename="meshes/1611_0514_0008.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="1611_0514_0008_inertial">
-      <mass value="0.001287228"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 0.0014117357" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_27" type="fixed">
-    <origin xyz="0.02322486 -0.02061 0.0172" rpy="0 1.5707963 0"/>
-    <parent link="Shoulder_Brace"/>
-    <child link="TORSO_COVER_FRONT"/>
-  </joint>
-  <link name="TORSO_COVER_FRONT">
-    <visual name="TORSO_COVER_FRONT_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="TORSO_COVER_FRONT_geometry">
-        <mesh filename="meshes/TORSO_COVER_FRONT.stl"/>
-      </geometry>
-      <material name="TORSO_COVER_FRONT_material">
-        <color rgba="0.97254902 0.52941176 0.0039215686 1"/>
-      </material>
-    </visual>
-    <collision name="TORSO_COVER_FRONT.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="TORSO_COVER_FRONT_collision_geometry">
-        <mesh filename="meshes/TORSO_COVER_FRONT.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="TORSO_COVER_FRONT_inertial">
-      <mass value="0.13924976"/>
-      <inertia ixx="0.00040235582" iyy="0.00020165283" izz="0.00023673578" ixy="-2.3319648e-06" ixz="0" iyz="0"/>
-      <origin xyz="-0.024302588 -0.0077571707 -0.063708729" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="left_shoulder_pitch" type="revolute">
-    <origin xyz="-0.01025 0.0083 0.0027997194" rpy="3.1415927 0 0"/>
-    <parent link="Left_Shoulder_Pitch_STS3250_Drive"/>
-    <child link="Left_1910_0025_0816_REV1"/>
-    <limit effort="2" velocity="2" lower="-1.5707963" upper="3.1415927"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Left_1910_0025_0816_REV1">
     <visual name="Left_1910_0025_0816_REV1_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -765,55 +211,15 @@
         <mesh filename="meshes/Left_1910_0025_0816_REV1.stl"/>
       </geometry>
       <material name="Left_1910_0025_0816_REV1_material">
-        <color rgba="0.64705882 0.64705882 0.64705882 1"/>
+        <color rgba="0.647059 0.647059 0.647059 1"/>
       </material>
     </visual>
-    <collision name="Left_1910_0025_0816_REV1.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_1910_0025_0816_REV1_collision_geometry">
-        <mesh filename="meshes/Left_1910_0025_0816_REV1.stl"/>
-      </geometry>
-    </collision>
     <inertial name="Left_1910_0025_0816_REV1_inertial">
-      <mass value="0.009548551"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1.1468076e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 -0.0083874189" rpy="0 0 0"/>
+      <mass value="0.019227"/>
+      <inertia ixx="0.000003" iyy="0.000005" izz="0.000004" ixy="0" ixz="0" iyz="0"/>
+      <origin xyz="0.000038 0.000969 -0.014200" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="Fastened_24" type="fixed">
-    <origin xyz="-0.02322486 0.0043899998 0.0162" rpy="0 1.5707963 0"/>
-    <parent link="Shoulder_Brace_2"/>
-    <child link="1611_0514_0008_2"/>
-  </joint>
-  <link name="1611_0514_0008_2">
-    <visual name="1611_0514_0008_visual_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="1611_0514_0008_geometry_2">
-        <mesh filename="meshes/1611_0514_0008_2.stl"/>
-      </geometry>
-      <material name="1611_0514_0008_material_2">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="1611_0514_0008.collision_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="1611_0514_0008_collision_geometry_2">
-        <mesh filename="meshes/1611_0514_0008_2.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="1611_0514_0008_inertial_2">
-      <mass value="0.001287228"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 0.0014117357" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="right_shoulder_pitch" type="revolute">
-    <origin xyz="-0.01025 -0.0083 0.0027997194" rpy="3.1415927 0 0"/>
-    <parent link="Right_Shoulder_Pitch_STS3250_Drive"/>
-    <child link="Right_1910_0025_0816_REV1"/>
-    <limit effort="2" velocity="2" lower="-1.5707963" upper="3.1415927"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Right_1910_0025_0816_REV1">
     <visual name="Right_1910_0025_0816_REV1_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -821,55 +227,15 @@
         <mesh filename="meshes/Right_1910_0025_0816_REV1.stl"/>
       </geometry>
       <material name="Right_1910_0025_0816_REV1_material">
-        <color rgba="0.64705882 0.64705882 0.64705882 1"/>
+        <color rgba="0.647059 0.647059 0.647059 1"/>
       </material>
     </visual>
-    <collision name="Right_1910_0025_0816_REV1.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_1910_0025_0816_REV1_collision_geometry">
-        <mesh filename="meshes/Right_1910_0025_0816_REV1.stl"/>
-      </geometry>
-    </collision>
     <inertial name="Right_1910_0025_0816_REV1_inertial">
-      <mass value="0.009548551"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1.1468076e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 -0.0083874189" rpy="0 0 0"/>
+      <mass value="0.019227"/>
+      <inertia ixx="0.000003" iyy="0.000005" izz="0.000004" ixy="0" ixz="0" iyz="0"/>
+      <origin xyz="0.000038 -0.000969 -0.014200" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="Fastened_18" type="fixed">
-    <origin xyz="0 0 -0.005" rpy="0 0 0"/>
-    <parent link="PA_PILLAR_M2_5X5_6"/>
-    <child link="MILK_DUOS_BOARD"/>
-  </joint>
-  <link name="MILK_DUOS_BOARD">
-    <visual name="MILK_DUOS_BOARD_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="MILK_DUOS_BOARD_geometry">
-        <mesh filename="meshes/MILK_DUOS_BOARD.stl"/>
-      </geometry>
-      <material name="MILK_DUOS_BOARD_material">
-        <color rgba="0.49803922 0.49803922 0.49803922 1"/>
-      </material>
-    </visual>
-    <collision name="MILK_DUOS_BOARD.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="MILK_DUOS_BOARD_collision_geometry">
-        <mesh filename="meshes/MILK_DUOS_BOARD.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="MILK_DUOS_BOARD_inertial">
-      <mass value="0.040880232"/>
-      <inertia ixx="1.042062e-05" iyy="9.9499578e-06" izz="1.6221665e-05" ixy="0" ixz="0" iyz="1.048037e-06"/>
-      <origin xyz="0.022481146 -0.020155532 -0.010367567" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="right_hip_yaw" type="revolute">
-    <origin xyz="0.015781257 -0.03047256 -0.034799719" rpy="0 0 0"/>
-    <parent link="Right_Hip_Yaw_STS3250"/>
-    <child link="Right_Upper_Hip_Bracket"/>
-    <limit effort="2" velocity="2" lower="-1.5707963" upper="1.5707963"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Right_Upper_Hip_Bracket">
     <visual name="Right_Upper_Hip_Bracket_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -877,28 +243,15 @@
         <mesh filename="meshes/Right_Upper_Hip_Bracket.stl"/>
       </geometry>
       <material name="Right_Upper_Hip_Bracket_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
+        <color rgba="0.615686 0.811765 0.929412 1"/>
       </material>
     </visual>
-    <collision name="Right_Upper_Hip_Bracket.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Upper_Hip_Bracket_collision_geometry">
-        <mesh filename="meshes/Right_Upper_Hip_Bracket.stl"/>
-      </geometry>
-    </collision>
     <inertial name="Right_Upper_Hip_Bracket_inertial">
-      <mass value="0.011705545"/>
-      <inertia ixx="3.913182e-06" iyy="3.5299871e-06" izz="1.2244756e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 -0.010912143 0.018499859" rpy="0 0 0"/>
+      <mass value="0.022071"/>
+      <inertia ixx="0.000015" iyy="0.000012" izz="0.000006" ixy="0" ixz="0" iyz="0.000002"/>
+      <origin xyz="-0.000042 -0.006054 0.003361" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="left_hip_yaw" type="revolute">
-    <origin xyz="-0.015781257 -0.03047256 -0.034799719" rpy="0 0 0"/>
-    <parent link="Left_Hip_Yaw_STS3250"/>
-    <child link="Left_Upper_Hip_Bracket"/>
-    <limit effort="2" velocity="2" lower="-1.5707963" upper="1.5707963"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Left_Upper_Hip_Bracket">
     <visual name="Left_Upper_Hip_Bracket_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -906,163 +259,15 @@
         <mesh filename="meshes/Left_Upper_Hip_Bracket.stl"/>
       </geometry>
       <material name="Left_Upper_Hip_Bracket_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
+        <color rgba="0.615686 0.811765 0.929412 1"/>
       </material>
     </visual>
-    <collision name="Left_Upper_Hip_Bracket.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Upper_Hip_Bracket_collision_geometry">
-        <mesh filename="meshes/Left_Upper_Hip_Bracket.stl"/>
-      </geometry>
-    </collision>
     <inertial name="Left_Upper_Hip_Bracket_inertial">
-      <mass value="0.011334835"/>
-      <inertia ixx="3.7187372e-06" iyy="3.3811282e-06" izz="1.1721011e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 -0.011269028 0.018499859" rpy="0 0 0"/>
+      <mass value="0.034227"/>
+      <inertia ixx="0.000023" iyy="0.000019" izz="0.000007" ixy="0" ixz="0" iyz="0"/>
+      <origin xyz="-0.000059 -0.010510 -0.007889" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="Fastened_26" type="fixed">
-    <origin xyz="0.001 0.042935 -0.033821886" rpy="-3.1415927 -1.5707963 0"/>
-    <parent link="TORSO_COVER_FRONT"/>
-    <child link="TORSO_COVER_BACK"/>
-  </joint>
-  <link name="TORSO_COVER_BACK">
-    <visual name="TORSO_COVER_BACK_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="TORSO_COVER_BACK_geometry">
-        <mesh filename="meshes/TORSO_COVER_BACK.stl"/>
-      </geometry>
-      <material name="TORSO_COVER_BACK_material">
-        <color rgba="0.37254902 0.65490196 0.23921569 1"/>
-      </material>
-    </visual>
-    <collision name="TORSO_COVER_BACK.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="TORSO_COVER_BACK_collision_geometry">
-        <mesh filename="meshes/TORSO_COVER_BACK.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="TORSO_COVER_BACK_inertial">
-      <mass value="0.18883898"/>
-      <inertia ixx="0.00044447186" iyy="0.00034125641" izz="0.00066140575" ixy="0" ixz="-1.0643792e-06" iyz="1.1480332e-05"/>
-      <origin xyz="-0.029908967 0.055802872 0.037314161" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_27_2" type="fixed">
-    <origin xyz="0 -0.011313708 -0.0121" rpy="0 0 0"/>
-    <parent link="Left_1910_0025_0816_REV1"/>
-    <child link="SHOULDER"/>
-  </joint>
-  <link name="SHOULDER">
-    <visual name="SHOULDER_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="SHOULDER_geometry">
-        <mesh filename="meshes/SHOULDER.stl"/>
-      </geometry>
-      <material name="SHOULDER_material">
-        <color rgba="0.97254902 0.52941176 0.0039215686 1"/>
-      </material>
-    </visual>
-    <collision name="SHOULDER.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="SHOULDER_collision_geometry">
-        <mesh filename="meshes/SHOULDER.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="SHOULDER_inertial">
-      <mass value="0.0096783033"/>
-      <inertia ixx="1.2612905e-06" iyy="3.4325568e-06" izz="3.2963052e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="7.4753894e-05 0.013238994 -0.0078353083" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_26_2" type="fixed">
-    <origin xyz="0 0.011313708 -0.0121" rpy="0 0 0"/>
-    <parent link="Right_1910_0025_0816_REV1"/>
-    <child link="Part_9"/>
-  </joint>
-  <link name="Part_9">
-    <visual name="Part_9_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Part_9_geometry">
-        <mesh filename="meshes/Part_9.stl"/>
-      </geometry>
-      <material name="Part_9_material">
-        <color rgba="0.97254902 0.52941176 0.0039215686 1"/>
-      </material>
-    </visual>
-    <collision name="Part_9.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Part_9_collision_geometry">
-        <mesh filename="meshes/Part_9.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Part_9_inertial">
-      <mass value="0.0096783033"/>
-      <inertia ixx="1.2612905e-06" iyy="3.4325568e-06" izz="3.2963052e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="7.4753894e-05 -0.013238994 -0.0078353083" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_45" type="fixed">
-    <origin xyz="0 0 -0.00259" rpy="0 0 0"/>
-    <parent link="Right_Upper_Hip_Bracket"/>
-    <child link="Right_Lower_Hip_Bracket"/>
-  </joint>
-  <link name="Right_Lower_Hip_Bracket">
-    <visual name="Right_Lower_Hip_Bracket_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Lower_Hip_Bracket_geometry">
-        <mesh filename="meshes/Right_Lower_Hip_Bracket.stl"/>
-      </geometry>
-      <material name="Right_Lower_Hip_Bracket_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Right_Lower_Hip_Bracket.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Lower_Hip_Bracket_collision_geometry">
-        <mesh filename="meshes/Right_Lower_Hip_Bracket.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Right_Lower_Hip_Bracket_inertial">
-      <mass value="0.010035789"/>
-      <inertia ixx="3.4808138e-06" iyy="1.5034069e-06" izz="2.8071232e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-9.036025e-05 0 -0.010722034" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_44" type="fixed">
-    <origin xyz="0 0 -0.00259" rpy="0 0 0"/>
-    <parent link="Left_Upper_Hip_Bracket"/>
-    <child link="Left_Lower_Hip_Bracket"/>
-  </joint>
-  <link name="Left_Lower_Hip_Bracket">
-    <visual name="Left_Lower_Hip_Bracket_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Lower_Hip_Bracket_geometry">
-        <mesh filename="meshes/Left_Lower_Hip_Bracket.stl"/>
-      </geometry>
-      <material name="Left_Lower_Hip_Bracket_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Left_Lower_Hip_Bracket.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Lower_Hip_Bracket_collision_geometry">
-        <mesh filename="meshes/Left_Lower_Hip_Bracket.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Left_Lower_Hip_Bracket_inertial">
-      <mass value="0.009892658"/>
-      <inertia ixx="3.4657314e-06" iyy="1.4883233e-06" izz="2.8045009e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-9.1667618e-05 0 -0.010862696" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="left_shoulder_roll" type="revolute">
-    <origin xyz="0.018892013 0.015413428 -0.0206" rpy="0 1.5707963 0"/>
-    <parent link="SHOULDER"/>
-    <child link="Left_Shoulder_Roll_STS3250"/>
-    <limit effort="2" velocity="2" lower="-2.6179939" upper="0.40142573"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Left_Shoulder_Roll_STS3250">
     <visual name="Left_Shoulder_Roll_STS3250_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -1070,28 +275,21 @@
         <mesh filename="meshes/Left_Shoulder_Roll_STS3250.stl"/>
       </geometry>
       <material name="Left_Shoulder_Roll_STS3250_material">
-        <color rgba="0.28627451 0.28627451 0.28627451 1"/>
+        <color rgba="0.286275 0.286275 0.286275 1"/>
       </material>
     </visual>
     <collision name="Left_Shoulder_Roll_STS3250.collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="Left_Shoulder_Roll_STS3250_collision_geometry">
-        <mesh filename="meshes/Left_Shoulder_Roll_STS3250.stl"/>
+        <mesh filename="meshes/Left_Shoulder_Roll_STS3250.collision.stl"/>
       </geometry>
     </collision>
     <inertial name="Left_Shoulder_Roll_STS3250_inertial">
-      <mass value="0.075"/>
-      <inertia ixx="1.9665758e-05" iyy="1.042856e-05" izz="1.6617051e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0.012815802 -0.019087576" rpy="0 0 0"/>
+      <mass value="0.142460"/>
+      <inertia ixx="0.000156" iyy="0.000023" izz="0.000149" ixy="0" ixz="0" iyz="0"/>
+      <origin xyz="0.000229 0.038854 -0.019074" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="right_shoulder_roll" type="revolute">
-    <origin xyz="-0.018757987 -0.015413428 -0.0206" rpy="0 -1.5707963 0"/>
-    <parent link="Part_9"/>
-    <child link="Right_Shoulder_Roll_STS3250"/>
-    <limit effort="2" velocity="2" lower="-2.6179939" upper="0.40142573"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Right_Shoulder_Roll_STS3250">
     <visual name="Right_Shoulder_Roll_STS3250_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -1099,28 +297,21 @@
         <mesh filename="meshes/Right_Shoulder_Roll_STS3250.stl"/>
       </geometry>
       <material name="Right_Shoulder_Roll_STS3250_material">
-        <color rgba="0.28627451 0.28627451 0.28627451 1"/>
+        <color rgba="0.286275 0.286275 0.286275 1"/>
       </material>
     </visual>
     <collision name="Right_Shoulder_Roll_STS3250.collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="Right_Shoulder_Roll_STS3250_collision_geometry">
-        <mesh filename="meshes/Right_Shoulder_Roll_STS3250.stl"/>
+        <mesh filename="meshes/Right_Shoulder_Roll_STS3250.collision.stl"/>
       </geometry>
     </collision>
     <inertial name="Right_Shoulder_Roll_STS3250_inertial">
-      <mass value="0.075"/>
-      <inertia ixx="1.9665755e-05" iyy="1.0428558e-05" izz="1.6617036e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 -0.012815785 -0.018562425" rpy="0 0 0"/>
+      <mass value="0.142460"/>
+      <inertia ixx="0.000156" iyy="0.000023" izz="0.000149" ixy="0" ixz="0" iyz="0"/>
+      <origin xyz="-0.000229 -0.038854 -0.018576" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="right_hip_roll" type="revolute">
-    <origin xyz="-8.682e-05 0.01865 -0.024075" rpy="1.5707963 0 0"/>
-    <parent link="Right_Lower_Hip_Bracket"/>
-    <child link="Right_Hip_Roll_STS3250"/>
-    <limit effort="2" velocity="2" lower="-0.61086524" upper="0.61086524"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Right_Hip_Roll_STS3250">
     <visual name="Right_Hip_Roll_STS3250_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -1134,49 +325,15 @@
     <collision name="Right_Hip_Roll_STS3250.collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="Right_Hip_Roll_STS3250_collision_geometry">
-        <mesh filename="meshes/Right_Hip_Roll_STS3250.stl"/>
+        <mesh filename="meshes/Right_Hip_Roll_STS3250.collision.stl"/>
       </geometry>
     </collision>
     <inertial name="Right_Hip_Roll_STS3250_inertial">
-      <mass value="0.075"/>
-      <inertia ixx="2.6571066e-05" iyy="1.5668956e-05" izz="2.0937042e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="1.3503701e-05 -0.01190911 -0.017143972" rpy="0 0 0"/>
+      <mass value="0.178551"/>
+      <inertia ixx="0.000108" iyy="0.000094" izz="0.000060" ixy="0" ixz="0.000002" iyz="0"/>
+      <origin xyz="-0.000772 -0.013316 -0.000110" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="Fastened_54" type="fixed">
-    <origin xyz="-8.682e-05 -0.01865 -0.024075" rpy="-1.5707963 0 0"/>
-    <parent link="Right_Lower_Hip_Bracket"/>
-    <child link="Part_1"/>
-  </joint>
-  <link name="Part_1">
-    <visual name="Part_1_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Part_1_geometry">
-        <mesh filename="meshes/Part_1.stl"/>
-      </geometry>
-      <material name="Part_1_material">
-        <color rgba="0.79607843 0.82352941 0.9372549 1"/>
-      </material>
-    </visual>
-    <collision name="Part_1.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Part_1_collision_geometry">
-        <mesh filename="meshes/Part_1.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Part_1_inertial">
-      <mass value="0.00032916753"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 0.00080497238" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="left_hip_roll" type="revolute">
-    <origin xyz="-8.682e-05 0.01865 -0.024075" rpy="1.5707963 0 0"/>
-    <parent link="Left_Lower_Hip_Bracket"/>
-    <child link="Left_Hip_Roll_STS3250"/>
-    <limit effort="2" velocity="2" lower="-0.61086524" upper="0.61086524"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Left_Hip_Roll_STS3250">
     <visual name="Left_Hip_Roll_STS3250_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -1190,319 +347,15 @@
     <collision name="Left_Hip_Roll_STS3250.collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="Left_Hip_Roll_STS3250_collision_geometry">
-        <mesh filename="meshes/Left_Hip_Roll_STS3250.stl"/>
+        <mesh filename="meshes/Left_Hip_Roll_STS3250.collision.stl"/>
       </geometry>
     </collision>
     <inertial name="Left_Hip_Roll_STS3250_inertial">
-      <mass value="0.075"/>
-      <inertia ixx="2.6571066e-05" iyy="1.5668956e-05" izz="2.0937042e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="1.3503701e-05 -0.01190911 -0.017143972" rpy="0 0 0"/>
+      <mass value="0.178551"/>
+      <inertia ixx="0.000108" iyy="0.000094" izz="0.000060" ixy="0" ixz="0.000002" iyz="0"/>
+      <origin xyz="-0.000772 -0.013316 -0.000110" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="Fastened_55" type="fixed">
-    <origin xyz="-8.682e-05 -0.01865 -0.024075" rpy="-1.5707963 0 0"/>
-    <parent link="Left_Lower_Hip_Bracket"/>
-    <child link="CAMERA_2"/>
-  </joint>
-  <link name="CAMERA_2">
-    <visual name="CAMERA_visual_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="CAMERA_geometry_2">
-        <mesh filename="meshes/CAMERA_2.stl"/>
-      </geometry>
-      <material name="CAMERA_material_2">
-        <color rgba="0.79607843 0.82352941 0.9372549 1"/>
-      </material>
-    </visual>
-    <collision name="CAMERA.collision_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="CAMERA_collision_geometry_2">
-        <mesh filename="meshes/CAMERA_2.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="CAMERA_inertial_2">
-      <mass value="0.013"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 0.00080497238" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_29" type="fixed">
-    <origin xyz="0.01025 0.0083 -0.034599991" rpy="0 0 0"/>
-    <parent link="Left_Shoulder_Roll_STS3250"/>
-    <child link="BICEP"/>
-  </joint>
-  <link name="BICEP">
-    <visual name="BICEP_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="BICEP_geometry">
-        <mesh filename="meshes/BICEP.stl"/>
-      </geometry>
-      <material name="BICEP_material">
-        <color rgba="0.97254902 0.52941176 0.0039215686 1"/>
-      </material>
-    </visual>
-    <collision name="BICEP.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="BICEP_collision_geometry">
-        <mesh filename="meshes/BICEP.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="BICEP_inertial">
-      <mass value="0.012460488"/>
-      <inertia ixx="5.6143717e-06" iyy="4.369739e-06" izz="3.653657e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.007627029 0.03480622 0.015671561" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_28" type="fixed">
-    <origin xyz="-0.01025 -0.0083 -0.0030500087" rpy="3.1415927 0 0"/>
-    <parent link="Right_Shoulder_Roll_STS3250"/>
-    <child link="Part_10"/>
-  </joint>
-  <link name="Part_10">
-    <visual name="Part_10_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Part_10_geometry">
-        <mesh filename="meshes/Part_10.stl"/>
-      </geometry>
-      <material name="Part_10_material">
-        <color rgba="0.97254902 0.52941176 0.0039215686 1"/>
-      </material>
-    </visual>
-    <collision name="Part_10.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Part_10_collision_geometry">
-        <mesh filename="meshes/Part_10.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Part_10_inertial">
-      <mass value="0.012460488"/>
-      <inertia ixx="5.6143717e-06" iyy="4.369739e-06" izz="3.653657e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.007627029 0.03480622 0.015671561" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_46" type="fixed">
-    <origin xyz="-0.01025 -0.03275 -0.034799719" rpy="0 0 0"/>
-    <parent link="Right_Hip_Roll_STS3250"/>
-    <child link="Servo_Bracket"/>
-  </joint>
-  <link name="Servo_Bracket">
-    <visual name="Servo_Bracket_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Bracket_geometry">
-        <mesh filename="meshes/Servo_Bracket.stl"/>
-      </geometry>
-      <material name="Servo_Bracket_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Servo_Bracket.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Bracket_collision_geometry">
-        <mesh filename="meshes/Servo_Bracket.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Servo_Bracket_inertial">
-      <mass value="0.0047906775"/>
-      <inertia ixx="1.0592736e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.0036015568 0.012666346 0.017575757" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_47" type="fixed">
-    <origin xyz="0.01025 -0.03275 -0.034799719" rpy="0 0 0"/>
-    <parent link="Right_Hip_Roll_STS3250"/>
-    <child link="Servo_Bracket_2"/>
-  </joint>
-  <link name="Servo_Bracket_2">
-    <visual name="Servo_Bracket_visual_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Bracket_geometry_2">
-        <mesh filename="meshes/Servo_Bracket_2.stl"/>
-      </geometry>
-      <material name="Servo_Bracket_material_2">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Servo_Bracket.collision_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Bracket_collision_geometry_2">
-        <mesh filename="meshes/Servo_Bracket_2.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Servo_Bracket_inertial_2">
-      <mass value="0.0047906775"/>
-      <inertia ixx="1.0592736e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.0036015568 0.011783654 0.017575757" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_48" type="fixed">
-    <origin xyz="-0.01025 -0.03275 -0.034799719" rpy="0 0 0"/>
-    <parent link="Left_Hip_Roll_STS3250"/>
-    <child link="Servo_Bracket_3"/>
-  </joint>
-  <link name="Servo_Bracket_3">
-    <visual name="Servo_Bracket_visual_3">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Bracket_geometry_3">
-        <mesh filename="meshes/Servo_Bracket_3.stl"/>
-      </geometry>
-      <material name="Servo_Bracket_material_3">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Servo_Bracket.collision_3">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Bracket_collision_geometry_3">
-        <mesh filename="meshes/Servo_Bracket_3.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Servo_Bracket_inertial_3">
-      <mass value="0.0047906775"/>
-      <inertia ixx="1.0592736e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.0036015568 0.012666346 0.017575757" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_49" type="fixed">
-    <origin xyz="0.01025 -0.03275 -0.034799719" rpy="0 0 0"/>
-    <parent link="Left_Hip_Roll_STS3250"/>
-    <child link="Servo_Bracket_4"/>
-  </joint>
-  <link name="Servo_Bracket_4">
-    <visual name="Servo_Bracket_visual_4">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Bracket_geometry_4">
-        <mesh filename="meshes/Servo_Bracket_4.stl"/>
-      </geometry>
-      <material name="Servo_Bracket_material_4">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Servo_Bracket.collision_4">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Bracket_collision_geometry_4">
-        <mesh filename="meshes/Servo_Bracket_4.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Servo_Bracket_inertial_4">
-      <mass value="0.0047906775"/>
-      <inertia ixx="1.0592736e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.0036015568 0.011783654 0.017575757" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_30" type="fixed">
-    <origin xyz="0 0.045162439 0.032" rpy="0 0 0"/>
-    <parent link="BICEP"/>
-    <child link="Left_Elbow_Roll_STS3215"/>
-  </joint>
-  <link name="Left_Elbow_Roll_STS3215">
-    <visual name="Left_Elbow_Roll_STS3215_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Elbow_Roll_STS3215_geometry">
-        <mesh filename="meshes/Left_Elbow_Roll_STS3215.stl"/>
-      </geometry>
-      <material name="Left_Elbow_Roll_STS3215_material">
-        <color rgba="0.28627451 0.28627451 0.28627451 1"/>
-      </material>
-    </visual>
-    <collision name="Left_Elbow_Roll_STS3215.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Elbow_Roll_STS3215_collision_geometry">
-        <mesh filename="meshes/Left_Elbow_Roll_STS3215.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Left_Elbow_Roll_STS3215_inertial">
-      <mass value="0.055"/>
-      <inertia ixx="1.4421554e-05" iyy="7.647609e-06" izz="1.2185826e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.01024998 0.019934215 -0.016487584" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_31" type="fixed">
-    <origin xyz="0 0.045162439 0.032" rpy="0 0 0"/>
-    <parent link="Part_10"/>
-    <child link="Right_Elbow_Roll_STS3215"/>
-  </joint>
-  <link name="Right_Elbow_Roll_STS3215">
-    <visual name="Right_Elbow_Roll_STS3215_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Elbow_Roll_STS3215_geometry">
-        <mesh filename="meshes/Right_Elbow_Roll_STS3215.stl"/>
-      </geometry>
-      <material name="Right_Elbow_Roll_STS3215_material">
-        <color rgba="0.28627451 0.28627451 0.28627451 1"/>
-      </material>
-    </visual>
-    <collision name="Right_Elbow_Roll_STS3215.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Elbow_Roll_STS3215_collision_geometry">
-        <mesh filename="meshes/Right_Elbow_Roll_STS3215.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Right_Elbow_Roll_STS3215_inertial">
-      <mass value="0.055"/>
-      <inertia ixx="1.4421556e-05" iyy="7.647611e-06" izz="1.2185837e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.010249997 0.019934198 -0.016487584" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_51" type="fixed">
-    <origin xyz="0.00605 0.012225 0.016" rpy="-3.1415927 1.5707963 0"/>
-    <parent link="Servo_Bracket_2"/>
-    <child link="Servo_Coupler"/>
-  </joint>
-  <link name="Servo_Coupler">
-    <visual name="Servo_Coupler_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Coupler_geometry">
-        <mesh filename="meshes/Servo_Coupler.stl"/>
-      </geometry>
-      <material name="Servo_Coupler_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Servo_Coupler.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Coupler_collision_geometry">
-        <mesh filename="meshes/Servo_Coupler.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Servo_Coupler_inertial">
-      <mass value="0.018969708"/>
-      <inertia ixx="6.4078918e-06" iyy="1.1996123e-05" izz="9.8773133e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.030337391 0.0002734612 0.017077687" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_50" type="fixed">
-    <origin xyz="0.00605 0.012225 0.016" rpy="-3.1415927 1.5707963 0"/>
-    <parent link="Servo_Bracket_4"/>
-    <child link="Servo_Coupler_2"/>
-  </joint>
-  <link name="Servo_Coupler_2">
-    <visual name="Servo_Coupler_visual_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Coupler_geometry_2">
-        <mesh filename="meshes/Servo_Coupler_2.stl"/>
-      </geometry>
-      <material name="Servo_Coupler_material_2">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Servo_Coupler.collision_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Coupler_collision_geometry_2">
-        <mesh filename="meshes/Servo_Coupler_2.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Servo_Coupler_inertial_2">
-      <mass value="0.018969708"/>
-      <inertia ixx="6.4078918e-06" iyy="1.1996123e-05" izz="9.8773133e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.030337391 0.0002734612 0.017077687" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="left_elbow_roll" type="revolute">
-    <origin xyz="-0.01025 0.03275 -0.035050009" rpy="0 0 0"/>
-    <parent link="Left_Elbow_Roll_STS3215"/>
-    <child link="R_ARM_MIRROR_1"/>
-    <limit effort="2" velocity="2" lower="-0.87266463" upper="1.5707963"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="R_ARM_MIRROR_1">
     <visual name="R_ARM_MIRROR_1_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -1510,28 +363,21 @@
         <mesh filename="meshes/R_ARM_MIRROR_1.stl"/>
       </geometry>
       <material name="R_ARM_MIRROR_1_material">
-        <color rgba="0.64705882 0.64705882 0.64705882 1"/>
+        <color rgba="0.647059 0.647059 0.647059 1"/>
       </material>
     </visual>
     <collision name="R_ARM_MIRROR_1.collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="R_ARM_MIRROR_1_collision_geometry">
-        <mesh filename="meshes/R_ARM_MIRROR_1.stl"/>
+        <mesh filename="meshes/R_ARM_MIRROR_1.collision.stl"/>
       </geometry>
     </collision>
     <inertial name="R_ARM_MIRROR_1_inertial">
-      <mass value="0.05561017"/>
-      <inertia ixx="5.9640821e-05" iyy="8.5401367e-06" izz="6.3725785e-05" ixy="8.7717684e-06" ixz="1.1555781e-06" iyz="-3.5863475e-06"/>
-      <origin xyz="-0.0039380844 0.050118576 0.0045054273" rpy="0 0 0"/>
+      <mass value="0.184048"/>
+      <inertia ixx="0.000206" iyy="0.000060" izz="0.000193" ixy="0.000018" ixz="0" iyz="0"/>
+      <origin xyz="-0.000534 0.054008 0.018540" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="right_elbow_roll" type="revolute">
-    <origin xyz="0.01025 0.03275 -0.035050009" rpy="3.1415927 0 0"/>
-    <parent link="Right_Elbow_Roll_STS3215"/>
-    <child link="L_ARM_MIRROR_1"/>
-    <limit effort="2" velocity="2" lower="-0.87266463" upper="1.5707963"/>
-    <axis xyz="0 0 -1"/>
-  </joint>
   <link name="L_ARM_MIRROR_1">
     <visual name="L_ARM_MIRROR_1_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -1539,136 +385,21 @@
         <mesh filename="meshes/L_ARM_MIRROR_1.stl"/>
       </geometry>
       <material name="L_ARM_MIRROR_1_material">
-        <color rgba="0.62745098 0.62745098 0.62745098 1"/>
+        <color rgba="0.627451 0.627451 0.627451 1"/>
       </material>
     </visual>
     <collision name="L_ARM_MIRROR_1.collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="L_ARM_MIRROR_1_collision_geometry">
-        <mesh filename="meshes/L_ARM_MIRROR_1.stl"/>
+        <mesh filename="meshes/L_ARM_MIRROR_1.collision.stl"/>
       </geometry>
     </collision>
     <inertial name="L_ARM_MIRROR_1_inertial">
-      <mass value="0.055610385"/>
-      <inertia ixx="5.9641339e-05" iyy="8.5401454e-06" izz="6.3726306e-05" ixy="8.7718187e-06" ixz="1.1555819e-06" iyz="-3.5863918e-06"/>
-      <origin xyz="0.003938101 -0.05011876 -0.0045054435" rpy="0 0 0"/>
+      <mass value="0.184048"/>
+      <inertia ixx="0.000206" iyy="0.000060" izz="0.000193" ixy="0.000018" ixz="0.000002" iyz="0"/>
+      <origin xyz="0.000560 -0.053930 -0.017547" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="Fastened_52" type="fixed">
-    <origin xyz="-0.045199719 -0.012225 0.0323" rpy="0 0 0"/>
-    <parent link="Servo_Coupler"/>
-    <child link="Right_Hip_Pitch_STS3250"/>
-  </joint>
-  <link name="Right_Hip_Pitch_STS3250">
-    <visual name="Right_Hip_Pitch_STS3250_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Hip_Pitch_STS3250_geometry">
-        <mesh filename="meshes/Right_Hip_Pitch_STS3250.stl"/>
-      </geometry>
-      <material name="Right_Hip_Pitch_STS3250_material">
-        <color rgba="1 0 0 1"/>
-      </material>
-    </visual>
-    <collision name="Right_Hip_Pitch_STS3250.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Hip_Pitch_STS3250_collision_geometry">
-        <mesh filename="meshes/Right_Hip_Pitch_STS3250.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Right_Hip_Pitch_STS3250_inertial">
-      <mass value="0.075"/>
-      <inertia ixx="2.6571066e-05" iyy="1.5668957e-05" izz="2.0937042e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.010236496 0.0036091097 -0.014344253" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_53" type="fixed">
-    <origin xyz="-0.045199719 -0.012225 0.0003" rpy="3.1415927 0 0"/>
-    <parent link="Servo_Coupler_2"/>
-    <child link="Left_Hip_Pitch_STS3250"/>
-  </joint>
-  <link name="Left_Hip_Pitch_STS3250">
-    <visual name="Left_Hip_Pitch_STS3250_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Hip_Pitch_STS3250_geometry">
-        <mesh filename="meshes/Left_Hip_Pitch_STS3250.stl"/>
-      </geometry>
-      <material name="Left_Hip_Pitch_STS3250_material">
-        <color rgba="1 0 0 1"/>
-      </material>
-    </visual>
-    <collision name="Left_Hip_Pitch_STS3250.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Hip_Pitch_STS3250_collision_geometry">
-        <mesh filename="meshes/Left_Hip_Pitch_STS3250.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Left_Hip_Pitch_STS3250_inertial">
-      <mass value="0.075"/>
-      <inertia ixx="2.6571066e-05" iyy="1.5668957e-05" izz="2.0937042e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.010236496 -0.0036091097 -0.017655747" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_35" type="fixed">
-    <origin xyz="0.0060336632 0.024665437 0" rpy="0 0 0"/>
-    <parent link="R_ARM_MIRROR_1"/>
-    <child link="SPACER_1"/>
-  </joint>
-  <link name="SPACER_1">
-    <visual name="SPACER_1_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="SPACER_1_geometry">
-        <mesh filename="meshes/SPACER_1.stl"/>
-      </geometry>
-      <material name="SPACER_1_material">
-        <color rgba="1 1 0 1"/>
-      </material>
-    </visual>
-    <collision name="SPACER_1.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="SPACER_1_collision_geometry">
-        <mesh filename="meshes/SPACER_1.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="SPACER_1_inertial">
-      <mass value="0.011494701"/>
-      <inertia ixx="4.6938329e-06" iyy="3.4221524e-06" izz="2.6618846e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.0041236704 0.0064283107 0.018564613" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_33" type="fixed">
-    <origin xyz="0.0058621536 -0.028877966 0" rpy="0 0 0"/>
-    <parent link="L_ARM_MIRROR_1"/>
-    <child link="SPACER"/>
-  </joint>
-  <link name="SPACER">
-    <visual name="SPACER_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="SPACER_geometry">
-        <mesh filename="meshes/SPACER.stl"/>
-      </geometry>
-      <material name="SPACER_material">
-        <color rgba="1 1 0 1"/>
-      </material>
-    </visual>
-    <collision name="SPACER.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="SPACER_collision_geometry">
-        <mesh filename="meshes/SPACER.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="SPACER_inertial">
-      <mass value="0.011494701"/>
-      <inertia ixx="4.6938329e-06" iyy="3.4221524e-06" izz="2.6618846e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.0077349326 -0.0021121321 -0.018515387" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="right_hip_pitch" type="revolute">
-    <origin xyz="0.01025 -0.0083 0.0027997194" rpy="3.1415927 0 0"/>
-    <parent link="Right_Hip_Pitch_STS3250"/>
-    <child link="Right_Upper_Leg"/>
-    <limit effort="2" velocity="2" lower="-1.5707963" upper="0.87266463"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Right_Upper_Leg">
     <visual name="Right_Upper_Leg_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -1676,28 +407,15 @@
         <mesh filename="meshes/Right_Upper_Leg.stl"/>
       </geometry>
       <material name="Right_Upper_Leg_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
+        <color rgba="0.615686 0.811765 0.929412 1"/>
       </material>
     </visual>
-    <collision name="Right_Upper_Leg.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Upper_Leg_collision_geometry">
-        <mesh filename="meshes/Right_Upper_Leg.stl"/>
-      </geometry>
-    </collision>
     <inertial name="Right_Upper_Leg_inertial">
-      <mass value="0.030705174"/>
-      <inertia ixx="3.7939213e-05" iyy="1.3062171e-05" izz="2.9291346e-05" ixy="-1.9232798e-06" ixz="0" iyz="0"/>
-      <origin xyz="-0.0040035774 -0.054562176 0.018602" rpy="0 0 0"/>
+      <mass value="0.030705"/>
+      <inertia ixx="0.000038" iyy="0.000013" izz="0.000029" ixy="-0.000002" ixz="0" iyz="0"/>
+      <origin xyz="-0.004004 -0.054562 0.018602" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="left_hip_pitch" type="revolute">
-    <origin xyz="0.01025 0.0083 -0.034799719" rpy="0 0 0"/>
-    <parent link="Left_Hip_Pitch_STS3250"/>
-    <child link="Left_Upper_Leg"/>
-    <limit effort="2" velocity="2" lower="-1.5707963" upper="0.87266463"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Left_Upper_Leg">
     <visual name="Left_Upper_Leg_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -1705,136 +423,15 @@
         <mesh filename="meshes/Left_Upper_Leg.stl"/>
       </geometry>
       <material name="Left_Upper_Leg_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
+        <color rgba="0.615686 0.811765 0.929412 1"/>
       </material>
     </visual>
-    <collision name="Left_Upper_Leg.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Upper_Leg_collision_geometry">
-        <mesh filename="meshes/Left_Upper_Leg.stl"/>
-      </geometry>
-    </collision>
     <inertial name="Left_Upper_Leg_inertial">
-      <mass value="0.030705174"/>
-      <inertia ixx="3.7939213e-05" iyy="1.3062171e-05" izz="2.9291346e-05" ixy="-1.9232798e-06" ixz="0" iyz="0"/>
-      <origin xyz="-0.0040035774 -0.054562176 0.018602" rpy="0 0 0"/>
+      <mass value="0.030705"/>
+      <inertia ixx="0.000038" iyy="0.000013" izz="0.000029" ixy="-0.000002" ixz="0" iyz="0"/>
+      <origin xyz="-0.004004 -0.054562 0.018602" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="Fastened_32" type="fixed">
-    <origin xyz="0.0054950215 0.010887169 0.03454" rpy="3.1415927 0 0"/>
-    <parent link="SPACER_1"/>
-    <child link="Left_Gripper_ST3215"/>
-  </joint>
-  <link name="Left_Gripper_ST3215">
-    <visual name="Left_Gripper_ST3215_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Gripper_ST3215_geometry">
-        <mesh filename="meshes/Left_Gripper_ST3215.stl"/>
-      </geometry>
-      <material name="Left_Gripper_ST3215_material">
-        <color rgba="1 0 0 1"/>
-      </material>
-    </visual>
-    <collision name="Left_Gripper_ST3215.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Gripper_ST3215_collision_geometry">
-        <mesh filename="meshes/Left_Gripper_ST3215.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Left_Gripper_ST3215_inertial">
-      <mass value="0.055"/>
-      <inertia ixx="1.8534219e-05" iyy="1.2441797e-05" izz="1.5353831e-05" ixy="2.5885802e-06" ixz="0" iyz="0"/>
-      <origin xyz="-0.0037737318 -0.019561271 0.014344253" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_39" type="fixed">
-    <origin xyz="0 0 0.03708" rpy="0 0 0"/>
-    <parent link="SPACER_1"/>
-    <child link="R_ARM_1"/>
-  </joint>
-  <link name="R_ARM_1">
-    <visual name="R_ARM_1_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="R_ARM_1_geometry">
-        <mesh filename="meshes/R_ARM_1.stl"/>
-      </geometry>
-      <material name="R_ARM_1_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="R_ARM_1.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="R_ARM_1_collision_geometry">
-        <mesh filename="meshes/R_ARM_1.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="R_ARM_1_inertial">
-      <mass value="0.051022274"/>
-      <inertia ixx="5.9307749e-05" iyy="7.8840136e-06" izz="6.3015609e-05" ixy="8.6450101e-06" ixz="0" iyz="3.5083537e-06"/>
-      <origin xyz="-0.01074376 0.025719783 -0.0049789005" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_34" type="fixed">
-    <origin xyz="-0.011858603 0.0043161785 -0.03708" rpy="0 0 0"/>
-    <parent link="SPACER"/>
-    <child link="L_ARM_1"/>
-  </joint>
-  <link name="L_ARM_1">
-    <visual name="L_ARM_1_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="L_ARM_1_geometry">
-        <mesh filename="meshes/L_ARM_1.stl"/>
-      </geometry>
-      <material name="L_ARM_1_material">
-        <color rgba="0.62745098 0.62745098 0.62745098 1"/>
-      </material>
-    </visual>
-    <collision name="L_ARM_1.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="L_ARM_1_collision_geometry">
-        <mesh filename="meshes/L_ARM_1.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="L_ARM_1_inertial">
-      <mass value="0.051022488"/>
-      <inertia ixx="5.9308259e-05" iyy="7.8840201e-06" izz="6.3016122e-05" ixy="8.6450521e-06" ixz="0" iyz="3.5083903e-06"/>
-      <origin xyz="0.010743775 -0.025719982 0.0049789161" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_38" type="fixed">
-    <origin xyz="-0.016071049 -0.0030471427 -0.03454" rpy="0 0 0"/>
-    <parent link="SPACER"/>
-    <child link="Right_Gripper_STS3215"/>
-  </joint>
-  <link name="Right_Gripper_STS3215">
-    <visual name="Right_Gripper_STS3215_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Gripper_STS3215_geometry">
-        <mesh filename="meshes/Right_Gripper_STS3215.stl"/>
-      </geometry>
-      <material name="Right_Gripper_STS3215_material">
-        <color rgba="1 0 0 1"/>
-      </material>
-    </visual>
-    <collision name="Right_Gripper_STS3215.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Gripper_STS3215_collision_geometry">
-        <mesh filename="meshes/Right_Gripper_STS3215.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Right_Gripper_STS3215_inertial">
-      <mass value="0.055"/>
-      <inertia ixx="1.8534219e-05" iyy="1.2441797e-05" izz="1.5353831e-05" ixy="-2.5885802e-06" ixz="0" iyz="0"/>
-      <origin xyz="0.0024911562 -0.023085119 0.017655747" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="right_knee_pitch" type="revolute">
-    <origin xyz="0 -0.1 0.00026" rpy="3.1415927 0 0"/>
-    <parent link="Right_Upper_Leg"/>
-    <child link="Right_Knee_Pitch_STS3250"/>
-    <limit effort="2" velocity="2" lower="-1.3962634" upper="1.3962634"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Right_Knee_Pitch_STS3250">
     <visual name="Right_Knee_Pitch_STS3250_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -1848,22 +445,15 @@
     <collision name="Right_Knee_Pitch_STS3250.collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="Right_Knee_Pitch_STS3250_collision_geometry">
-        <mesh filename="meshes/Right_Knee_Pitch_STS3250.stl"/>
+        <mesh filename="meshes/Right_Knee_Pitch_STS3250.collision.stl"/>
       </geometry>
     </collision>
     <inertial name="Right_Knee_Pitch_STS3250_inertial">
-      <mass value="0.075"/>
-      <inertia ixx="2.6571066e-05" iyy="1.5668957e-05" izz="2.0937042e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-1.3503332e-05 0.01190911 -0.017143972" rpy="0 0 0"/>
+      <mass value="0.114286"/>
+      <inertia ixx="0.000107" iyy="0.000032" izz="0.000093" ixy="0.000002" ixz="0" iyz="0.000002"/>
+      <origin xyz="-0.001019 0.026262 -0.017776" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="left_knee_pitch" type="revolute">
-    <origin xyz="0 -0.1 0.00026" rpy="3.1415927 0 0"/>
-    <parent link="Left_Upper_Leg"/>
-    <child link="Left_Knee_Pitch_STS3250"/>
-    <limit effort="2" velocity="2" lower="-1.3962634" upper="1.3962634"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Left_Knee_Pitch_STS3250">
     <visual name="Left_Knee_Pitch_STS3250_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -1877,22 +467,15 @@
     <collision name="Left_Knee_Pitch_STS3250.collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="Left_Knee_Pitch_STS3250_collision_geometry">
-        <mesh filename="meshes/Left_Knee_Pitch_STS3250.stl"/>
+        <mesh filename="meshes/Left_Knee_Pitch_STS3250.collision.stl"/>
       </geometry>
     </collision>
     <inertial name="Left_Knee_Pitch_STS3250_inertial">
-      <mass value="0.075"/>
-      <inertia ixx="2.6571066e-05" iyy="1.5668957e-05" izz="2.0937042e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-1.3503332e-05 0.01190911 -0.017143972" rpy="0 0 0"/>
+      <mass value="0.114286"/>
+      <inertia ixx="0.000107" iyy="0.000032" izz="0.000093" ixy="0.000002" ixz="0" iyz="0.000001"/>
+      <origin xyz="-0.001019 0.026262 -0.017568" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="left_gripper_roll" type="revolute">
-    <origin xyz="0.00028673479 -0.030756792 -0.0027997194" rpy="0 0 0.34906585"/>
-    <parent link="Left_Gripper_ST3215"/>
-    <child link="Left_Finger"/>
-    <limit effort="2" velocity="2" lower="-0.52359878" upper="0.52359878"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Left_Finger">
     <visual name="Left_Finger_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -1900,82 +483,21 @@
         <mesh filename="meshes/Left_Finger.stl"/>
       </geometry>
       <material name="Left_Finger_material">
-        <color rgba="0.62745098 0.62745098 0.62745098 1"/>
+        <color rgba="0.627451 0.627451 0.627451 1"/>
       </material>
     </visual>
     <collision name="Left_Finger.collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="Left_Finger_collision_geometry">
-        <mesh filename="meshes/Left_Finger.stl"/>
+        <mesh filename="meshes/Left_Finger.collision.stl"/>
       </geometry>
     </collision>
     <inertial name="Left_Finger_inertial">
-      <mass value="0.033444431"/>
-      <inertia ixx="1.7805682e-05" iyy="8.8911722e-06" izz="1.2055321e-05" ixy="2.5632864e-06" ixz="0" iyz="0"/>
-      <origin xyz="0.010616617 -0.024438044 0.018799326" rpy="0 0 0"/>
+      <mass value="0.044365"/>
+      <inertia ixx="0.000023" iyy="0.000010" izz="0.000016" ixy="0.000002" ixz="0" iyz="0"/>
+      <origin xyz="0.010671 -0.028980 0.018799" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="Fastened_36" type="fixed">
-    <origin xyz="-0.01690055 0.091834563 -0.0088" rpy="-1.5707963 0 1.4835299"/>
-    <parent link="R_ARM_1"/>
-    <child link="HAND_PAD"/>
-  </joint>
-  <link name="HAND_PAD">
-    <visual name="HAND_PAD_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="HAND_PAD_geometry">
-        <mesh filename="meshes/HAND_PAD.stl"/>
-      </geometry>
-      <material name="HAND_PAD_material">
-        <color rgba="0.49803922 0.49803922 0.49803922 1"/>
-      </material>
-    </visual>
-    <collision name="HAND_PAD.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="HAND_PAD_collision_geometry">
-        <mesh filename="meshes/HAND_PAD.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="HAND_PAD_inertial">
-      <mass value="0.010920595"/>
-      <inertia ixx="1.302566e-06" iyy="1.4492322e-06" izz="2.6413801e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.0069314274 0.010000291 -0.0034792257" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_37" type="fixed">
-    <origin xyz="0.01821288 -0.076834563 0.0088" rpy="1.5707963 0 1.4835299"/>
-    <parent link="L_ARM_1"/>
-    <child link="HAND_PAD_1"/>
-  </joint>
-  <link name="HAND_PAD_1">
-    <visual name="HAND_PAD_1_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="HAND_PAD_1_geometry">
-        <mesh filename="meshes/HAND_PAD_1.stl"/>
-      </geometry>
-      <material name="HAND_PAD_1_material">
-        <color rgba="0.49803922 0.49803922 0.49803922 1"/>
-      </material>
-    </visual>
-    <collision name="HAND_PAD_1.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="HAND_PAD_1_collision_geometry">
-        <mesh filename="meshes/HAND_PAD_1.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="HAND_PAD_1_inertial">
-      <mass value="0.010920595"/>
-      <inertia ixx="1.302566e-06" iyy="1.4492322e-06" izz="2.6413801e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.0080254882 0.0099997092 -0.0034792257" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="right_gripper_roll" type="revolute">
-    <origin xyz="-0.0015693103 -0.03428064 0.034799719" rpy="3.1415927 0 -0.34906585"/>
-    <parent link="Right_Gripper_STS3215"/>
-    <child link="Right_Finger"/>
-    <limit effort="2" velocity="2" lower="-0.52359878" upper="0.52359878"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Right_Finger">
     <visual name="Right_Finger_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -1983,190 +505,21 @@
         <mesh filename="meshes/Right_Finger.stl"/>
       </geometry>
       <material name="Right_Finger_material">
-        <color rgba="0.62745098 0.62745098 0.62745098 1"/>
+        <color rgba="0.627451 0.627451 0.627451 1"/>
       </material>
     </visual>
     <collision name="Right_Finger.collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="Right_Finger_collision_geometry">
-        <mesh filename="meshes/Right_Finger.stl"/>
+        <mesh filename="meshes/Right_Finger.collision.stl"/>
       </geometry>
     </collision>
     <inertial name="Right_Finger_inertial">
-      <mass value="0.033444431"/>
-      <inertia ixx="1.7805682e-05" iyy="8.8911722e-06" izz="1.2055321e-05" ixy="2.5632864e-06" ixz="0" iyz="0"/>
-      <origin xyz="-0.010616617 0.024438044 0.018799326" rpy="0 0 0"/>
+      <mass value="0.044365"/>
+      <inertia ixx="0.000023" iyy="0.000010" izz="0.000016" ixy="0.000002" ixz="0" iyz="0"/>
+      <origin xyz="-0.010671 0.028980 0.018799" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="Fastened_56" type="fixed">
-    <origin xyz="-0.01025 0.0083 -0.0027997194" rpy="3.1415927 0 0"/>
-    <parent link="Right_Knee_Pitch_STS3250"/>
-    <child link="Spacer"/>
-  </joint>
-  <link name="Spacer">
-    <visual name="Spacer_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Spacer_geometry">
-        <mesh filename="meshes/Spacer.stl"/>
-      </geometry>
-      <material name="Spacer_material">
-        <color rgba="1 1 0.52941176 1"/>
-      </material>
-    </visual>
-    <collision name="Spacer.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Spacer_collision_geometry">
-        <mesh filename="meshes/Spacer.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Spacer_inertial">
-      <mass value="0.0102832"/>
-      <inertia ixx="3.5757529e-06" iyy="2.9323117e-06" izz="2.1700767e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.012315196 -0.025933484 0.015543692" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_57" type="fixed">
-    <origin xyz="-0.01025 0.0083 -0.0027997194" rpy="3.1415927 0 0"/>
-    <parent link="Left_Knee_Pitch_STS3250"/>
-    <child link="Spacer_2"/>
-  </joint>
-  <link name="Spacer_2">
-    <visual name="Spacer_visual_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Spacer_geometry_2">
-        <mesh filename="meshes/Spacer_2.stl"/>
-      </geometry>
-      <material name="Spacer_material_2">
-        <color rgba="1 1 0.52941176 1"/>
-      </material>
-    </visual>
-    <collision name="Spacer.collision_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Spacer_collision_geometry_2">
-        <mesh filename="meshes/Spacer_2.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Spacer_inertial_2">
-      <mass value="0.0102832"/>
-      <inertia ixx="3.5757529e-06" iyy="2.9323117e-06" izz="2.1700767e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.012315196 -0.025933484 0.015543692" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_41" type="fixed">
-    <origin xyz="0.015002431 -0.035198813 0.0088" rpy="1.5707963 0 1.4835299"/>
-    <parent link="Left_Finger"/>
-    <child link="HAND_PAD_3"/>
-  </joint>
-  <link name="HAND_PAD_3">
-    <visual name="HAND_PAD_3_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="HAND_PAD_3_geometry">
-        <mesh filename="meshes/HAND_PAD_3.stl"/>
-      </geometry>
-      <material name="HAND_PAD_3_material">
-        <color rgba="0.49803922 0.49803922 0.49803922 1"/>
-      </material>
-    </visual>
-    <collision name="HAND_PAD_3.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="HAND_PAD_3_collision_geometry">
-        <mesh filename="meshes/HAND_PAD_3.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="HAND_PAD_3_inertial">
-      <mass value="0.010920595"/>
-      <inertia ixx="1.302566e-06" iyy="1.4492322e-06" izz="2.6413801e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.0080254882 0.0099997092 -0.0034792257" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_40" type="fixed">
-    <origin xyz="-0.015002431 0.035198813 0.0088" rpy="-1.5707963 0 1.4835299"/>
-    <parent link="Right_Finger"/>
-    <child link="HAND_PAD_2"/>
-  </joint>
-  <link name="HAND_PAD_2">
-    <visual name="HAND_PAD_2_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="HAND_PAD_2_geometry">
-        <mesh filename="meshes/HAND_PAD_2.stl"/>
-      </geometry>
-      <material name="HAND_PAD_2_material">
-        <color rgba="0.49803922 0.49803922 0.49803922 1"/>
-      </material>
-    </visual>
-    <collision name="HAND_PAD_2.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="HAND_PAD_2_collision_geometry">
-        <mesh filename="meshes/HAND_PAD_2.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="HAND_PAD_2_inertial">
-      <mass value="0.010920595"/>
-      <inertia ixx="1.302566e-06" iyy="1.4492322e-06" izz="2.6413801e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.0080254882 -0.0099997092 -0.0034792257" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_58" type="fixed">
-    <origin xyz="0.01906 -0.02931 -0.00254" rpy="0 0 0"/>
-    <parent link="Spacer"/>
-    <child link="Lower_Leg"/>
-  </joint>
-  <link name="Lower_Leg">
-    <visual name="Lower_Leg_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Lower_Leg_geometry">
-        <mesh filename="meshes/Lower_Leg.stl"/>
-      </geometry>
-      <material name="Lower_Leg_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Lower_Leg.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Lower_Leg_collision_geometry">
-        <mesh filename="meshes/Lower_Leg.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Lower_Leg_inertial">
-      <mass value="0.029002672"/>
-      <inertia ixx="2.648205e-05" iyy="1.267985e-05" izz="1.9238236e-05" ixy="2.4861641e-06" ixz="0" iyz="0"/>
-      <origin xyz="-0.01352458 -0.022941123 0.01894979" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_59" type="fixed">
-    <origin xyz="0.01906 -0.02931 0.03454" rpy="3.1415927 0 0"/>
-    <parent link="Spacer_2"/>
-    <child link="Lower_Leg_2"/>
-  </joint>
-  <link name="Lower_Leg_2">
-    <visual name="Lower_Leg_visual_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Lower_Leg_geometry_2">
-        <mesh filename="meshes/Lower_Leg_2.stl"/>
-      </geometry>
-      <material name="Lower_Leg_material_2">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Lower_Leg.collision_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Lower_Leg_collision_geometry_2">
-        <mesh filename="meshes/Lower_Leg_2.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Lower_Leg_inertial_2">
-      <mass value="0.029002672"/>
-      <inertia ixx="2.648205e-05" iyy="1.267985e-05" izz="1.9238236e-05" ixy="-2.4861641e-06" ixz="0" iyz="0"/>
-      <origin xyz="-0.01352458 0.022941123 0.01894979" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="right_ankle_pitch" type="revolute">
-    <origin xyz="-0.0088099998 -0.06239 0.037599579" rpy="0 0 0"/>
-    <parent link="Lower_Leg"/>
-    <child link="Right_Ankle_Pitch_STS3250"/>
-    <limit effort="2" velocity="2" lower="-1.3962634" upper="0.6981317"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Right_Ankle_Pitch_STS3250">
     <visual name="Right_Ankle_Pitch_STS3250_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -2177,25 +530,12 @@
         <color rgba="1 0 0 1"/>
       </material>
     </visual>
-    <collision name="Right_Ankle_Pitch_STS3250.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Ankle_Pitch_STS3250_collision_geometry">
-        <mesh filename="meshes/Right_Ankle_Pitch_STS3250.stl"/>
-      </geometry>
-    </collision>
     <inertial name="Right_Ankle_Pitch_STS3250_inertial">
-      <mass value="0.075"/>
-      <inertia ixx="2.6571066e-05" iyy="1.5668956e-05" izz="2.0937042e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-1.350333e-05 0.011909108 -0.017143972" rpy="0 0 0"/>
+      <mass value="0.178551"/>
+      <inertia ixx="0.000060" iyy="0.000094" izz="0.000108" ixy="0" ixz="0.000002" iyz="0"/>
+      <origin xyz="0.016260 0.013316 -0.018027" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="left_ankle_pitch" type="revolute">
-    <origin xyz="-0.0088099998 0.06239 0.0003" rpy="3.1415927 0 0"/>
-    <parent link="Lower_Leg_2"/>
-    <child link="Left_Ankle_Pitch_STS3250"/>
-    <limit effort="2" velocity="2" lower="-1.3962634" upper="0.6981317"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Left_Ankle_Pitch_STS3250">
     <visual name="Left_Ankle_Pitch_STS3250_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -2206,241 +546,12 @@
         <color rgba="1 0 0 1"/>
       </material>
     </visual>
-    <collision name="Left_Ankle_Pitch_STS3250.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Ankle_Pitch_STS3250_collision_geometry">
-        <mesh filename="meshes/Left_Ankle_Pitch_STS3250.stl"/>
-      </geometry>
-    </collision>
     <inertial name="Left_Ankle_Pitch_STS3250_inertial">
-      <mass value="0.075"/>
-      <inertia ixx="2.6571066e-05" iyy="1.5668956e-05" izz="2.0937042e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-1.350333e-05 0.011909108 -0.017143972" rpy="0 0 0"/>
+      <mass value="0.178551"/>
+      <inertia ixx="0.000060" iyy="0.000094" izz="0.000108" ixy="0" ixz="0.000002" iyz="0"/>
+      <origin xyz="0.016260 0.013316 -0.018027" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="Fastened_61" type="fixed">
-    <origin xyz="0.01025 0.03275 -0.035099719" rpy="0 0 0"/>
-    <parent link="Right_Ankle_Pitch_STS3250"/>
-    <child link="Servo_Coupler_3"/>
-  </joint>
-  <link name="Servo_Coupler_3">
-    <visual name="Servo_Coupler_visual_3">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Coupler_geometry_3">
-        <mesh filename="meshes/Servo_Coupler_3.stl"/>
-      </geometry>
-      <material name="Servo_Coupler_material_3">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Servo_Coupler.collision_3">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Coupler_collision_geometry_3">
-        <mesh filename="meshes/Servo_Coupler_3.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Servo_Coupler_inertial_3">
-      <mass value="0.018969708"/>
-      <inertia ixx="6.4078918e-06" iyy="1.1996123e-05" izz="9.8773133e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.0056376716 -0.011951539 0.017077687" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_60" type="fixed">
-    <origin xyz="0.01025 0.03275 -0.034799719" rpy="3.1415927 0 0"/>
-    <parent link="Left_Ankle_Pitch_STS3250"/>
-    <child link="Servo_Coupler_4"/>
-  </joint>
-  <link name="Servo_Coupler_4">
-    <visual name="Servo_Coupler_visual_4">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Coupler_geometry_4">
-        <mesh filename="meshes/Servo_Coupler_4.stl"/>
-      </geometry>
-      <material name="Servo_Coupler_material_4">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Servo_Coupler.collision_4">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Coupler_collision_geometry_4">
-        <mesh filename="meshes/Servo_Coupler_4.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Servo_Coupler_inertial_4">
-      <mass value="0.018969708"/>
-      <inertia ixx="6.4078918e-06" iyy="1.1996123e-05" izz="9.8773133e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.0056376716 0.011951539 -0.016777687" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_64" type="fixed">
-    <origin xyz="0.024699719 -0.012225 0.0003" rpy="3.1415927 0 0"/>
-    <parent link="Servo_Coupler_3"/>
-    <child link="Servo_Bracket_5"/>
-  </joint>
-  <link name="Servo_Bracket_5">
-    <visual name="Servo_Bracket_visual_5">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Bracket_geometry_5">
-        <mesh filename="meshes/Servo_Bracket_5.stl"/>
-      </geometry>
-      <material name="Servo_Bracket_material_5">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Servo_Bracket.collision_5">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Bracket_collision_geometry_5">
-        <mesh filename="meshes/Servo_Bracket_5.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Servo_Bracket_inertial_5">
-      <mass value="0.0047906775"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1.0592736e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.0015757574 -0.00044134593 -0.0021484432" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_65" type="fixed">
-    <origin xyz="0.024699719 -0.012225 0.0323" rpy="0 0 0"/>
-    <parent link="Servo_Coupler_3"/>
-    <child link="Servo_Bracket_6"/>
-  </joint>
-  <link name="Servo_Bracket_6">
-    <visual name="Servo_Bracket_visual_6">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Bracket_geometry_6">
-        <mesh filename="meshes/Servo_Bracket_6.stl"/>
-      </geometry>
-      <material name="Servo_Bracket_material_6">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Servo_Bracket.collision_6">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Bracket_collision_geometry_6">
-        <mesh filename="meshes/Servo_Bracket_6.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Servo_Bracket_inertial_6">
-      <mass value="0.0047906775"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1.0592736e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.0015757574 -0.00044134593 -0.0021484432" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_62" type="fixed">
-    <origin xyz="0.024699719 0.012225 0" rpy="0 0 0"/>
-    <parent link="Servo_Coupler_4"/>
-    <child link="Servo_Bracket_7"/>
-  </joint>
-  <link name="Servo_Bracket_7">
-    <visual name="Servo_Bracket_visual_7">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Bracket_geometry_7">
-        <mesh filename="meshes/Servo_Bracket_7.stl"/>
-      </geometry>
-      <material name="Servo_Bracket_material_7">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Servo_Bracket.collision_7">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Bracket_collision_geometry_7">
-        <mesh filename="meshes/Servo_Bracket_7.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Servo_Bracket_inertial_7">
-      <mass value="0.0047906775"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1.0592736e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.0015757574 -0.00044134593 -0.0021484432" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_63" type="fixed">
-    <origin xyz="0.024699719 0.012225 -0.0323" rpy="0 0 0"/>
-    <parent link="Servo_Coupler_4"/>
-    <child link="Servo_Bracket_8"/>
-  </joint>
-  <link name="Servo_Bracket_8">
-    <visual name="Servo_Bracket_visual_8">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Bracket_geometry_8">
-        <mesh filename="meshes/Servo_Bracket_8.stl"/>
-      </geometry>
-      <material name="Servo_Bracket_material_8">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Servo_Bracket.collision_8">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Servo_Bracket_collision_geometry_8">
-        <mesh filename="meshes/Servo_Bracket_8.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Servo_Bracket_inertial_8">
-      <mass value="0.0047906775"/>
-      <inertia ixx="1e-06" iyy="1e-06" izz="1.0592736e-06" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.0015757574 0.00044134593 0.0024484432" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_67" type="fixed">
-    <origin xyz="0.016 -0.012225 -0.00575" rpy="0 1.5707963 0"/>
-    <parent link="Servo_Bracket_5"/>
-    <child link="Right_Ankle_Roll_STS3250"/>
-  </joint>
-  <link name="Right_Ankle_Roll_STS3250">
-    <visual name="Right_Ankle_Roll_STS3250_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Ankle_Roll_STS3250_geometry">
-        <mesh filename="meshes/Right_Ankle_Roll_STS3250.stl"/>
-      </geometry>
-      <material name="Right_Ankle_Roll_STS3250_material">
-        <color rgba="1 0 0 1"/>
-      </material>
-    </visual>
-    <collision name="Right_Ankle_Roll_STS3250.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Right_Ankle_Roll_STS3250_collision_geometry">
-        <mesh filename="meshes/Right_Ankle_Roll_STS3250.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Right_Ankle_Roll_STS3250_inertial">
-      <mass value="0.075"/>
-      <inertia ixx="2.6571066e-05" iyy="1.5668956e-05" izz="2.0937042e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.010236496 0.02084089 -0.017655747" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_66" type="fixed">
-    <origin xyz="0.016 -0.012225 -0.00575" rpy="0 1.5707963 0"/>
-    <parent link="Servo_Bracket_7"/>
-    <child link="Left_Ankle_Roll_STS3250"/>
-  </joint>
-  <link name="Left_Ankle_Roll_STS3250">
-    <visual name="Left_Ankle_Roll_STS3250_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Ankle_Roll_STS3250_geometry">
-        <mesh filename="meshes/Left_Ankle_Roll_STS3250.stl"/>
-      </geometry>
-      <material name="Left_Ankle_Roll_STS3250_material">
-        <color rgba="1 0 0 1"/>
-      </material>
-    </visual>
-    <collision name="Left_Ankle_Roll_STS3250.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Left_Ankle_Roll_STS3250_collision_geometry">
-        <mesh filename="meshes/Left_Ankle_Roll_STS3250.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Left_Ankle_Roll_STS3250_inertial">
-      <mass value="0.075"/>
-      <inertia ixx="2.6571066e-05" iyy="1.5668956e-05" izz="2.0937042e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.010236496 0.02084089 -0.017655747" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="right_ankle_roll" type="revolute">
-    <origin xyz="0.01025 0.03275 -0.034799719" rpy="0 0 0"/>
-    <parent link="Right_Ankle_Roll_STS3250"/>
-    <child link="Right_Foot"/>
-    <limit effort="2" velocity="2" lower="-1.0471976" upper="1.0471976"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Right_Foot">
     <visual name="Right_Foot_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -2448,28 +559,21 @@
         <mesh filename="meshes/Right_Foot.stl"/>
       </geometry>
       <material name="Right_Foot_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
+        <color rgba="0.615686 0.811765 0.929412 1"/>
       </material>
     </visual>
     <collision name="Right_Foot.collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="Right_Foot_collision_geometry">
-        <mesh filename="meshes/Right_Foot.stl"/>
+        <mesh filename="meshes/Right_Foot.collision.stl"/>
       </geometry>
     </collision>
     <inertial name="Right_Foot_inertial">
-      <mass value="0.043122212"/>
-      <inertia ixx="4.2957651e-05" iyy="6.3405205e-05" izz="2.3913143e-05" ixy="0" ixz="-1.6365704e-06" iyz="2.2989305e-06"/>
-      <origin xyz="-0.006957034 0.022190607 -0.0071436829" rpy="0 0 0"/>
+      <mass value="0.096554"/>
+      <inertia ixx="0.000090" iyy="0.000131" izz="0.000047" ixy="0" ixz="-0.000002" iyz="0.000003"/>
+      <origin xyz="-0.006981 0.025970 -0.010887" rpy="0 0 0"/>
     </inertial>
   </link>
-  <joint name="left_ankle_roll" type="revolute">
-    <origin xyz="0.01025 0.03275 -0.034799719" rpy="0 0 0"/>
-    <parent link="Left_Ankle_Roll_STS3250"/>
-    <child link="Left_Foot"/>
-    <limit effort="2" velocity="2" lower="-1.0471976" upper="1.0471976"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <link name="Left_Foot">
     <visual name="Left_Foot_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -2477,73 +581,19 @@
         <mesh filename="meshes/Left_Foot.stl"/>
       </geometry>
       <material name="Left_Foot_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
+        <color rgba="0.615686 0.811765 0.929412 1"/>
       </material>
     </visual>
     <collision name="Left_Foot.collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="Left_Foot_collision_geometry">
-        <mesh filename="meshes/Left_Foot.stl"/>
+        <mesh filename="meshes/Left_Foot.collision.stl"/>
       </geometry>
     </collision>
     <inertial name="Left_Foot_inertial">
-      <mass value="0.043122212"/>
-      <inertia ixx="4.2957651e-05" iyy="6.3405205e-05" izz="2.3913143e-05" ixy="0" ixz="1.6365704e-06" iyz="2.2989305e-06"/>
-      <origin xyz="0.006957034 0.022190607 -0.0071436829" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_68" type="fixed">
-    <origin xyz="-0.032 0.025629654 -0.053175281" rpy="-1.5707963 0 0"/>
-    <parent link="Right_Foot"/>
-    <child link="Foot_Pad"/>
-  </joint>
-  <link name="Foot_Pad">
-    <visual name="Foot_Pad_visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Foot_Pad_geometry">
-        <mesh filename="meshes/Foot_Pad.stl"/>
-      </geometry>
-      <material name="Foot_Pad_material">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Foot_Pad.collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Foot_Pad_collision_geometry">
-        <mesh filename="meshes/Foot_Pad.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Foot_Pad_inertial">
-      <mass value="0.053432044"/>
-      <inertia ixx="4.4476606e-05" iyy="2.210186e-05" izz="6.6149537e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.025 -0.039268134 0.0033900955" rpy="0 0 0"/>
-    </inertial>
-  </link>
-  <joint name="Fastened_69" type="fixed">
-    <origin xyz="-0.018 0.025629654 -0.053175281" rpy="1.5707963 0 0"/>
-    <parent link="Left_Foot"/>
-    <child link="Foot_Pad_2"/>
-  </joint>
-  <link name="Foot_Pad_2">
-    <visual name="Foot_Pad_visual_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Foot_Pad_geometry_2">
-        <mesh filename="meshes/Foot_Pad_2.stl"/>
-      </geometry>
-      <material name="Foot_Pad_material_2">
-        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
-      </material>
-    </visual>
-    <collision name="Foot_Pad.collision_2">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="Foot_Pad_collision_geometry_2">
-        <mesh filename="meshes/Foot_Pad_2.stl"/>
-      </geometry>
-    </collision>
-    <inertial name="Foot_Pad_inertial_2">
-      <mass value="0.053432044"/>
-      <inertia ixx="4.4476606e-05" iyy="2.210186e-05" izz="6.6149537e-05" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.025 0.039268134 -0.0033900955" rpy="0 0 0"/>
+      <mass value="0.096554"/>
+      <inertia ixx="0.000090" iyy="0.000131" izz="0.000047" ixy="0" ixz="0.000002" iyz="0.000003"/>
+      <origin xyz="0.006981 0.025970 -0.010887" rpy="0 0 0"/>
     </inertial>
   </link>
 </robot>

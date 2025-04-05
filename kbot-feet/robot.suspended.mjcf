@@ -141,8 +141,8 @@
                 <body name="foot1" pos="0 -0.300000 0.009500">
                   <joint name="left_ankle_02" type="hinge" ref="0.0" class="motor_02" range="-0.698132 0.698132" axis="0 0 -1" />
                   <inertial pos="0.021350 -0.019419 -0.019276" mass="0.582091" diaginertia="0.000284 0.002188 0.002024" />
-                  <geom name="foot1_visual" material="arm1_top_material" type="box" class="visual" pos="0.029965 -0.009984 -0.019483" quat="0.707388 -0.000563 -0.000563 -0.706825" size="0.109929 0.027188 0.036000" />
-                  <geom name="foot1_collision_box" type="box" pos="0.029965 -0.009984 -0.019483" quat="0.707388 -0.000563 -0.000563 -0.706825" size="0.109929 0.027188 0.036000" class="collision" />
+                  <geom name="foot1_visual" material="arm1_top_material" type="box" class="visual" pos="0.029928 -0.009880 -0.019500" quat="1.000000 0.000000 0.000000 0.000000" size="0.109928 0.027120 0.036000" />
+                  <geom name="foot1_collision_box" type="box" pos="0.029928 -0.009880 -0.019500" quat="1.000000 0.000000 0.000000 0.000000" size="0.109928 0.027120 0.036000" class="collision" />
                 </body>
               </body>
             </body>
@@ -167,8 +167,8 @@
                 <body name="foot3" pos="0 -0.300000 -0.035500" quat="3.000000781252362e-14 -1.7320510330969674e-07 0.99999999999997 -1.7320510330969674e-07">
                   <joint name="right_ankle_02" type="hinge" ref="0.0" class="motor_02" range="-0.698132 0.698132" axis="0 0 1.0" />
                   <inertial pos="0.021350 -0.019419 -0.023724" mass="0.582091" diaginertia="0.000284 0.002188 0.002024" />
-                  <geom name="foot3_visual" material="arm1_top_material" type="box" class="visual" pos="0.029918 -0.009990 -0.023490" quat="0.707388 -0.000563 -0.000563 -0.706825" size="0.109910 0.027182 0.036006" />
-                  <geom name="foot3_collision_box" type="box" pos="0.029918 -0.009990 -0.023490" quat="0.707388 -0.000563 -0.000563 -0.706825" size="0.109910 0.027182 0.036006" class="collision" />
+                  <geom name="foot3_visual" material="arm1_top_material" type="box" class="visual" pos="0.029910 -0.009880 -0.023500" quat="1.000000 0.000000 0.000000 0.000000" size="0.109910 0.027120 0.036000" />
+                  <geom name="foot3_collision_box" type="box" pos="0.029910 -0.009880 -0.023500" quat="1.000000 0.000000 0.000000 0.000000" size="0.109910 0.027120 0.036000" class="collision" />
                 </body>
               </body>
             </body>
