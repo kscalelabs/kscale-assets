@@ -141,8 +141,8 @@
                 <body name="KB_D_501R_R_LEG_FOOT" pos="-0.030000 0.290000 0.035100">
                   <joint name="dof_right_ankle_02" type="hinge" ref="0.0" class="motor_02" range="-0.296706 0.785398" axis="0 0 1" />
                   <inertial pos="-0.014842 0.027139 -0.016105" mass="0.483858" diaginertia="0.000268 0.001549 0.001458" />
-                  <geom name="KB_D_501R_R_LEG_FOOT_visual" material="Torso_Side_Right_material" type="box" class="visual" pos="-0.028937 0.012621 -0.014000" quat="0.000281 0.707107 -0.707106 0.000282" size="0.105716 0.034253 0.036000" />
-                  <geom name="KB_D_501R_R_LEG_FOOT_collision_box" type="box" pos="-0.028937 0.012621 -0.014000" quat="0.000281 0.707107 -0.707106 0.000282" size="0.105716 0.034253 0.036000" class="collision" />
+                  <geom name="KB_D_501R_R_LEG_FOOT_visual" material="Torso_Side_Right_material" type="box" class="visual" pos="-0.028937 0.012621 -0.014000" quat="0.000281 0.707107 -0.707106 0.000282" size="0.036000 0.105716 0.034253" />
+                  <geom name="KB_D_501R_R_LEG_FOOT_collision_box" type="box" pos="-0.028937 0.012621 -0.014000" quat="0.000281 0.707107 -0.707106 0.000282" size="0.036000 0.105716 0.034253" class="collision" />
                 </body>
               </body>
             </body>
@@ -167,8 +167,8 @@
                 <body name="KB_D_501L_L_LEG_FOOT" pos="-0.030000 -0.290000 0.035100" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
                   <joint name="dof_left_ankle_02" type="hinge" ref="0.0" class="motor_02" range="-0.785398 0.296706" axis="0 0 -1" />
                   <inertial pos="-0.014842 0.027139 0.016105" mass="0.483858" diaginertia="0.000268 0.001549 0.001458" />
-                  <geom name="KB_D_501L_L_LEG_FOOT_visual" material="Torso_Side_Right_material" type="box" class="visual" pos="-0.028840 0.012621 0.014000" quat="-0.000282 -0.707107 0.707107 -0.000282" size="0.105813 0.034253 0.036000" />
-                  <geom name="KB_D_501L_L_LEG_FOOT_collision_box" type="box" pos="-0.028840 0.012621 0.014000" quat="-0.000282 -0.707107 0.707107 -0.000282" size="0.105813 0.034253 0.036000" class="collision" />
+                  <geom name="KB_D_501L_L_LEG_FOOT_visual" material="Torso_Side_Right_material" type="box" class="visual" pos="-0.028840 0.012621 0.014000" quat="-0.000282 -0.707107 0.707107 -0.000282" size="0.036000 0.105813 0.034253" />
+                  <geom name="KB_D_501L_L_LEG_FOOT_collision_box" type="box" pos="-0.028840 0.012621 0.014000" quat="-0.000282 -0.707107 0.707107 -0.000282" size="0.036000 0.105813 0.034253" class="collision" />
                 </body>
               </body>
             </body>
