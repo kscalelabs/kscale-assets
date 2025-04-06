@@ -2,8 +2,6 @@
   <default>
     <default class="robot">
       <default class="motor">
-        <joint armature="0.03999977737144798" frictionloss="0.1999950458140071" actuatorfrcrange="-8.716130441407099 8.716130441407099" />
-        <motor ctrlrange="-8.716130441407099 8.716130441407099" />
       </default>
       <default class="visual">
         <geom material="visualgeom" contype="0" conaffinity="0" group="2" />
