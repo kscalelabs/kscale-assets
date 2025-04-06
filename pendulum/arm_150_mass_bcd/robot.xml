@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/03d3216bcac5903908a6e0de/w/9c3caedc2611d4b7bfb40d56/e/d71a56cd59f2d839a7fdd788 -->
+<mujoco model="arm_150_mass_bcd">
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+  <default>
+    <default class="arm_150_mass_bcd">
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom group="3"/>
+      </default>
+    </default>
+  </default>
+  <worldbody>
+    <!-- Link motor_holder__configuration__1lb -->
+    <body name="motor_holder__configuration__1lb" pos="0 0 0" quat="1 0 0 0" childclass="arm_150_mass_bcd">
+      <inertial pos="8.90348e-08 0.0151625 0.0438794" mass="0.0593939" fullinertia="4.21552e-05 1.0144e-05 4.23761e-05 -9.45235e-12 1.06843e-10 -5.33782e-06"/>
+      <!-- Part sts3215 -->
+      <geom type="mesh" class="visual" pos="6.93893e-18 -0.0096 0.025435" quat="2.4677e-16 -0.707107 -3.14018e-16 -0.707107" mesh="sts3215" material="sts3215_material"/>
+      <geom type="mesh" class="collision" pos="6.93893e-18 -0.0096 0.025435" quat="2.4677e-16 -0.707107 -3.14018e-16 -0.707107" mesh="sts3215" material="sts3215_material"/>
+      <!-- Part motor_holder__configuration__1lb -->
+      <geom type="mesh" class="visual" pos="0 0 0" quat="1 0 0 0" mesh="motor_holder__configuration__1lb" material="motor_holder__configuration__1lb_material"/>
+      <geom type="mesh" class="collision" pos="0 0 0" quat="1 0 0 0" mesh="motor_holder__configuration__1lb" material="motor_holder__configuration__1lb_material"/>
+      <!-- Link axle_a__configuration__1lb -->
+      <body name="axle_a__configuration__1lb" pos="1.38708e-17 -0.0187997 -6.5e-05" quat="0.5 -0.5 -0.5 -0.5">
+        <!-- Joint from motor_holder__configuration__1lb to axle_a__configuration__1lb -->
+        <joint name="pendulum_joint" type="hinge" range="-1.669709476145103 1.698775980203953"/>
+        <inertial pos="-0.147561 0.00214469 0.017263" mass="1.218" fullinertia="0.00161883 0.00188739 0.00315073 3.90419e-06 -3.20806e-06 4.66268e-08"/>
+        <!-- Part disc_d__configuration__1lb -->
+        <geom type="mesh" class="visual" pos="2.57634e-17 -2.18203e-17 0.017125" quat="0.50362 0.50362 0.496354 0.496354" mesh="disc_d__configuration__1lb" material="disc_d__configuration__1lb_material"/>
+        <geom type="mesh" class="collision" pos="2.57634e-17 -2.18203e-17 0.017125" quat="0.50362 0.50362 0.496354 0.496354" mesh="disc_d__configuration__1lb" material="disc_d__configuration__1lb_material"/>
+        <!-- Part axle_a__configuration__1lb -->
+        <geom type="mesh" class="visual" pos="-7.86047e-18 -3.28516e-18 0.0188" quat="0.50362 0.50362 0.496354 0.496354" mesh="axle_a__configuration__1lb" material="axle_a__configuration__1lb_material"/>
+        <geom type="mesh" class="collision" pos="-7.86047e-18 -3.28516e-18 0.0188" quat="0.50362 0.50362 0.496354 0.496354" mesh="axle_a__configuration__1lb" material="axle_a__configuration__1lb_material"/>
+        <!-- Part disc_c__configuration__1lb -->
+        <geom type="mesh" class="visual" pos="1.74692e-17 -8.82038e-17 0.0285" quat="0.50362 0.50362 0.496354 0.496354" mesh="disc_c__configuration__1lb" material="disc_c__configuration__1lb_material"/>
+        <geom type="mesh" class="collision" pos="1.74692e-17 -8.82038e-17 0.0285" quat="0.50362 0.50362 0.496354 0.496354" mesh="disc_c__configuration__1lb" material="disc_c__configuration__1lb_material"/>
+        <!-- Part arm_front__configuration__1lb -->
+        <geom type="mesh" class="visual" pos="-4.51299e-18 -3.61197e-18 0.01905" quat="0.50362 0.50362 0.496354 0.496354" mesh="arm_front__configuration__1lb" material="arm_front__configuration__1lb_material"/>
+        <geom type="mesh" class="collision" pos="-4.51299e-18 -3.61197e-18 0.01905" quat="0.50362 0.50362 0.496354 0.496354" mesh="arm_front__configuration__1lb" material="arm_front__configuration__1lb_material"/>
+        <!-- Part disc_b__configuration__1lb -->
+        <geom type="mesh" class="visual" pos="1.13706e-17 3.14026e-18 0.00575" quat="0.50362 0.50362 0.496354 0.496354" mesh="disc_b__configuration__1lb" material="disc_b__configuration__1lb_material"/>
+        <geom type="mesh" class="collision" pos="1.13706e-17 3.14026e-18 0.00575" quat="0.50362 0.50362 0.496354 0.496354" mesh="disc_b__configuration__1lb" material="disc_b__configuration__1lb_material"/>
+        <!-- Part arm_rear__configuration__1lb -->
+        <geom type="mesh" class="visual" pos="-4.10642e-18 -3.46922e-18 0.01885" quat="0.50362 0.50362 0.496354 0.496354" mesh="arm_rear__configuration__1lb" material="arm_rear__configuration__1lb_material"/>
+        <geom type="mesh" class="collision" pos="-4.10642e-18 -3.46922e-18 0.01885" quat="0.50362 0.50362 0.496354 0.496354" mesh="arm_rear__configuration__1lb" material="arm_rear__configuration__1lb_material"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <asset>
+    <mesh file="disc_d__configuration__1lb.stl"/>
+    <mesh file="disc_b__configuration__1lb.stl"/>
+    <mesh file="axle_a__configuration__1lb.stl"/>
+    <mesh file="arm_rear__configuration__1lb.stl"/>
+    <mesh file="sts3215.stl"/>
+    <mesh file="arm_front__configuration__1lb.stl"/>
+    <mesh file="motor_holder__configuration__1lb.stl"/>
+    <mesh file="disc_c__configuration__1lb.stl"/>
+    <material name="sts3215_material" rgba="1 0 0 1"/>
+    <material name="motor_holder__configuration__1lb_material" rgba="0.615686 0.811765 0.929412 1"/>
+    <material name="disc_d__configuration__1lb_material" rgba="1 0 0 1"/>
+    <material name="axle_a__configuration__1lb_material" rgba="0.231373 0.380392 0.705882 1"/>
+    <material name="disc_c__configuration__1lb_material" rgba="0.980392 0.713725 0.00392157 1"/>
+    <material name="arm_front__configuration__1lb_material" rgba="0.647059 0.647059 0.647059 1"/>
+    <material name="disc_b__configuration__1lb_material" rgba="0.980392 0.713725 0.00392157 1"/>
+    <material name="arm_rear__configuration__1lb_material" rgba="0.647059 0.647059 0.647059 1"/>
+  </asset>
+  <actuator>
+      <motor class="arm_150_mass_bcd" name="pendulum_joint_ctrl" joint="pendulum_joint" gear="1"/>
+  </actuator>
+  <equality/>
+</mujoco>

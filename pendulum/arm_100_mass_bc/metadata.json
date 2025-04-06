@@ -1,0 +1,11 @@
+{
+  "joint_name_to_metadata": {
+    "pendulum_joint": {
+      "actuator_type": "feetech-sts3215-12v",
+      "id": 11,
+      "kp": "20.0",
+      "kd": "0.0"
+    }
+  },
+  "control_frequency": "50"
+}

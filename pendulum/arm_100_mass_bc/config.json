@@ -1,0 +1,10 @@
+{
+    "robot-name": "sysid-pendulum-testbench",
+    "url": "https://cad.onshape.com/documents/03d3216bcac5903908a6e0de/w/9c3caedc2611d4b7bfb40d56/e/93084d8e1e921470a8fa1690",
+    "output_format": "mujoco",
+        
+    
+    "ignore": {
+ 
+    }
+}
