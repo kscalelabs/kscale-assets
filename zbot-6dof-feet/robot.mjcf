@@ -124,8 +124,8 @@
                   <body name="Right_Foot" pos="0.015150 0 -0.018800" quat="-1.2247452309842457e-07 -0.7071068967259713 1.22474483074382e-07 -0.7071066656470838">
                     <joint name="right_ankle_roll" type="hinge" ref="0.0" class="motor" range="-1.047198 1.047198" axis="0 0 1" />
                     <inertial pos="-0.006981 0.025970 -0.010887" mass="0.096554" diaginertia="9e-05 0.000131 4.7e-05" />
-                    <geom name="Right_Foot_visual" material="Top_Brace_material" type="box" class="visual" pos="-0.007008 0.011329 -0.012323" quat="0.500199 0.499801 -0.499801 0.500199" size="0.051723 0.037001 0.021329" />
-                    <geom name="Right_Foot_collision_box" type="box" pos="-0.007008 0.011329 -0.012323" quat="0.500199 0.499801 -0.499801 0.500199" size="0.051723 0.037001 0.021329" class="collision" />
+                    <geom name="Right_Foot_visual" material="Top_Brace_material" type="box" class="visual" pos="-0.007000 0.011315 -0.012323" quat="1.000000 0.000000 0.000000 0.000000" size="0.037000 0.021315 0.051723" />
+                    <geom name="Right_Foot_collision_box" type="box" pos="-0.007000 0.011315 -0.012323" quat="1.000000 0.000000 0.000000 0.000000" size="0.037000 0.021315 0.051723" class="collision" />
                   </body>
                 </body>
               </body>
@@ -155,8 +155,8 @@
                   <body name="Left_Foot" pos="0.015150 0 -0.018800" quat="-1.2247452309842457e-07 -0.7071068967259713 1.22474483074382e-07 -0.7071066656470838">
                     <joint name="left_ankle_roll" type="hinge" ref="0.0" class="motor" range="-1.047198 1.047198" axis="0 0 1" />
                     <inertial pos="0.006981 0.025970 -0.010887" mass="0.096554" diaginertia="9e-05 0.000131 4.7e-05" />
-                    <geom name="Left_Foot_visual" material="Top_Brace_material" type="box" class="visual" pos="0.006992 0.011324 -0.012323" quat="0.500199 0.499801 -0.499801 0.500199" size="0.051723 0.037001 0.021329" />
-                    <geom name="Left_Foot_collision_box" type="box" pos="0.006992 0.011324 -0.012323" quat="0.500199 0.499801 -0.499801 0.500199" size="0.051723 0.037001 0.021329" class="collision" />
+                    <geom name="Left_Foot_visual" material="Top_Brace_material" type="box" class="visual" pos="0.007000 0.011315 -0.012323" quat="1.000000 0.000000 0.000000 0.000000" size="0.037000 0.021315 0.051723" />
+                    <geom name="Left_Foot_collision_box" type="box" pos="0.007000 0.011315 -0.012323" quat="1.000000 0.000000 0.000000 0.000000" size="0.037000 0.021315 0.051723" class="collision" />
                   </body>
                 </body>
               </body>

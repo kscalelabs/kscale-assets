@@ -12,7 +12,7 @@
   <default>
     <default class="robot">
       <default class="motor_00">
-        <joint armature="0.0005" frictionloss="0.1" actuatorfrcrange="-20.0 20.0" />
+        <joint armature="0.005" frictionloss="0.1" actuatorfrcrange="-20.0 20.0" />
         <motor ctrlrange="-20.0 20.0" />
       </default>
       <default class="motor_02">
