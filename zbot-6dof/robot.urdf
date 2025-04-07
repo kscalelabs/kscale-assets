@@ -45,7 +45,7 @@
     <parent link="Top_Brace"/>
     <child link="Right_Upper_Hip_Bracket"/>
     <limit effort="2" velocity="2" lower="-1.570796" upper="1.570796"/>
-    <axis xyz="0 0 -1.0"/>
+    <axis xyz="0 0 1"/>
   </joint>
   <joint name="left_hip_yaw" type="revolute">
     <origin xyz="0.043042 0.000211 -0.089300" rpy="0 0 0"/>
@@ -142,8 +142,8 @@
     <origin xyz="0 0.100000 -0.036859" rpy="-3.141593 0 0"/>
     <parent link="Right_Knee_Pitch_STS3250"/>
     <child link="Right_Ankle_Pitch_STS3250"/>
-    <limit effort="2" velocity="2" lower="-0.698132" upper="1.396263"/>
-    <axis xyz="0 0 -1.0"/>
+    <limit effort="2" velocity="2" lower="-1.396263" upper="0.698132"/>
+    <axis xyz="0 0 1"/>
   </joint>
   <joint name="left_ankle_pitch" type="revolute">
     <origin xyz="0 0.100000 -0.036040" rpy="-3.141593 0 0"/>

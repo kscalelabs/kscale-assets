@@ -2,6 +2,8 @@
   <default>
     <default class="robot">
       <default class="motor">
+        <joint />
+        <motor />
       </default>
       <default class="visual">
         <geom material="visualgeom" contype="0" conaffinity="0" group="2" />
@@ -102,7 +104,7 @@
           </body>
         </body>
         <body name="Right_Upper_Hip_Bracket" pos="-0.043042 0.000211 -0.089300">
-          <joint name="right_hip_yaw" type="hinge" ref="0.0" class="motor" range="-1.570796 1.570796" axis="0 0 -1.0" />
+          <joint name="right_hip_yaw" type="hinge" ref="0.0" class="motor" range="-1.570796 1.570796" axis="0 0 1" />
           <inertial pos="-0.000042 -0.006054 0.003361" mass="0.022071" diaginertia="1.5e-05 1.2e-05 6e-06" />
           <geom name="Right_Upper_Hip_Bracket_visual" material="Top_Brace_material" type="mesh" mesh="Right_Upper_Hip_Bracket.stl" class="visual" />
           <body name="Right_Hip_Roll_STS3250" pos="-0.000087 0.019650 -0.026665" quat="0.7071068967259818 0.7071066656470943 0.0 0.0">
@@ -118,7 +120,7 @@
                 <inertial pos="-0.001019 0.026262 -0.017776" mass="0.114286" diaginertia="0.000107 3.2e-05 9.3e-05" />
                 <geom name="Right_Knee_Pitch_STS3250_visual" material="floating_base_link_material" type="mesh" mesh="Right_Knee_Pitch_STS3250.stl" class="visual" />
                 <body name="Right_Ankle_Pitch_STS3250" pos="0 0.100000 -0.036859" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
-                  <joint name="right_ankle_pitch" type="hinge" ref="0.0" class="motor" range="-0.698132 1.396263" axis="0 0 -1.0" />
+                  <joint name="right_ankle_pitch" type="hinge" ref="0.0" class="motor" range="-1.396263 0.698132" axis="0 0 1" />
                   <inertial pos="0.016260 0.013316 -0.018027" mass="0.178551" diaginertia="6e-05 9.4e-05 0.000108" />
                   <geom name="Right_Ankle_Pitch_STS3250_visual" material="floating_base_link_material" type="mesh" mesh="Right_Ankle_Pitch_STS3250.stl" class="visual" />
                   <body name="Right_Foot" pos="0.015150 0 -0.018800" quat="-1.2247452309842457e-07 -0.7071068967259713 1.22474483074382e-07 -0.7071066656470838">
