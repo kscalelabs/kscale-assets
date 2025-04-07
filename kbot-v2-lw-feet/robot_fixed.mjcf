@@ -63,6 +63,7 @@
   <worldbody>
     <body name="floating_base_link" pos="0.00000000 0.00000000 1.00947904" childclass="robot">
       <freejoint name="floating_base" />
+      <site name="origin_site" size="0.01" pos="0 0.09 -0.25"/>
       <geom name="floating_base_link_visual" quat="0.7073882691671998 0.0 0.0 0.706825181105366" material="floating_base_link_material" type="sphere" size="0.01" class="visual" />
       <body name="Torso_Side_Right" quat="0.7073882691671998 0.0 0.0 0.706825181105366">
         <inertial pos="0.093342 -0.001704 -0.061458" mass="13.320850" diaginertia="0.49511 0.521226 0.059272" />
@@ -197,5 +198,13 @@
     <framequat name="base_link_quat" objtype="site" objname="imu_site" />
     <framelinvel name="base_link_vel" objtype="site" objname="imu_site" />
     <frameangvel name="base_link_ang_vel" objtype="site" objname="imu_site" />
+ 
+     <framezaxis objtype="site" objname="origin_site" name="upvector_origin"/>
+    <velocimeter site="origin_site" name="local_linvel_origin"/>
+    <accelerometer site="origin_site" name="accelerometer_origin"/>
+    <framequat objtype="site" objname="origin_site" name="orientation_origin"/>
+    <gyro site="origin_site" name="gyro_origin"/>
+    <framelinvel objtype="site" objname="origin_site" name="global_linvel_origin"/>
+    <frameangvel objtype="site" objname="origin_site" name="global_angvel_origin"/>
   </sensor>
 </mujoco>
