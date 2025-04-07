@@ -167,7 +167,7 @@
                 <inertial pos="-0.024550 -0.104154 0.018183" mass="1.670535" diaginertia="0.014672 0.002924 0.014592" />
                 <geom name="KC_D_401L_L_Shin_Drive_visual" material="Torso_Side_Right_material" type="mesh" mesh="KC_D_401L_L_Shin_Drive.stl" class="visual" />
                 <body name="KB_D_501L_L_LEG_FOOT" pos="-0.030000 -0.290000 0.035100" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
-                  <site name="left_foot" rgba="1 0 0 1"/>
+                 <site name="left_foot" rgba="1 0 0 1"/>
                  <joint name="dof_left_ankle_02" type="hinge" ref="0.0" class="motor_02" range="-0.785398 0.296706" axis="0 0 -1" />
                   <inertial pos="-0.014842 0.027139 0.016105" mass="0.483858" diaginertia="0.000268 0.001549 0.001458" />
                   <geom name="KB_D_501L_L_LEG_FOOT_visual" material="Torso_Side_Right_material" type="box" class="visual" pos="-0.028818 0.012560 0.014000" quat="1.000000 0.000000 0.000000 0.000000" size="0.105818 0.034236 0.036000" />
