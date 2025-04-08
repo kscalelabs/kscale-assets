@@ -1,4 +1,14 @@
 <mujoco model="kbotv2p0_nosubassy">
+
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0" />
+    <rgba haze="0.15 0.25 0.35 1" />
+    <global azimuth="220" elevation="-10" />
+    <quality shadowsize="8192" />
+  </visual>
+
+  <statistic center="0.15 0.1 0.38" extent=".8" meansize="0.05" />
+
   <default>
     <default class="robot">
       <default class="motor_00">
@@ -21,7 +31,7 @@
         <geom material="visualgeom" contype="0" conaffinity="0" group="2" />
       </default>
       <default class="collision">
-        <geom condim="6" friction="0.8 0.02 0.01" group="3" />
+        <geom condim="6" friction="0.8 0.02 0.01" material="Torso_Side_Right_material" group="2" rgba="1 1 1 0.7" />
       </default>
     </default>
     <mesh maxhullvert="64" />
@@ -58,11 +68,21 @@
     <mesh name="KC_D_401L_L_Shin_Drive.stl" file="meshes/KC_D_401L_L_Shin_Drive.stl" />
     <mesh name="KB_D_501L_L_LEG_FOOT.collision.stl" file="meshes/KB_D_501L_L_LEG_FOOT.collision.stl" />
     <mesh name="KB_D_501L_L_LEG_FOOT.stl" file="meshes/KB_D_501L_L_LEG_FOOT.stl" />
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072" />
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300" />
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2" rgba="0.9 0.9 0.9 0.2" />
+    <hfield name="hfield" nrow="100" ncol="100" size="10 10 .05 0.1" />
   </asset>
 
   <worldbody>
+    <geom name="floor" type="hfield" hfield="hfield" contype="1" conaffinity="0" material="groundplane" friction="1 0.005 0.0001" pos="0 0 -0.1" />
     <body name="floating_base_link" pos="0.00000000 0.00000000 1.00947904" childclass="robot">
       <freejoint name="floating_base" />
+      <!-- Main torso collision box -->
+      <geom class="collision" name="torso_collision" rgba="1 1 1 0.3" contype="1" conaffinity="1" size="0.07 0.13 0.21" pos="0.0 0.095 -0.01" type="box"/>
+      <!-- Leg approximation collision box -->
+      <geom class="collision" name="legs_collision" rgba="1 1 1 0.3" contype="1" conaffinity="1" size="0.06 0.175 0.09" pos="0.0 0.09 -0.35" type="box"/>
+      
       <geom name="floating_base_link_visual" quat="0.7073882691671998 0.0 0.0 0.706825181105366" material="floating_base_link_material" type="sphere" size="0.01" class="visual" />
       <body name="Torso_Side_Right" quat="0.7073882691671998 0.0 0.0 0.706825181105366">
         <inertial pos="0.093342 -0.001704 -0.061458" mass="13.320850" diaginertia="0.49511 0.521226 0.059272" />
@@ -79,10 +99,12 @@
               <joint name="dof_right_shoulder_yaw_02" type="hinge" ref="0.0" class="motor_02" range="-1.658063 1.658063" axis="0 0 1" />
               <inertial pos="0.003910 -0.004160 -0.101316" mass="0.743508" diaginertia="0.00241 0.002208 0.000693" />
               <geom name="KC_C_202R_visual" material="Torso_Side_Right_material" type="mesh" mesh="KC_C_202R.stl" class="visual" />
+              <geom name="right_upper_arm_collision" class="collision" size="0.05 0.05 0.06" pos="0 0.0 0.0" euler="0 0 0" rgba="1 1 1 0.3" contype="1" conaffinity="1" type="box"/>
               <body name="KC_C_401R_R_UpForearmDrive" pos="0.018500 -0.010000 -0.137000" quat="0.7071068967259818 0.0 0.7071066656470943 0.0">
                 <joint name="dof_right_elbow_02" type="hinge" ref="0.0" class="motor_02" range="0 2.478368" axis="0 0 -1" />
                 <inertial pos="0.061999 0.015867 -0.012446" mass="0.585204" diaginertia="0.000522 0.001021 0.00102" />
                 <geom name="KC_C_401R_R_UpForearmDrive_visual" material="Torso_Side_Right_material" type="mesh" mesh="KC_C_401R_R_UpForearmDrive.stl" class="visual" />
+                <geom name="right_forearm_collision" class="collision" size="0.04 0.04 0.095" pos="0.08 0.02 -.015" euler="0 -1.57 0" type="box" rgba="1 1 1 0.3" contype="1" conaffinity="1" />
                 <body name="KB_C_501X_Right_Bayonet_Adapter_Hard_Stop" pos="0.103000 0.017350 -0.018000" quat="0.7071068967259818 0.0 -0.7071066656470943 0.0">
                   <joint name="dof_right_wrist_00" type="hinge" ref="0.0" class="motor_00" range="-1.745329 1.745329" axis="0 0 1" />
                   <inertial pos="0.002102 0.000041 -0.035252" mass="0.303020" diaginertia="0.00031 0.000303 0.000253" />
@@ -104,10 +126,12 @@
               <joint name="dof_left_shoulder_yaw_02" type="hinge" ref="0.0" class="motor_02" range="-1.658063 1.658063" axis="0 0 -1" />
               <inertial pos="0.000925 0.006010 0.113327" mass="0.579259" diaginertia="0.001537 0.001383 0.000471" />
               <geom name="KC_C_202L_visual" material="Torso_Side_Right_material" type="mesh" mesh="KC_C_202L.stl" class="visual" />
+              <geom name="left_upper_arm_collision" class="collision" size="0.05 0.05 0.06" pos="0 0.0 0.0" euler="0 0 0" type="box"/>
               <body name="KC_C_401L_L_UpForearmDrive" pos="-0.018500 0.010000 0.137000" quat="-1.2247452309842457e-07 -0.7071068967259713 -1.22474483074382e-07 0.7071066656470838">
                 <joint name="dof_left_elbow_02" type="hinge" ref="0.0" class="motor_02" range="-2.478368 0" axis="0 0 -1" />
                 <inertial pos="-0.061998 0.015867 -0.012446" mass="0.585219" diaginertia="0.000522 0.001021 0.00102" />
                 <geom name="KC_C_401L_L_UpForearmDrive_visual" material="Torso_Side_Right_material" type="mesh" mesh="KC_C_401L_L_UpForearmDrive.stl" class="visual" />
+                <geom name="left_forearm_collision" class="collision" size="0.04 0.04 0.095" pos="-0.08 0.02 -.015" euler="0 1.57 0" type="box"/>
                 <body name="KB_C_501X_Left_Bayonet_Adapter_Hard_Stop" pos="-0.103000 0.017350 -0.018000" quat="-1.2247452309842457e-07 -0.7071068967259713 -1.22474483074382e-07 0.7071066656470838">
                   <joint name="dof_left_wrist_00" type="hinge" ref="0.0" class="motor_00" range="-1.745329 1.745329" axis="0 0 -1" />
                   <inertial pos="-0.002105 -0.000038 0.035254" mass="0.303033" diaginertia="0.00031 0.000303 0.000253" />
@@ -141,8 +165,8 @@
                 <body name="KB_D_501R_R_LEG_FOOT" pos="-0.030000 0.290000 0.035100">
                   <joint name="dof_right_ankle_02" type="hinge" ref="0.0" class="motor_02" range="-0.296706 0.785398" axis="0 0 1" />
                   <inertial pos="-0.014842 0.027139 -0.016105" mass="0.483858" diaginertia="0.000268 0.001549 0.001458" />
-                  <geom name="KB_D_501R_R_LEG_FOOT_visual" material="Torso_Side_Right_material" type="box" class="visual" pos="-0.028920 0.012560 -0.014000" quat="1.000000 0.000000 0.000000 0.000000" size="0.105716 0.034236 0.036000" />
-                  <geom name="KB_D_501R_R_LEG_FOOT_collision_box" type="box" pos="-0.028920 0.012560 -0.014000" quat="1.000000 0.000000 0.000000 0.000000" size="0.105716 0.034236 0.036000" class="collision" />
+                  <geom name="KB_D_501R_R_LEG_FOOT_visual" material="Torso_Side_Right_material" type="box" class="visual" pos="-0.028920 0.012560 -0.014000" quat="0.500000 0.500000 -0.500000 0.500000" size="0.034236 0.105716 0.036000" />
+                  <geom name="KB_D_501R_R_LEG_FOOT_collision_box" type="box" pos="-0.028920 0.012560 -0.014000" quat="0.500000 0.500000 -0.500000 0.500000" size="0.034236 0.105716 0.036000" class="collision" />
                 </body>
               </body>
             </body>
@@ -167,8 +191,8 @@
                 <body name="KB_D_501L_L_LEG_FOOT" pos="-0.030000 -0.290000 0.035100" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
                   <joint name="dof_left_ankle_02" type="hinge" ref="0.0" class="motor_02" range="-0.785398 0.296706" axis="0 0 -1" />
                   <inertial pos="-0.014842 0.027139 0.016105" mass="0.483858" diaginertia="0.000268 0.001549 0.001458" />
-                  <geom name="KB_D_501L_L_LEG_FOOT_visual" material="Torso_Side_Right_material" type="box" class="visual" pos="-0.028818 0.012560 0.014000" quat="1.000000 0.000000 0.000000 0.000000" size="0.105818 0.034236 0.036000" />
-                  <geom name="KB_D_501L_L_LEG_FOOT_collision_box" type="box" pos="-0.028818 0.012560 0.014000" quat="1.000000 0.000000 0.000000 0.000000" size="0.105818 0.034236 0.036000" class="collision" />
+                  <geom name="KB_D_501L_L_LEG_FOOT_visual" material="Torso_Side_Right_material" type="box" class="visual" pos="-0.028818 0.012560 0.014000" quat="0.500000 0.500000 -0.500000 0.500000" size="0.034236 0.105818 0.036000" />
+                  <geom name="KB_D_501L_L_LEG_FOOT_collision_box" type="box" pos="-0.028818 0.012560 0.014000" quat="0.500000 0.500000 -0.500000 0.500000" size="0.034236 0.105818 0.036000" class="collision" />
                 </body>
               </body>
             </body>
@@ -178,6 +202,11 @@
       <site name="floating_base_link_site" />
       <camera name="front_camera" mode="track" fovy="90.0" quat="4.329780281177467e-17 4.329780281177466e-17 0.7071067811865475 0.7071067811865476" pos="0.0 2.0 0.5" />
       <camera name="side_camera" mode="track" fovy="90.0" quat="-0.5 -0.4999999999999999 0.5 0.5000000000000001" pos="-2.0 0.0 0.5" />
+      <camera name="iso_camera"
+              mode="track"
+              fovy="60"
+              pos="1 -0.8 0.8"
+        euler="0.8 0.65 0.6" />
     </body>
   </worldbody>
 
@@ -203,8 +232,6 @@
     <motor name="dof_left_knee_04_ctrl" joint="dof_left_knee_04" class="motor_04" />
     <motor name="dof_left_ankle_02_ctrl" joint="dof_left_ankle_02" class="motor_02" />
   </actuator>
-
-  <contact />
 
   <sensor>
     <accelerometer name="imu_acc" site="imu_site" noise="0.01" />
