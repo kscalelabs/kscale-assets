@@ -2,3 +2,4 @@
 
 .cache/
 *.tgz
+.DS_Store
