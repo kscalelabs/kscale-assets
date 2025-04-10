@@ -84,7 +84,7 @@
     <body name="floating_base_link" pos="0.00000000 0.00000000 1.00947904" childclass="robot">
       <geom name="floating_base_link_visual" quat="0.7073882691671998 0.0 0.0 0.706825181105366" material="floating_base_link_material" type="sphere" size="0.01" class="visual" />
       <body name="Torso_Side_Right" quat="0.7073882691671998 0.0 0.0 0.706825181105366">
-        <inertial pos="0.093342 -0.001703 -0.061448" mass="13.322034" diaginertia="0.495128 0.521254 0.059284" />
+        <inertial pos="0.093172 -0.000957 -0.063239" mass="13.516427" diaginertia="0.486657 0.51314 0.059226" />
         <geom name="Torso_Side_Right_collision" type="mesh" mesh="Torso_Side_Right.collision.stl" class="collision" />
         <geom name="Torso_Side_Right_visual" material="Torso_Side_Right_material" type="mesh" mesh="Torso_Side_Right.stl" class="visual" />
         <body name="KC_C_104R_PitchHardstopDriven" pos="-0.028031 0.000007 0.126021" quat="0.5000001633974483 0.4999999999999733 0.49999983660255165 0.4999999999999733">
@@ -174,7 +174,7 @@
                 <geom name="KC_D_401R_R_Shin_Drive_collision" type="mesh" mesh="KC_D_401R_R_Shin_Drive.collision.stl" class="collision" />
                 <geom name="KC_D_401R_R_Shin_Drive_visual" material="Torso_Side_Right_material" type="mesh" mesh="KC_D_401R_R_Shin_Drive.stl" class="visual" />
                 <body name="KB_D_501R_R_LEG_FOOT" pos="-0.030000 0.290000 0.035100">
-                  <joint name="dof_right_ankle_02" type="hinge" ref="0.0" class="motor_02" range="-0.296706 0.785398" axis="0 0 1" />
+                  <joint name="dof_right_ankle_02" type="hinge" ref="0.0" class="motor_02" range="-0.226893 1.256637" axis="0 0 1" />
                   <inertial pos="-0.014842 0.027139 -0.016105" mass="0.483858" diaginertia="0.000268 0.001549 0.001458" />
                   <geom name="KB_D_501R_R_LEG_FOOT_collision" type="mesh" mesh="KB_D_501R_R_LEG_FOOT.collision.stl" class="collision" />
                   <geom name="KB_D_501R_R_LEG_FOOT_visual" material="Torso_Side_Right_material" type="mesh" mesh="KB_D_501R_R_LEG_FOOT.stl" class="visual" />
@@ -204,7 +204,7 @@
                 <geom name="KC_D_401L_L_Shin_Drive_collision" type="mesh" mesh="KC_D_401L_L_Shin_Drive.collision.stl" class="collision" />
                 <geom name="KC_D_401L_L_Shin_Drive_visual" material="Torso_Side_Right_material" type="mesh" mesh="KC_D_401L_L_Shin_Drive.stl" class="visual" />
                 <body name="KB_D_501L_L_LEG_FOOT" pos="-0.030000 -0.290000 0.035100" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
-                  <joint name="dof_left_ankle_02" type="hinge" ref="0.0" class="motor_02" range="-0.785398 0.296706" axis="0 0 -1" />
+                  <joint name="dof_left_ankle_02" type="hinge" ref="0.0" class="motor_02" range="-1.256637 0.226893" axis="0 0 -1" />
                   <inertial pos="-0.014842 0.027139 0.016105" mass="0.483858" diaginertia="0.000268 0.001549 0.001458" />
                   <geom name="KB_D_501L_L_LEG_FOOT_collision" type="mesh" mesh="KB_D_501L_L_LEG_FOOT.collision.stl" class="collision" />
                   <geom name="KB_D_501L_L_LEG_FOOT_visual" material="Torso_Side_Right_material" type="mesh" mesh="KB_D_501L_L_LEG_FOOT.stl" class="visual" />

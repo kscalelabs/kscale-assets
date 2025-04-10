@@ -80,7 +80,7 @@
       <freejoint name="floating_base" />
       <geom name="floating_base_link_visual" quat="0.7073882691671998 0.0 0.0 0.706825181105366" material="floating_base_link_material" type="sphere" size="0.01" class="visual" />
       <body name="Torso_Side_Right" quat="0.7073882691671998 0.0 0.0 0.706825181105366">
-        <inertial pos="0.093342 -0.001703 -0.061448" mass="13.322034" diaginertia="0.495128 0.521254 0.059284" />
+        <inertial pos="0.093172 -0.000957 -0.063239" mass="13.516427" diaginertia="0.486657 0.51314 0.059226" />
         <geom name="Torso_Side_Right_visual" material="Torso_Side_Right_material" type="mesh" mesh="Torso_Side_Right.stl" class="visual" />
         <body name="KC_C_104R_PitchHardstopDriven" pos="-0.028031 0.000007 0.126021" quat="0.5000001633974483 0.4999999999999733 0.49999983660255165 0.4999999999999733">
           <joint name="dof_right_shoulder_pitch_03" type="hinge" ref="0.0" class="motor_03" range="-2.617994 2.094395" axis="0 0 1" />
