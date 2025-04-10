@@ -1,13 +1,13 @@
 {
   "joint_name_to_metadata": {
     "left_shoulder_pitch": {
-      "actuator_type": "feetech_sts3215_12v",
+      "actuator_type": "feetech_sts3250",
       "id": 11,
       "kp": "20.0",
       "kd": "5.0"
     },
     "left_shoulder_roll": {
-      "actuator_type": "feetech_sts3215_12v",
+      "actuator_type": "feetech_sts3250",
       "id": 12,
       "kp": "20.0",
       "kd": "5.0"
@@ -25,13 +25,13 @@
       "kd": "5.0"
     },
     "right_shoulder_pitch": {
-      "actuator_type": "feetech_sts3215_12v",
+      "actuator_type": "feetech_sts3250",
       "id": 21,
       "kp": "20.0",
       "kd": "5.0"
     },
     "right_shoulder_roll": {
-      "actuator_type": "feetech_sts3215_12v",
+      "actuator_type": "feetech_sts3250",
       "id": 22,
       "kp": "20.0",
       "kd": "5.0"
