@@ -1,125 +1,125 @@
 {
-  "joint_name_to_metadata": {
-    "dof_left_shoulder_pitch_03": {
-      "actuator_type": "robstride_03",
-      "id": 11,
-      "kp": "40.0",
-      "kd": "4.0"
+    "joint_name_to_metadata": {
+      "dof_left_shoulder_pitch_03": {
+        "actuator_type": "robstride_03",
+        "id": 11,
+        "kp": "40.0",
+        "kd": "4.0"
+      },
+      "dof_left_shoulder_roll_03": {
+        "actuator_type": "robstride_03",
+        "id": 12,
+        "kp": "40.0",
+        "kd": "4.0"
+      },
+      "dof_left_shoulder_yaw_02": {
+        "actuator_type": "robstride_02",
+        "id": 13,
+        "kp": "30.0",
+        "kd": "1.0"
+      },
+      "dof_left_elbow_02": {
+        "actuator_type": "robstride_02",
+        "id": 14,
+        "kp": "30.0",
+        "kd": "1.0"
+      },
+      "dof_left_wrist_00": {
+        "actuator_type": "robstride_00",
+        "id": 15,
+        "kp": "20.0",
+        "kd": "0.45473329537059787"
+      },
+      "dof_right_shoulder_pitch_03": {
+        "actuator_type": "robstride_03",
+        "id": 21,
+        "kp": "40.0",
+        "kd": "4.0"
+      },
+      "dof_right_shoulder_roll_03": {
+        "actuator_type": "robstride_03",
+        "id": 22,
+        "kp": "40.0",
+        "kd": "4.0"
+      },
+      "dof_right_shoulder_yaw_02": {
+        "actuator_type": "robstride_02",
+        "id": 23,
+        "kp": "30.0",
+        "kd": "1.0"
+      },
+      "dof_right_elbow_02": {
+        "actuator_type": "robstride_02",
+        "id": 24,
+        "kp": "30.0",
+        "kd": "1.0"
+      },
+      "dof_right_wrist_00": {
+        "actuator_type": "robstride_00",
+        "id": 25,
+        "kp": "20.0",
+        "kd": "0.45473329537059787"
+      },
+      "dof_left_hip_pitch_04": {
+        "actuator_type": "robstride_04",
+        "id": 31,
+        "kp": "85.0",
+        "kd": "5.0"
+      },
+      "dof_left_hip_roll_03": {
+        "actuator_type": "robstride_03",
+        "id": 32,
+        "kp": "40.0",
+        "kd": "4.0"
+      },
+      "dof_left_hip_yaw_03": {
+        "actuator_type": "robstride_03",
+        "id": 33,
+        "kp": "40.0",
+        "kd": "4.0"
+      },
+      "dof_left_knee_04": {
+        "actuator_type": "robstride_04",
+        "id": 34,
+        "kp": "85.0",
+        "kd": "5.0"
+      },
+      "dof_left_ankle_02": {
+        "actuator_type": "robstride_02",
+        "id": 35,
+        "kp": "30.0",
+        "kd": "1.0"
+      },
+      "dof_right_hip_pitch_04": {
+        "actuator_type": "robstride_04",
+        "id": 41,
+        "kp": "85.0",
+        "kd": "5.0"
+      },
+      "dof_right_hip_roll_03": {
+        "actuator_type": "robstride_03",
+        "id": 42,
+        "kp": "40.0",
+        "kd": "4.0"
+      },
+      "dof_right_hip_yaw_03": {
+        "actuator_type": "robstride_03",
+        "id": 43,
+        "kp": "40.0",
+        "kd": "4.0"
+      },
+      "dof_right_knee_04": {
+        "actuator_type": "robstride_04",
+        "id": 44,
+        "kp": "85.0",
+        "kd": "5.0"
+      },
+      "dof_right_ankle_02": {
+        "actuator_type": "robstride_02",
+        "id": 45,
+        "kp": "30.0",
+        "kd": "1.0"
+      }
     },
-    "dof_left_shoulder_roll_03": {
-      "actuator_type": "robstride_03",
-      "id": 12,
-      "kp": "40.0",
-      "kd": "4.0"
-    },
-    "dof_left_shoulder_yaw_02": {
-      "actuator_type": "robstride_02",
-      "id": 13,
-      "kp": "30.0",
-      "kd": "1.0"
-    },
-    "dof_left_elbow_02": {
-      "actuator_type": "robstride_02",
-      "id": 14,
-      "kp": "30.0",
-      "kd": "1.0"
-    },
-    "dof_left_wrist_00": {
-      "actuator_type": "robstride_00",
-      "id": 15,
-      "kp": "20.0",
-      "kd": "0.45473329537059787"
-    },
-    "dof_right_shoulder_pitch_03": {
-      "actuator_type": "robstride_03",
-      "id": 21,
-      "kp": "40.0",
-      "kd": "4.0"
-    },
-    "dof_right_shoulder_roll_03": {
-      "actuator_type": "robstride_03",
-      "id": 22,
-      "kp": "40.0",
-      "kd": "4.0"
-    },
-    "dof_right_shoulder_yaw_02": {
-      "actuator_type": "robstride_02",
-      "id": 23,
-      "kp": "30.0",
-      "kd": "1.0"
-    },
-    "dof_right_elbow_02": {
-      "actuator_type": "robstride_02",
-      "id": 24,
-      "kp": "30.0",
-      "kd": "1.0"
-    },
-    "dof_right_wrist_00": {
-      "actuator_type": "robstride_00",
-      "id": 25,
-      "kp": "20.0",
-      "kd": "0.45473329537059787"
-    },
-    "dof_left_hip_pitch_04": {
-      "actuator_type": "robstride_04",
-      "id": 31,
-      "kp": "85.0",
-      "kd": "5.0"
-    },
-    "dof_left_hip_roll_03": {
-      "actuator_type": "robstride_03",
-      "id": 32,
-      "kp": "40.0",
-      "kd": "4.0"
-    },
-    "dof_left_hip_yaw_03": {
-      "actuator_type": "robstride_03",
-      "id": 33,
-      "kp": "40.0",
-      "kd": "4.0"
-    },
-    "dof_left_knee_04": {
-      "actuator_type": "robstride_04",
-      "id": 34,
-      "kp": "85.0",
-      "kd": "5.0"
-    },
-    "dof_left_ankle_02": {
-      "actuator_type": "robstride_02",
-      "id": 35,
-      "kp": "30.0",
-      "kd": "1.0"
-    },
-    "dof_right_hip_pitch_04": {
-      "actuator_type": "robstride_04",
-      "id": 41,
-      "kp": "85.0",
-      "kd": "5.0"
-    },
-    "dof_right_hip_roll_03": {
-      "actuator_type": "robstride_03",
-      "id": 42,
-      "kp": "40.0",
-      "kd": "4.0"
-    },
-    "dof_right_hip_yaw_03": {
-      "actuator_type": "robstride_03",
-      "id": 43,
-      "kp": "40.0",
-      "kd": "4.0"
-    },
-    "dof_right_knee_04": {
-      "actuator_type": "robstride_04",
-      "id": 44,
-      "kp": "85.0",
-      "kd": "5.0"
-    },
-    "dof_right_ankle_02": {
-      "actuator_type": "robstride_02",
-      "id": 45,
-      "kp": "30.0",
-      "kd": "1.0"
-    }
-  },
-  "control_frequency": "50"
+    "control_frequency": "50"
 }
