@@ -156,14 +156,14 @@
     <origin xyz="-0.030000 0.290000 0.035100" rpy="0 0 0"/>
     <parent link="KC_D_401R_R_Shin_Drive"/>
     <child link="KB_D_501R_R_LEG_FOOT"/>
-    <limit effort="17" velocity="12.566" lower="-0.296706" upper="0.785398"/>
+    <limit effort="17" velocity="12.566" lower="-0.226893" upper="1.256637"/>
     <axis xyz="0 0 1"/>
   </joint>
   <joint name="dof_left_ankle_02" type="revolute">
     <origin xyz="-0.030000 -0.290000 0.035100" rpy="-3.141593 0 0"/>
     <parent link="KC_D_401L_L_Shin_Drive"/>
     <child link="KB_D_501L_L_LEG_FOOT"/>
-    <limit effort="17" velocity="12.566" lower="-0.785398" upper="0.296706"/>
+    <limit effort="17" velocity="12.566" lower="-1.256637" upper="0.226893"/>
     <axis xyz="0 0 -1"/>
   </joint>
   <link name="Torso_Side_Right">
@@ -177,9 +177,9 @@
       </material>
     </visual>
     <inertial name="Torso_Side_Right_inertial">
-      <mass value="13.322034"/>
-      <inertia ixx="0.495128" iyy="0.521254" izz="0.059284" ixy="0.000149" ixz="-0.001815" iyz="0.014304"/>
-      <origin xyz="0.093342 -0.001703 -0.061448" rpy="0 0 0"/>
+      <mass value="13.516427"/>
+      <inertia ixx="0.486657" iyy="0.513140" izz="0.059226" ixy="0.000137" ixz="-0.000970" iyz="0.010461"/>
+      <origin xyz="0.093172 -0.000957 -0.063239" rpy="0 0 0"/>
     </inertial>
   </link>
   <link name="KC_C_104R_PitchHardstopDriven">
