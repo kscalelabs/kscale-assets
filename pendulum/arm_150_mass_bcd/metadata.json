@@ -1,7 +1,7 @@
 {
   "joint_name_to_metadata": {
     "pendulum_joint": {
-      "actuator_type": "feetech-sts3250",
+      "actuator_type": "feetech_sts3250",
       "id": 11,
       "kp": "20.0",
       "kd": "0.0"
