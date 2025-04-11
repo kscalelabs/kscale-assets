@@ -69,11 +69,11 @@
         <inertial pos="0.093342 -0.001703 -0.061448" mass="13.322034" diaginertia="0.495128 0.521254 0.059284" />
         <geom name="Torso_Side_Right_visual" material="Torso_Side_Right_material" type="mesh" mesh="Torso_Side_Right.stl" class="visual" />
         <body name="KC_C_104R_PitchHardstopDriven" pos="-0.028031 0.000007 0.126021" quat="0.5000001633974483 0.4999999999999733 0.49999983660255165 0.4999999999999733">
-          <joint name="dof_right_shoulder_pitch_03" type="hinge" ref="0.0" class="motor_03" range="-0.2 0.2" axis="0 0 1" />
+          <joint name="dof_right_shoulder_pitch_03" type="hinge" ref="0.0" class="motor_03" range="-0.3 0.3" axis="0 0 1" />
           <inertial pos="-0.004584 0.002745 -0.051222" mass="0.584848" diaginertia="0.001182 0.001537 0.001416" />
           <geom name="KC_C_104R_PitchHardstopDriven_visual" material="Torso_Side_Right_material" type="mesh" mesh="KC_C_104R_PitchHardstopDriven.stl" class="visual" />
           <body name="RS03_3" pos="-0.024250 0 -0.080000" quat="-1.2247452309842457e-07 -0.7071068967259713 1.22474483074382e-07 -0.7071066656470838">
-            <joint name="dof_right_shoulder_roll_03" type="hinge" ref="0.0" class="motor_03" range="-0.2 0.2" axis="0 0 -1" />
+            <joint name="dof_right_shoulder_roll_03" type="hinge" ref="0.0" class="motor_03" range="-0.05 0.05" axis="0 0 -1" />
             <inertial pos="-0.004944 0.042532 0.027432" mass="1.676509" diaginertia="0.006831 0.001755 0.007324" />
             <geom name="RS03_3_visual" material="Torso_Side_Right_material" type="mesh" mesh="RS03_3.stl" class="visual" />
             <body name="KC_C_202R" pos="-0.013000 0.142000 0.030250" quat="0.7071068967259818 0.7071066656470943 0.0 0.0">
@@ -103,11 +103,11 @@
           <inertial pos="-0.004595 -0.002745 -0.051222" mass="0.584843" diaginertia="0.001182 0.001536 0.001415" />
           <geom name="KC_C_104L_PitchHardstopDriven_visual" material="Torso_Side_Right_material" type="mesh" mesh="KC_C_104L_PitchHardstopDriven.stl" class="visual" />
           <body name="RS03_6" pos="-0.024250 0 -0.080000" quat="-1.2247452309842457e-07 -0.7071068967259713 -1.22474483074382e-07 0.7071066656470838">
-            <joint name="dof_left_shoulder_roll_03" type="hinge" ref="0.0" class="motor_03" range="-0.2 0.2" axis="0 0 1" />
+            <joint name="dof_left_shoulder_roll_03" type="hinge" ref="0.0" class="motor_03" range="-0.3 0.3" axis="0 0 1" />
             <inertial pos="0.004944 -0.042531 -0.027433" mass="1.676479" diaginertia="0.00683 0.001755 0.007324" />
             <geom name="RS03_6_visual" material="Torso_Side_Right_material" type="mesh" mesh="RS03_6.stl" class="visual" />
             <body name="KC_C_202L" pos="0.013000 -0.142000 -0.030250" quat="0.7071068967259818 0.7071066656470943 0.0 0.0">
-              <joint name="dof_left_shoulder_yaw_02" type="hinge" ref="0.0" class="motor_02" range="-0.2 0.2" axis="0 0 -1" />
+              <joint name="dof_left_shoulder_yaw_02" type="hinge" ref="0.0" class="motor_02" range="-0.05 0.05" axis="0 0 -1" />
               <inertial pos="0.000925 0.006010 0.113327" mass="0.579259" diaginertia="0.001537 0.001383 0.000471" />
               <geom name="KC_C_202L_visual" material="Torso_Side_Right_material" type="mesh" mesh="KC_C_202L.stl" class="visual" />
               <body name="KC_C_401L_L_UpForearmDrive" pos="-0.018500 0.010000 0.137000" quat="-1.2247452309842457e-07 -0.7071068967259713 -1.22474483074382e-07 0.7071066656470838">
