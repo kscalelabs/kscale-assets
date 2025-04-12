@@ -217,6 +217,8 @@
     <gyro site="origin_site" name="gyro_origin"/>
     <framelinvel objtype="site" objname="origin_site" name="global_linvel_origin"/>
     <frameangvel objtype="site" objname="origin_site" name="global_angvel_origin"/>
+    <force name="left_foot_force" site="left_foot"/>
+    <force name="right_foot_force" site="right_foot"/>
 
     <accelerometer name="imu_acc" site="imu_site" noise="0.01" />
     <gyro name="imu_gyro" site="imu_site" noise="0.01" />
