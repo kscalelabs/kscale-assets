@@ -75,8 +75,8 @@
   </asset>
 
   <worldbody>
-    <geom name="floor" type="hfield" hfield="hfield" contype="1" conaffinity="0" material="groundplane" friction="1 0.005 0.0001" pos="0 0 -0.1" />
     <body name="floating_base_link" pos="0.00000000 0.00000000 1.00947904" childclass="robot">
+      <site name="origin_site" size="0.01" pos="0 0.09 -0.25"/>
       <freejoint name="floating_base" />
       <geom class="collision" name="torso_collision" rgba="1 1 1 0.3" size="0.07 0.13 0.21" pos="0.0 0.095 -0.01" type="box"  contype="1" conaffinity="1" />
       <geom class="collision" name="legs_collision" rgba="1 1 1 0.3" size="0.06 0.175 0.09" pos="0.0 0.09 -0.35" type="box" contype="1" conaffinity="1" />
@@ -162,6 +162,7 @@
                 <body name="KB_D_501R_R_LEG_FOOT" pos="-0.030000 0.290000 0.035100">
                   <joint name="dof_right_ankle_02" type="hinge" ref="0.0" class="motor_02" range="-0.226893 1.256637" axis="0 0 1" />
                   <inertial pos="-0.014842 0.027139 -0.016105" mass="0.483858" diaginertia="0.000268 0.001549 0.001458" />
+                  <site name="right_foot" rgba="1 0 0 1"/>
                   <geom name="KB_D_501R_R_LEG_FOOT_visual" material="Torso_Side_Right_material" type="box" class="visual" pos="-0.028920 0.012560 -0.014000" quat="1.000000 0.000000 0.000000 0.000000" size="0.105716 0.034236 0.036000" />
                   <geom name="KB_D_501R_R_LEG_FOOT_collision_box" type="box" pos="-0.028920 0.012560 -0.014000" quat="1.000000 0.000000 0.000000 0.000000" size="0.105716 0.034236 0.036000" class="collision" />
                 </body>
@@ -188,6 +189,7 @@
                 <body name="KB_D_501L_L_LEG_FOOT" pos="-0.030000 -0.290000 0.035100" quat="-1.7320510330969933e-07 -0.999999999999985 -0.0 0.0">
                   <joint name="dof_left_ankle_02" type="hinge" ref="0.0" class="motor_02" range="-1.256637 0.226893" axis="0 0 -1" />
                   <inertial pos="-0.014842 0.027139 0.016105" mass="0.483858" diaginertia="0.000268 0.001549 0.001458" />
+                  <site name="left_foot" rgba="1 0 0 1"/>
                   <geom name="KB_D_501L_L_LEG_FOOT_visual" material="Torso_Side_Right_material" type="box" class="visual" pos="-0.028818 0.012560 0.014000" quat="1.000000 0.000000 0.000000 0.000000" size="0.105818 0.034236 0.036000" />
                   <geom name="KB_D_501L_L_LEG_FOOT_collision_box" type="box" pos="-0.028818 0.012560 0.014000" quat="1.000000 0.000000 0.000000 0.000000" size="0.105818 0.034236 0.036000" class="collision" />
                 </body>
@@ -234,5 +236,15 @@
     <framequat name="base_link_quat" objtype="site" objname="imu_site" />
     <framelinvel name="base_link_vel" objtype="site" objname="imu_site" />
     <frameangvel name="base_link_ang_vel" objtype="site" objname="imu_site" />
+
+    <framezaxis objtype="site" objname="origin_site" name="upvector_origin"/>
+    <velocimeter site="origin_site" name="local_linvel_origin"/>
+    <accelerometer site="origin_site" name="accelerometer_origin"/>
+    <framequat objtype="site" objname="origin_site" name="orientation_origin"/>
+    <gyro site="origin_site" name="gyro_origin"/>
+    <framelinvel objtype="site" objname="origin_site" name="global_linvel_origin"/>
+    <frameangvel objtype="site" objname="origin_site" name="global_angvel_origin"/>
+    <force name="left_foot_force" site="left_foot"/>
+    <force name="right_foot_force" site="right_foot"/>
   </sensor>
 </mujoco>
