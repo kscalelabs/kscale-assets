@@ -18,7 +18,7 @@
         <motor ctrlrange="-200.0 200.0" />
       </default>
       <default class="visual">
-        <geom material="visualgeom" contype="0" conaffinity="0" group="2" />
+        <geom contype="0" conaffinity="0" group="2" />
       </default>
       <default class="collision">
         <geom condim="6" friction="0.8 0.02 0.01" group="3" />
