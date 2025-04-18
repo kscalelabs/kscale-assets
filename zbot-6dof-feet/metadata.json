@@ -3,123 +3,125 @@
     "left_shoulder_pitch": {
       "actuator_type": "feetech_sts3250",
       "id": 11,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "16.0",
+      "kd": "3.0"
     },
     "left_shoulder_roll": {
       "actuator_type": "feetech_sts3250",
       "id": 12,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "16.0",
+      "kd": "3.0"
     },
     "left_elbow_roll": {
       "actuator_type": "feetech_sts3215_12v",
       "id": 13,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "16.0",
+      "kd": "3.0"
     },
     "left_gripper_roll": {
       "actuator_type": "feetech_sts3215_12v",
       "id": 14,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "16.0",
+      "kd": "3.0"
     },
     "right_shoulder_pitch": {
       "actuator_type": "feetech_sts3250",
       "id": 21,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "16.0",
+      "kd": "3.0"
     },
     "right_shoulder_roll": {
       "actuator_type": "feetech_sts3250",
       "id": 22,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "16.0",
+      "kd": "3.0"
     },
     "right_elbow_roll": {
       "actuator_type": "feetech_sts3215_12v",
       "id": 23,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "16.0",
+      "kd": "3.0"
     },
     "right_gripper_roll": {
       "actuator_type": "feetech_sts3215_12v",
       "id": 24,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "16.0",
+      "kd": "3.0"
     },
     "left_hip_yaw": {
       "actuator_type": "feetech_sts3250",
       "id": 31,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "22.0",
+      "kd": "12.0"
     },
     "left_hip_roll": {
       "actuator_type": "feetech_sts3250",
       "id": 32,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "22.0",
+      "kd": "12.0"
     },
     "left_hip_pitch": {
       "actuator_type": "feetech_sts3250",
       "id": 33,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "22.0",
+      "kd": "12.0"
     },
     "left_knee_pitch": {
       "actuator_type": "feetech_sts3250",
       "id": 34,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "22.0",
+      "kd": "12.0"
     },
     "left_ankle_roll": {
       "actuator_type": "feetech_sts3250",
       "id": 35,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "22.0",
+      "kd": "12.0"
     },
     "left_ankle_pitch": {
       "actuator_type": "feetech_sts3250",
       "id": 36,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "22.0",
+      "kd": "12.0"
     },
     "right_hip_yaw": {
       "actuator_type": "feetech_sts3250",
       "id": 41,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "22.0",
+      "kd": "12.0"
     },
     "right_hip_roll": {
       "actuator_type": "feetech_sts3250",
       "id": 42,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "22.0",
+      "kd": "12.0"
     },
     "right_hip_pitch": {
       "actuator_type": "feetech_sts3250",
       "id": 43,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "22.0",
+      "kd": "12.0"
     },
     "right_knee_pitch": {
       "actuator_type": "feetech_sts3250",
       "id": 44,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "22.0",
+      "kd": "12.0"
     },
     "right_ankle_roll": {
       "actuator_type": "feetech_sts3250",
       "id": 45,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "22.0",
+      "kd": "12.0"
     },
     "right_ankle_pitch": {
       "actuator_type": "feetech_sts3250",
       "id": 46,
-      "kp": "20.0",
-      "kd": "0.0"
+      "kp": "22.0",
+      "kd": "12.0"
     }
   },
-  "control_frequency": "50"
+  "control_frequency": "50",
+  "max_acceleration": "39.0",
+  "max_velocity": "5.0"
 }
