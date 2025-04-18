@@ -127,6 +127,7 @@
                     <inertial pos="-0.006981 0.025970 -0.010887" mass="0.096554" diaginertia="9e-05 0.000131 4.7e-05" />
                     <geom name="Right_Foot_visual" material="Top_Brace_material" type="box" class="visual" pos="-0.007000 0.011315 -0.012323" quat="1.000000 0.000000 0.000000 0.000000" size="0.037000 0.021315 0.051723" />
                     <geom name="Right_Foot_collision_box" type="box" pos="-0.007000 0.011315 -0.012323" quat="1.000000 0.000000 0.000000 0.000000" size="0.037000 0.021315 0.051723" class="collision" />
+                    <site name="right_foot" />
                   </body>
                 </body>
               </body>
@@ -158,6 +159,7 @@
                     <inertial pos="0.006981 0.025970 -0.010887" mass="0.096554" diaginertia="9e-05 0.000131 4.7e-05" />
                     <geom name="Left_Foot_visual" material="Top_Brace_material" type="box" class="visual" pos="0.007000 0.011315 -0.012323" quat="1.000000 0.000000 0.000000 0.000000" size="0.037000 0.021315 0.051723" />
                     <geom name="Left_Foot_collision_box" type="box" pos="0.007000 0.011315 -0.012323" quat="1.000000 0.000000 0.000000 0.000000" size="0.037000 0.021315 0.051723" class="collision" />
+                    <site name="left_foot" />
                   </body>
                 </body>
               </body>
@@ -207,5 +209,7 @@
     <framequat name="base_link_quat" objtype="site" objname="imu_site" />
     <framelinvel name="base_link_vel" objtype="site" objname="imu_site" />
     <frameangvel name="base_link_ang_vel" objtype="site" objname="imu_site" />
+    <force name="left_foot_force" site="left_foot" />
+    <force name="right_foot_force" site="right_foot" />
   </sensor>
 </mujoco>

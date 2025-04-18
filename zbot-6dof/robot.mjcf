@@ -148,6 +148,7 @@
                     <inertial pos="-0.006981 0.025970 -0.010887" mass="0.096554" diaginertia="9e-05 0.000131 4.7e-05" />
                     <geom name="Right_Foot_collision" type="mesh" mesh="Right_Foot.collision.stl" class="collision" />
                     <geom name="Right_Foot_visual" material="Top_Brace_material" type="mesh" mesh="Right_Foot.stl" class="visual" />
+                    <site name="right_foot" />
                   </body>
                 </body>
               </body>
@@ -181,6 +182,7 @@
                     <inertial pos="0.006981 0.025970 -0.010887" mass="0.096554" diaginertia="9e-05 0.000131 4.7e-05" />
                     <geom name="Left_Foot_collision" type="mesh" mesh="Left_Foot.collision.stl" class="collision" />
                     <geom name="Left_Foot_visual" material="Top_Brace_material" type="mesh" mesh="Left_Foot.stl" class="visual" />
+                    <site name="left_foot" />
                   </body>
                 </body>
               </body>
@@ -232,5 +234,7 @@
     <framequat name="base_link_quat" objtype="site" objname="imu_site" />
     <framelinvel name="base_link_vel" objtype="site" objname="imu_site" />
     <frameangvel name="base_link_ang_vel" objtype="site" objname="imu_site" />
+    <force name="left_foot_force" site="left_foot" />
+    <force name="right_foot_force" site="right_foot" />
   </sensor>
 </mujoco>
