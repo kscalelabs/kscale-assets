@@ -39,6 +39,7 @@
 
   <worldbody>
     <body name="floating_base_link" pos="0.00000000 0.00000000 0.06790000" quat="1 0 0 0" childclass="robot">
+      <freejoint name="floating_base" />
       <geom name="floating_base_link_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="floating_base_link_material" type="sphere" size="0.01" class="visual" />
       <body name="Motor_Weight_Mount" pos="0 0 0" quat="1.0 0.0 0.0 0.0">
         <inertial pos="0 0.000488 -0.002309" quat="1.0 0.0 0.0 0.0" mass="0.108000" diaginertia="0.000257 0.00023 4.4e-05" />
