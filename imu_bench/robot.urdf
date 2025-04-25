@@ -1,48 +1,5 @@
 <?xml version="1.0" ?>
 <robot name="assembly_1">
-  <link name="floating_base_link">
-    <visual name="floating_base_link_visual">
-      <geometry name="floating_base_link_geometry">
-        <sphere radius="0.01"/>
-      </geometry>
-      <material name="floating_base_link_material">
-        <color rgba="1 0 0 1"/>
-      </material>
-      <origin xyz="0 0 0" rpy="0.00 0.00 0.00"/>
-    </visual>
-    <inertial name="floating_base_link_inertial">
-      <mass value="0.001"/>
-      <inertia ixx="0.000001" iyy="0.000001" izz="0.000002" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0 0 0" rpy="0.00 0.00 0.00"/>
-    </inertial>
-  </link>
-  <joint name="floating_base_joint" type="fixed">
-    <parent link="floating_base_link"/>
-    <child link="Motor_Weight_Mount"/>
-    <origin xyz="0 0 0" rpy="0.00 0.00 0.00"/>
-  </joint>
-  <joint name="fix_imu_front_side" type="fixed">
-    <origin xyz="0.000007 -0.029724 -0.041560" rpy="1.570796 1.570796 0"/>
-    <parent link="Motor_Weight_Mount"/>
-    <child link="imu"/>
-  </joint>
-  <joint name="fix_imu_right_side" type="fixed">
-    <origin xyz="0.020007 -0.003224 -0.023810" rpy="0 1.570796 0"/>
-    <parent link="Motor_Weight_Mount"/>
-    <child link="imu_2"/>
-  </joint>
-  <joint name="fix_imu_bottom" type="fixed">
-    <origin xyz="0.017732 -0.003224 -0.067900" rpy="3.141593 0 3.141593"/>
-    <parent link="Motor_Weight_Mount"/>
-    <child link="imu_3"/>
-  </joint>
-  <joint name="dof_servo_out" type="revolute">
-    <origin xyz="0.000007 -0.010299 0.088440" rpy="-1.570796 0 0"/>
-    <parent link="Motor_Weight_Mount"/>
-    <child link="STS3215"/>
-    <limit effort="5" velocity="6.28" lower="-1.570796" upper="1.570796"/>
-    <axis xyz="0 0 -1"/>
-  </joint>
   <link name="Motor_Weight_Mount">
     <visual name="Motor_Weight_Mount_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -50,21 +7,26 @@
         <mesh filename="meshes/Motor_Weight_Mount.stl"/>
       </geometry>
       <material name="Motor_Weight_Mount_material">
-        <color rgba="0.972549 0.529412 0.003922 1"/>
+        <color rgba="0.97254902 0.52941176 0.0039215686 1"/>
       </material>
     </visual>
     <collision name="Motor_Weight_Mount.collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="Motor_Weight_Mount_collision_geometry">
-        <mesh filename="meshes/Motor_Weight_Mount.collision.stl"/>
+        <mesh filename="meshes/Motor_Weight_Mount.stl"/>
       </geometry>
     </collision>
     <inertial name="Motor_Weight_Mount_inertial">
-      <mass value="0.108000"/>
-      <inertia ixx="0.000257" iyy="0.000230" izz="0.000044" ixy="0" ixz="0" iyz="-0.000034"/>
-      <origin xyz="0 0.000488 -0.002309" rpy="0 0 0"/>
+      <mass value="0.108"/>
+      <inertia ixx="0.00025671209072946754" iyy="0.00023024378013468234" izz="4.3574052217014776e-05" ixy="-3.684877512045158e-10" ixz="1.745026328443468e-09" iyz="-3.44376938106893e-05"/>
+      <origin xyz="4.1164608888888893e-07 0.00048755811111111117 -0.0023089010089316323" rpy="0 0 0"/>
     </inertial>
   </link>
+  <joint name="fix_imu_front_side" type="fixed">
+    <origin xyz="7.4096296e-06 -0.029723954 -0.041560218" rpy="1.5707963 1.5707963 0"/>
+    <parent link="Motor_Weight_Mount"/>
+    <child link="imu"/>
+  </joint>
   <link name="imu">
     <visual name="imu_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -72,21 +34,26 @@
         <mesh filename="meshes/imu.stl"/>
       </geometry>
       <material name="imu_material">
-        <color rgba="0.615686 0.811765 0.929412 1"/>
+        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
       </material>
     </visual>
     <collision name="imu.collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="imu_collision_geometry">
-        <mesh filename="meshes/imu.collision.stl"/>
+        <mesh filename="meshes/imu.stl"/>
       </geometry>
     </collision>
     <inertial name="imu_inertial">
-      <mass value="0.005700"/>
-      <inertia ixx="0.000001" iyy="0.000001" izz="0.000002" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="-0.003012 0 0.003249" rpy="0 0 0"/>
+      <mass value="0.0057"/>
+      <inertia ixx="1e-06" iyy="1.1684421e-06" izz="1.5348873e-06" ixy="0" ixz="0" iyz="0"/>
+      <origin xyz="-0.0030124468 0 0.0032493417" rpy="0 0 0"/>
     </inertial>
   </link>
+  <joint name="fix_imu_right_side" type="fixed">
+    <origin xyz="0.02000741 -0.0032239537 -0.023810218" rpy="0 1.5707963 0"/>
+    <parent link="Motor_Weight_Mount"/>
+    <child link="imu_2"/>
+  </joint>
   <link name="imu_2">
     <visual name="imu_visual_2">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -94,21 +61,26 @@
         <mesh filename="meshes/imu_2.stl"/>
       </geometry>
       <material name="imu_material_2">
-        <color rgba="0.615686 0.811765 0.929412 1"/>
+        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
       </material>
     </visual>
     <collision name="imu.collision_2">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="imu_collision_geometry_2">
-        <mesh filename="meshes/imu_2.collision.stl"/>
+        <mesh filename="meshes/imu_2.stl"/>
       </geometry>
     </collision>
     <inertial name="imu_inertial_2">
-      <mass value="0.005700"/>
-      <inertia ixx="0.000001" iyy="0.000001" izz="0.000002" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.014738 -0.012000 0.002999" rpy="0 0 0"/>
+      <mass value="0.0057"/>
+      <inertia ixx="1e-06" iyy="1.1684421e-06" izz="1.5348873e-06" ixy="0" ixz="0" iyz="0"/>
+      <origin xyz="0.014737553 -0.012 0.0029993417" rpy="0 0 0"/>
     </inertial>
   </link>
+  <joint name="fix_imu_bottom" type="fixed">
+    <origin xyz="0.017731837 -0.0032239537 -0.067899562" rpy="3.1415927 0 3.1415927"/>
+    <parent link="Motor_Weight_Mount"/>
+    <child link="imu_3"/>
+  </joint>
   <link name="imu_3">
     <visual name="imu_visual_3">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -116,21 +88,28 @@
         <mesh filename="meshes/imu_3.stl"/>
       </geometry>
       <material name="imu_material_3">
-        <color rgba="0.615686 0.811765 0.929412 1"/>
+        <color rgba="0.61568627 0.81176471 0.92941176 1"/>
       </material>
     </visual>
     <collision name="imu.collision_3">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="imu_collision_geometry_3">
-        <mesh filename="meshes/imu_3.collision.stl"/>
+        <mesh filename="meshes/imu_3.stl"/>
       </geometry>
     </collision>
     <inertial name="imu_inertial_3">
-      <mass value="0.005700"/>
-      <inertia ixx="0.000001" iyy="0.000001" izz="0.000002" ixy="0" ixz="0" iyz="0"/>
-      <origin xyz="0.014738 -0.012000 0.002999" rpy="0 0 0"/>
+      <mass value="0.0057"/>
+      <inertia ixx="1e-06" iyy="1.1684421e-06" izz="1.5348873e-06" ixy="0" ixz="0" iyz="0"/>
+      <origin xyz="0.014737553 -0.012 0.0029993417" rpy="0 0 0"/>
     </inertial>
   </link>
+  <joint name="dof_servo_out" type="revolute">
+    <origin xyz="7.4096296e-06 -0.010298954 0.088439782" rpy="-1.5707963 0 0"/>
+    <parent link="Motor_Weight_Mount"/>
+    <child link="STS3215"/>
+    <limit effort="5" velocity="6.28" lower="-1.5707963" upper="1.5707963"/>
+    <axis xyz="0 0 -1"/>
+  </joint>
   <link name="STS3215">
     <visual name="STS3215_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -144,13 +123,13 @@
     <collision name="STS3215.collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="STS3215_collision_geometry">
-        <mesh filename="meshes/STS3215.collision.stl"/>
+        <mesh filename="meshes/STS3215.stl"/>
       </geometry>
     </collision>
     <inertial name="STS3215_inertial">
-      <mass value="0.341126"/>
-      <inertia ixx="0.000799" iyy="0.000908" izz="0.000276" ixy="0" ixz="0" iyz="0.000128"/>
-      <origin xyz="-0.000003 -0.037927 0.066872" rpy="0 0 0"/>
+      <mass value="0.34112575"/>
+      <inertia ixx="0.0007991976665541033" iyy="0.0009078084262351327" izz="0.0002757100497095613" ixy="2.4760137196551268e-08" ixz="-4.7333634687073423e-08" iyz="0.00012843866280498235"/>
+      <origin xyz="-2.789990960259091e-06 -0.03792701956340436 0.06687174290207863" rpy="0 0 0"/>
     </inertial>
   </link>
 </robot>

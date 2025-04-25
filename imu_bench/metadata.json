@@ -1,6 +1,6 @@
 {
   "joint_name_to_metadata": {
-    "servo_out": {
+    "dof_servo_out": {
       "actuator_type": "feetech_sts3215_12v",
       "id": 1,
       "kp": "16.0",
