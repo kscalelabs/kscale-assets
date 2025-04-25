@@ -1,9 +1,9 @@
 <mujoco model="assembly_1">
   <default>
     <default class="robot">
-      <default class="servo_motor">
-        <joint armature="0.005" frictionloss="0.1" actuatorfrcrange="-5.0 5.0" />
-        <motor ctrlrange="-5.0 5.0" />
+      <default class="motor">
+        <joint />
+        <motor />
       </default>
       <default class="visual">
         <geom material="visualgeom" contype="0" conaffinity="0" group="2" />
@@ -63,7 +63,7 @@
           <site name="imu_3_site" quat="1.0 0.0 0.0 0.0" pos="0.0 0.0 0.0" />
         </body>
         <body name="STS3215" pos="0.000007 -0.010299 0.088440" quat="0.7071068967259818 -0.7071066656470943 0.0 0.0">
-          <joint name="dof_servo_out" type="hinge" ref="0.0" class="servo_motor" range="-1.570796 1.570796" axis="0 0 -1" />
+          <joint name="dof_servo_out" type="hinge" ref="0.0" class="motor" range="-1.570796 1.570796" axis="0 0 -1" />
           <inertial pos="-0.000003 -0.037927 0.066872" quat="1.0 0.0 0.0 0.0" mass="0.341126" diaginertia="0.000799 0.000908 0.000276" />
           <geom name="STS3215_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="STS3215.collision.stl" class="collision" />
           <geom name="STS3215_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="floating_base_link_material" type="mesh" mesh="STS3215.stl" class="visual" />
@@ -73,11 +73,10 @@
       <camera name="front_camera" mode="track" fovy="90.0" quat="4.329780281177467e-17 4.329780281177466e-17 0.7071067811865475 0.7071067811865476" pos="0.0 2.0 0.5" />
       <camera name="side_camera" mode="track" fovy="90.0" quat="-0.5 -0.4999999999999999 0.5 0.5000000000000001" pos="-2.0 0.0 0.5" />
     </body>
-    <geom name="floor" class="floor" pos="0 0 0" quat="1 0 0 0" />
   </worldbody>
 
   <actuator>
-    <motor name="dof_servo_out_ctrl" joint="dof_servo_out" class="servo_motor" />
+    <motor name="dof_servo_out_ctrl" joint="dof_servo_out" class="motor" />
   </actuator>
 
   <contact>
@@ -98,16 +97,16 @@
     <accelerometer name="imu_2_acc" site="imu_2_site" noise="0.01" />
     <gyro name="imu_2_gyro" site="imu_2_site" noise="0.01" />
     <magnetometer name="imu_2_mag" site="imu_2_site" noise="0.05" />
-    <framepos name="base_link_pos" objtype="site" objname="imu_2_site" />
+    <!-- <framepos name="base_link_pos" objtype="site" objname="imu_2_site" />
     <framequat name="base_link_quat" objtype="site" objname="imu_2_site" />
     <framelinvel name="base_link_vel" objtype="site" objname="imu_2_site" />
-    <frameangvel name="base_link_ang_vel" objtype="site" objname="imu_2_site" />
+    <frameangvel name="base_link_ang_vel" objtype="site" objname="imu_2_site" /> -->
     <accelerometer name="imu_3_acc" site="imu_3_site" noise="0.01" />
     <gyro name="imu_3_gyro" site="imu_3_site" noise="0.01" />
     <magnetometer name="imu_3_mag" site="imu_3_site" noise="0.05" />
-    <framepos name="base_link_pos" objtype="site" objname="imu_3_site" />
+    <!-- <framepos name="base_link_pos" objtype="site" objname="imu_3_site" />
     <framequat name="base_link_quat" objtype="site" objname="imu_3_site" />
     <framelinvel name="base_link_vel" objtype="site" objname="imu_3_site" />
-    <frameangvel name="base_link_ang_vel" objtype="site" objname="imu_3_site" />
+    <frameangvel name="base_link_ang_vel" objtype="site" objname="imu_3_site" /> -->
   </sensor>
 </mujoco>
