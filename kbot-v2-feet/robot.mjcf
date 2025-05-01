@@ -2,20 +2,20 @@
   <default>
     <default class="robot">
       <default class="motor_00">
-        <joint armature="0.005" frictionloss="0.1" actuatorfrcrange="-20.0 20.0" />
-        <motor ctrlrange="-20.0 20.0" />
+        <joint armature="0.005" frictionloss="0.1" actuatorfrcrange="-5.0 5.0" />
+        <motor ctrlrange="-5.0 5.0" />
       </default>
       <default class="motor_02">
-        <joint armature="0.0015" frictionloss="0.1" actuatorfrcrange="-30.0 30.0" />
-        <motor ctrlrange="-30.0 30.0" />
+        <joint armature="0.0015" frictionloss="0.1" actuatorfrcrange="-6.0 6.0" />
+        <motor ctrlrange="-6.0 6.0" />
       </default>
       <default class="motor_03">
-        <joint armature="0.005" frictionloss="0.001" actuatorfrcrange="-100.0 100.0" />
-        <motor ctrlrange="-100.0 100.0" />
+        <joint armature="0.005" frictionloss="0.001" actuatorfrcrange="-20.0 20.0" />
+        <motor ctrlrange="-20.0 20.0" />
       </default>
       <default class="motor_04">
-        <joint armature="0.007" frictionloss="0.0015" actuatorfrcrange="-200.0 200.0" />
-        <motor ctrlrange="-200.0 200.0" />
+        <joint armature="0.007" frictionloss="0.0015" actuatorfrcrange="-40.0 40.0" />
+        <motor ctrlrange="-40.0 40.0" />
       </default>
       <default class="visual">
         <geom contype="0" conaffinity="0" group="2" />
