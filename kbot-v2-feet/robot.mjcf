@@ -26,9 +26,6 @@
       </default>
     </default>
     <mesh maxhullvert="64" />
-    <default class="floor">
-      <geom contype="1" conaffinity="1" group="1" friction="0.8 0.02 0.01" condim="6" type="plane" size="100 100 0.1" />
-    </default>
   </default>
 
   <compiler angle="radian" />
@@ -185,7 +182,6 @@
       <camera name="front_camera" mode="track" fovy="90.0" quat="4.329780281177467e-17 4.329780281177466e-17 0.7071067811865475 0.7071067811865476" pos="0.0 2.0 0.5" />
       <camera name="side_camera" mode="track" fovy="90.0" quat="-0.5 -0.4999999999999999 0.5 0.5000000000000001" pos="-2.0 0.0 0.5" />
     </body>
-    <geom name="floor" class="floor" pos="0 0 0" quat="1 0 0 0" />
   </worldbody>
 
   <actuator>
